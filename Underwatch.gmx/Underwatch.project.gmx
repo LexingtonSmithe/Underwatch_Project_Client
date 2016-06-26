@@ -117,6 +117,9 @@
       <script>scripts\ButtonPressed.gml</script>
       <script>scripts\DrawTextThenMoveDown.gml</script>
     </scripts>
+    <scripts name="Multiplayer">
+      <script>scripts\HandleIncomingPackets.gml</script>
+    </scripts>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fSmall</font>
@@ -195,8 +198,13 @@
       <object>objects\oLava</object>
       <object>objects\oTorch</object>
     </objects>
+    <objects name="Multiplayer">
+      <object>objects\oController</object>
+      <object>objects\oMessage</object>
+    </objects>
   </objects>
   <rooms name="rooms">
+    <room>rooms\rtest</room>
     <room>rooms\rMenu</room>
     <room>rooms\rLevelSelect</room>
     <room>rooms\rLevelEditor</room>
