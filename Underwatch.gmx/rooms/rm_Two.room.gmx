@@ -23,7 +23,7 @@ buffer_write(global.buffer, buffer_u8, 6);
 buffer_write(global.buffer, buffer_u32,  global.playerId);
 network_send_packet(oController.socket, global.buffer, buffer_tell(global.buffer));
 
-//Room_Init()</code>
+ScreenResolution()</code>
   <enableViews>-1</enableViews>
   <clearViewBackground>-1</clearViewBackground>
   <clearDisplayBuffer>0</clearDisplayBuffer>

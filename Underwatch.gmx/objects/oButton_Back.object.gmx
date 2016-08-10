@@ -25,7 +25,11 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>room_goto(rm_Register_Login_Select);
+            <string>if oController.LoggedIn = false {
+    room_goto(rm_Register_Login_Select);
+} else {
+    room_goto(rm_Lobby);
+}
 </string>
           </argument>
         </arguments>

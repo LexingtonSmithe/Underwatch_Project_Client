@@ -8,7 +8,7 @@
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
-    <event eventtype="3" enumb="0">
+    <event eventtype="6" enumb="4">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -25,20 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Clickable
-
-if  mouse_x &gt; bbox_left &amp;&amp;
-    mouse_x &lt; bbox_right &amp;&amp;
-    mouse_y &gt; bbox_top &amp;&amp;
-    mouse_y &lt; bbox_bottom {
-    
-    if mouse_check_button_pressed(mb_left) {
-        audio_play_sound(a_Boop, 1, false);
-   }
-   
-} else {
-    image_alpha = 1
-}
+            <string>room_goto(rm_Options)
 </string>
           </argument>
         </arguments>

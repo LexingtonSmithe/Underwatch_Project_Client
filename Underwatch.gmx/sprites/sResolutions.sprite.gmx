@@ -20,6 +20,12 @@
   <width>221</width>
   <height>63</height>
   <frames>
-    <frame index="0">images\sBack_0.png</frame>
+    <frame index="0">images\sResolutions_0.png</frame>
+    <frame index="1">images\sResolutions_1.png</frame>
+    <frame index="2">images\sResolutions_2.png</frame>
+    <frame index="3">images\sResolutions_3.png</frame>
+    <frame index="4">images\sResolutions_4.png</frame>
+    <frame index="5">images\sResolutions_5.png</frame>
+    <frame index="6">images\sResolutions_6.png</frame>
   </frames>
 </sprite>

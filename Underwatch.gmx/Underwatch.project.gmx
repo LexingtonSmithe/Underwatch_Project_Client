@@ -71,9 +71,9 @@
     <sprites name="Menu">
       <sprite>sprites\sTitle</sprite>
       <sprite>sprites\sEye</sprite>
+      <sprite>sprites\Icon</sprite>
       <sprite>sprites\sTextBox</sprite>
-      <sprite>sprites\sRoomEditor</sprite>
-      <sprite>sprites\sLevelSelect</sprite>
+      <sprite>sprites\sResolutions</sprite>
       <sprite>sprites\sOptions</sprite>
       <sprite>sprites\sCancel</sprite>
       <sprite>sprites\sLogOut</sprite>
@@ -109,7 +109,6 @@
     </sprites>
   </sprites>
   <backgrounds name="background">
-    <background>background\bg_floor</background>
     <backgrounds name="Sewers">
       <background>background\bg_walls_sewer</background>
       <background>background\bg_floor_sewer</background>
@@ -165,7 +164,7 @@
       <script>scripts\DestroyOutsideRoom.gml</script>
     </scripts>
     <scripts name="Settings">
-      <script>scripts\Room_Init.gml</script>
+      <script>scripts\ScreenResolution.gml</script>
       <script>scripts\ButtonPressed.gml</script>
       <script>scripts\DrawTextThenMoveDown.gml</script>
       <script>scripts\CollisionCheck.gml</script>
@@ -274,6 +273,10 @@
       <objects name="Login">
         <object>objects\oButton_Login</object>
       </objects>
+      <objects name="Options">
+        <object>objects\oResolution</object>
+        <object>objects\oReolutionButtonMaker</object>
+      </objects>
     </objects>
     <objects name="Multiplayer">
       <object>objects\oController</object>
@@ -290,6 +293,7 @@
     <room>rooms\rm_Register</room>
     <room>rooms\rm_Login</room>
     <room>rooms\rm_Lobby</room>
+    <room>rooms\rm_Options</room>
     <room>rooms\rm_One</room>
     <room>rooms\rm_Two</room>
     <room>rooms\rm_Level_Look</room>

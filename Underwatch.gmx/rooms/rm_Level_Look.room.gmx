@@ -11,19 +11,7 @@
   <colour>0</colour>
   <showcolour>-1</showcolour>
   <code>ShowNotification("Joined Game!");
-Room_Init()
-
-/*
-// create our player randomly in the room
-instance_create(random(room_width-60) + 30 , random(room_height-60) + 30 ,oLocalPlayer);
-
-// tell the server we are joinging a game
-buffer_seek(global.buffer, buffer_seek_start, 0);
-buffer_write(global.buffer, buffer_u8, 6);
-buffer_write(global.buffer, buffer_u32,  global.playerId);
-network_send_packet(oController.socket, global.buffer, buffer_tell(global.buffer));
-
-*/</code>
+ScreenResolution()</code>
   <enableViews>-1</enableViews>
   <clearViewBackground>-1</clearViewBackground>
   <clearDisplayBuffer>0</clearDisplayBuffer>

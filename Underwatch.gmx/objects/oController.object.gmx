@@ -31,6 +31,7 @@ isConnected = network_connect(socket, ip, 8000);
 global.buffer = buffer_create(1024, buffer_fixed, 1);
 latency = 0;
 global.playerId = "";
+LoggedIn = false
 </string>
           </argument>
         </arguments>

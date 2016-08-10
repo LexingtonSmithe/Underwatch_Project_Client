@@ -30,6 +30,7 @@ switch (messageID) {
                 ShowNotification("Login failed!#Username doesn't exist or password incorrect!");
             break;
             case 1: //success
+                LoggedIn = true
                 room_goto(rm_Lobby);
             break;
         }
