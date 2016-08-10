@@ -56,7 +56,7 @@ Trail.image_yscale = 0.3
 
 
 
-if grid_place_meeting(x,y) {
+if instance_place(x,y,oSolid) {
     instance_create(x + lengthdir_x(len,dir), y + lengthdir_y(len,dir), oExplosion)
     instance_destroy();
 }

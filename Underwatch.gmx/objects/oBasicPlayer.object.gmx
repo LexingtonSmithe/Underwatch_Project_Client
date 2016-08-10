@@ -28,7 +28,7 @@
             <string>ispeed = 0.15;
 facingLeft = true;
 
-var gun = instance_create(x,y,oBazooka);
+var gun = instance_create(x,y,oGunRight);
 gun.Owner = self.id;
 
 
@@ -60,9 +60,9 @@ var spd = 3;
 var hspd = (keyboard_check(ord('D')) - keyboard_check(ord('A')))*spd;
 var vspd = (keyboard_check(ord('S')) - keyboard_check(ord('W')))*spd;
 
-//Move
 
-move(hspd,vspd);
+CollisionCheck(hspd,vspd)
+
 //if we arent standing still then do the run animation
 if hspd &gt; 0 or vspd &gt; 0 or vspd &lt; 0 or hspd &lt; 0  {
     sprite_index = sPlayer_Walking

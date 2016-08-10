@@ -4,7 +4,9 @@
     <Config>Configs\Default</Config>
   </Configs>
   <NewExtensions/>
-  <sounds name="sound"/>
+  <sounds name="sound">
+    <sound>sound\a_Boop</sound>
+  </sounds>
   <sprites name="sprites">
     <sprite>sprites\sPlayer_Walking</sprite>
     <sprite>sprites\sPlayer_Idle</sprite>
@@ -67,12 +69,20 @@
       <sprite>sprites\sPlayerSpawn</sprite>
     </sprites>
     <sprites name="Menu">
-      <sprite>sprites\sExit</sprite>
+      <sprite>sprites\sTitle</sprite>
+      <sprite>sprites\sEye</sprite>
+      <sprite>sprites\sTextBox</sprite>
       <sprite>sprites\sRoomEditor</sprite>
       <sprite>sprites\sLevelSelect</sprite>
       <sprite>sprites\sOptions</sprite>
-      <sprite>sprites\sTitle</sprite>
-      <sprite>sprites\sEye</sprite>
+      <sprite>sprites\sCancel</sprite>
+      <sprite>sprites\sLogOut</sprite>
+      <sprite>sprites\sRegister</sprite>
+      <sprite>sprites\sLogin</sprite>
+      <sprite>sprites\sJoinGame</sprite>
+      <sprite>sprites\sBack</sprite>
+      <sprite>sprites\sExit</sprite>
+      <sprite>sprites\sSearching</sprite>
     </sprites>
     <sprites name="GUI">
       <sprite>sprites\sSprite_Box</sprite>
@@ -84,41 +94,85 @@
     </sprites>
     <sprites name="Scenery">
       <sprite>sprites\sLava</sprite>
+      <sprite>sprites\sInvisibleWall</sprite>
       <sprite>sprites\sTorch</sprite>
+      <sprites name="Critters">
+        <sprite>sprites\sCockroach_Walk</sprite>
+        <sprite>sprites\sScorpion_Idle</sprite>
+        <sprite>sprites\sScorpion_Walk</sprite>
+        <sprite>sprites\sCockroach_Corpse</sprite>
+        <sprite>sprites\sCockroach_Idle</sprite>
+        <sprite>sprites\sHole</sprite>
+        <sprite>sprites\sRoomba_Idle</sprite>
+        <sprite>sprites\sRoomba_Walk</sprite>
+      </sprites>
     </sprites>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_floor</background>
-    <background>background\bg_walltiles2</background>
-    <background>background\bg_walltiles</background>
+    <backgrounds name="Sewers">
+      <background>background\bg_walls_sewer</background>
+      <background>background\bg_floor_sewer</background>
+    </backgrounds>
+    <backgrounds name="Laboratory">
+      <background>background\bg_walls_lab</background>
+      <background>background\bg_floor_lab</background>
+    </backgrounds>
+    <backgrounds name="Temple">
+      <background>background\bg_walls_temple</background>
+      <background>background\bg_floor_temple</background>
+    </backgrounds>
+    <backgrounds name="Mines">
+      <background>background\oldwalls</background>
+      <background>background\bg_Walls_Mines</background>
+      <background>background\bg_floor_Mines</background>
+    </backgrounds>
+    <backgrounds name="Dojo">
+      <background>background\bg_Floors_Dojo</background>
+      <background>background\bg_Walls_Dojo</background>
+    </backgrounds>
+    <backgrounds name="Factory">
+      <background>background\bg_Walls_Factory</background>
+      <background>background\bg_Floors_Factory</background>
+    </backgrounds>
+    <backgrounds name="Greece">
+      <background>background\bg_Floors_Marble</background>
+    </backgrounds>
+    <backgrounds name="Menus">
+      <background>background\bgMenuSewer</background>
+      <background>background\bgMenuLab</background>
+      <background>background\bgMenuTemple</background>
+      <background>background\bgMenuDojo</background>
+    </backgrounds>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
     <scripts name="Player Scripts">
       <script>scripts\GetOrientationAndFace.gml</script>
-      <script>scripts\move.gml</script>
       <script>scripts\WhenShotByArrow.gml</script>
       <script>scripts\WhenShot.gml</script>
       <script>scripts\HealthHud.gml</script>
     </scripts>
     <scripts name="Effects">
       <script>scripts\Fade.gml</script>
+      <script>scripts\scr_herd.gml</script>
     </scripts>
     <scripts name="Gun Scripts">
       <script>scripts\GunStats.gml</script>
       <script>scripts\LeftGunPosition.gml</script>
       <script>scripts\RightGunPosition.gml</script>
       <script>scripts\AmmoCounter.gml</script>
+      <script>scripts\DestroyOutsideRoom.gml</script>
     </scripts>
     <scripts name="Settings">
-      <script>scripts\LoadLevelAndTile.gml</script>
-      <script>scripts\grid_place_meeting.gml</script>
       <script>scripts\Room_Init.gml</script>
       <script>scripts\ButtonPressed.gml</script>
       <script>scripts\DrawTextThenMoveDown.gml</script>
+      <script>scripts\CollisionCheck.gml</script>
     </scripts>
     <scripts name="Multiplayer">
       <script>scripts\HandleIncomingPackets.gml</script>
+      <script>scripts\ShowNotification.gml</script>
     </scripts>
   </scripts>
   <fonts name="fonts">
@@ -128,6 +182,7 @@
   </fonts>
   <objects name="objects">
     <object>objects\oBasicPlayer</object>
+    <object>objects\oBasicReturn</object>
     <objects name="Characters">
       <object>objects\oKrang</object>
       <object>objects\oBrorus</object>
@@ -135,27 +190,6 @@
       <objects name="Effects">
         <object>objects\oSlimeTrail</object>
       </objects>
-    </objects>
-    <objects name="Settings">
-      <object>objects\oLevel</object>
-      <object>objects\oPlayerSpawn</object>
-      <object>objects\oLevel_Editor</object>
-      <object>objects\oCursor</object>
-      <object>objects\oPlayerSelect</object>
-      <objects name="Parents">
-        <object>objects\oPlayer</object>
-        <object>objects\oBullet</object>
-        <object>objects\oFire</object>
-      </objects>
-      <objects name="Menu">
-        <object>objects\oExit</object>
-        <object>objects\oRoomEditor</object>
-        <object>objects\oLevelSelect</object>
-        <object>objects\oOptions</object>
-        <object>objects\oTitle</object>
-        <object>objects\oEye</object>
-      </objects>
-      <object>objects\oBasicReturn</object>
     </objects>
     <objects name="Guns">
       <object>objects\oGunLeft</object>
@@ -191,32 +225,75 @@
     <objects name="Tests">
       <object>objects\oTargetDummy</object>
       <object>objects\oBlood</object>
-      <object>objects\oGifPlayer</object>
-      <object>objects\oAnimationTest</object>
     </objects>
     <objects name="Scenery">
       <object>objects\oLava</object>
       <object>objects\oTorch</object>
+      <object>objects\oVoid</object>
+      <objects name="Critters">
+        <object>objects\oCockroachHerd</object>
+        <object>objects\oCockroach</object>
+        <object>objects\oCockroach_Corpse</object>
+        <object>objects\oRoombaHatch</object>
+        <object>objects\oRoomba</object>
+        <object>objects\oScorpionHole</object>
+        <object>objects\oScorpion</object>
+      </objects>
+    </objects>
+    <objects name="Settings">
+      <object>objects\oScreenFill</object>
+      <object>objects\oCursor</object>
+      <objects name="Parents">
+        <object>objects\oPlayer</object>
+        <object>objects\oBullet</object>
+        <object>objects\oFire</object>
+        <object>objects\oSolid</object>
+      </objects>
+    </objects>
+    <objects name="Menus">
+      <object>objects\oTitle</object>
+      <object>objects\oEye</object>
+      <objects name="Main Menu">
+        <object>objects\oButton_Join</object>
+        <object>objects\oButton_Cancel</object>
+        <object>objects\oButton_Logout</object>
+        <object>objects\oOptions</object>
+        <object>objects\oButton_Exit</object>
+        <object>objects\oSearching</object>
+      </objects>
+      <objects name="Registration">
+        <object>objects\oTextBox_Password2</object>
+        <object>objects\oButton_Register</object>
+      </objects>
+      <objects name="Common">
+        <object>objects\oTextboxParent</object>
+        <object>objects\oTextBox_Username</object>
+        <object>objects\oTextBox_Password1</object>
+        <object>objects\oButton_Back</object>
+      </objects>
+      <objects name="Login">
+        <object>objects\oButton_Login</object>
+      </objects>
     </objects>
     <objects name="Multiplayer">
       <object>objects\oController</object>
       <object>objects\oMessage</object>
+      <object>objects\oRemotePlayer</object>
+      <object>objects\oLocalPlayer</object>
+      <object>objects\oRemoteGun</object>
+      <object>objects\oLocalGun</object>
+      <object>objects\oPlayerSpawn</object>
     </objects>
   </objects>
   <rooms name="rooms">
-    <room>rooms\rtest</room>
-    <room>rooms\rMenu</room>
-    <room>rooms\rLevelSelect</room>
-    <room>rooms\rLevelEditor</room>
-    <room>rooms\rGif</room>
+    <room>rooms\rm_Register_Login_Select</room>
+    <room>rooms\rm_Register</room>
+    <room>rooms\rm_Login</room>
+    <room>rooms\rm_Lobby</room>
+    <room>rooms\rm_One</room>
+    <room>rooms\rm_Two</room>
+    <room>rooms\rm_Level_Look</room>
   </rooms>
-  <constants number="5">
-    <constant name="CELL_HEIGHT">64</constant>
-    <constant name="CELL_WIDTH">64</constant>
-    <constant name="FLOOR">-5</constant>
-    <constant name="WALL">-6</constant>
-    <constant name="VOID">-7</constant>
-  </constants>
   <help>
     <rtf>help.rtf</rtf>
   </help>

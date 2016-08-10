@@ -21,5 +21,18 @@
   <height>64</height>
   <frames>
     <frame index="0">images\sLava_0.png</frame>
+    <frame index="1">images\sLava_1.png</frame>
+    <frame index="2">images\sLava_2.png</frame>
+    <frame index="3">images\sLava_3.png</frame>
+    <frame index="4">images\sLava_4.png</frame>
+    <frame index="5">images\sLava_5.png</frame>
+    <frame index="6">images\sLava_6.png</frame>
+    <frame index="7">images\sLava_7.png</frame>
+    <frame index="8">images\sLava_8.png</frame>
+    <frame index="9">images\sLava_9.png</frame>
+    <frame index="10">images\sLava_10.png</frame>
+    <frame index="11">images\sLava_11.png</frame>
+    <frame index="12">images\sLava_12.png</frame>
+    <frame index="13">images\sLava_13.png</frame>
   </frames>
 </sprite>

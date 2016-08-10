@@ -25,22 +25,15 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>var ToMake = 10
+            <string>var ToMake = 15
 var Made = 0
 while Made &lt; ToMake {
-    Smoke = instance_create(x,y,oSmoke)
-    Smoke.direction = random(359)
-    Smoke.speed = random(1.5)
-    Smoke.image_angle = random(359)
-    Smoke.image_xscale = random_range(0.5,1)
-    Smoke.image_yscale = Smoke.image_xscale
-    
-    Fire = instance_create(x,y,oFire)
-    Fire.direction = random(359)
-    Fire.speed = random(3)
-    Fire.image_angle = random(359)
-    Fire.image_xscale = random_range(0.5,1)
-    Fire.image_yscale = Fire.image_xscale
+    var Fire = instance_create(x,y,oFlames);
+    Fire.direction = random(359);
+    Fire.speed = random(3);
+    Fire.image_angle = random(359);
+    Fire.image_xscale = random_range(0.5,1);
+    Fire.image_yscale = Fire.image_xscale;
 
     Made +=1    
 }

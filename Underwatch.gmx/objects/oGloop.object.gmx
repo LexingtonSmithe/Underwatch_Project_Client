@@ -72,7 +72,7 @@ vspd = (keyboard_check(ord('S')) - keyboard_check(ord('W')))*spd;
 
 //Move
 
-move(hspd,vspd);
+CollisionCheck(hspd,vspd);
 
 // Set the depth
 depth = -y

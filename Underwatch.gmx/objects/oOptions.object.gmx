@@ -32,7 +32,9 @@ if  mouse_x &gt; bbox_left &amp;&amp;
     mouse_y &gt; bbox_top &amp;&amp;
     mouse_y &lt; bbox_bottom {
     
-    room_restart()
+    if mouse_check_button_pressed(mb_left) {
+        audio_play_sound(a_Boop, 1, false);
+   }
    
 } else {
     image_alpha = 1

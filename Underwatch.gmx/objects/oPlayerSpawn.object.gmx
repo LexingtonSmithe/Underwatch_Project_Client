@@ -5,9 +5,75 @@
   <visible>0</visible>
   <depth>-10</depth>
   <persistent>0</persistent>
-  <parentName>self</parentName>
+  <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
-  <events/>
+  <events>
+    <event eventtype="0" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>Killer = ""
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if !instance_exists(oLocalPlayer) {
+        LivingStatus = 0; //dead
+    if keyboard_check(ord('H')) {
+        var Player = instance_create(x, y, oLocalPlayer);
+        LivingStatus = 1; //alive
+        Killer = "";
+        if instance_exists(oScreenFill) {
+            with(oScreenFill) {
+                instance_destroy()
+            }
+        }
+    }
+    // tell the server we are joinging a game
+    buffer_seek(global.buffer, buffer_seek_start, 0);
+    buffer_write(global.buffer, buffer_u8, 10);
+    buffer_write(global.buffer, buffer_u32,  global.playerId);
+    buffer_write(global.buffer, buffer_u8,  LivingStatus);
+    network_send_packet(oController.socket, global.buffer, buffer_tell(global.buffer));
+}
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+  </events>
   <PhysicsObject>0</PhysicsObject>
   <PhysicsObjectSensor>0</PhysicsObjectSensor>
   <PhysicsObjectShape>0</PhysicsObjectShape>

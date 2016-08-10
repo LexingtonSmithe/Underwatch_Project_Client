@@ -77,7 +77,7 @@ for (var i = 0; i &lt; max_length; i++) {
     if (collision_point(lx, ly, oTargetDummy, false, true)){
         break;
     }
-    if grid_place_meeting(lx, ly) {
+    if (collision_point(lx, ly, oSolid, false, true)) {
         break;
     }
 }
@@ -91,6 +91,8 @@ image_xscale = xscale
 if !instance_exists(oStaffLaser_End) {
     instance_create(lx,ly,oStaffLaser_End)
 }
+
+
 </string>
           </argument>
         </arguments>

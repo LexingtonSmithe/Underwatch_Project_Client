@@ -25,7 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>GunStats(6,1,0.3)
+            <string>GunStats(6,0.2,0.1)
 </string>
           </argument>
         </arguments>
@@ -78,7 +78,7 @@ if Ammo &lt;= 0 {
     Reloading = true;
 }
 
-if Reloading = true {
+if Reloading = true &amp;&amp; Ammo != MaxAmmo {
     Ammo = 0;
     SecondsReloading = SecondsReloading + 1 / room_speed;
     

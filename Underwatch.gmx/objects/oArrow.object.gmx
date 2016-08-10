@@ -29,9 +29,10 @@
     Fade(1)
 }
 
-if grid_place_meeting(x,y) {
+if instance_place(x,y,oSolid) {
     instance_destroy()
 }
+
 </string>
           </argument>
         </arguments>

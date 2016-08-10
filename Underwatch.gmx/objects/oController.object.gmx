@@ -4,7 +4,7 @@
   <solid>0</solid>
   <visible>-1</visible>
   <depth>0</depth>
-  <persistent>0</persistent>
+  <persistent>-1</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
@@ -26,17 +26,11 @@
           <argument>
             <kind>1</kind>
             <string>socket = network_create_socket(network_socket_tcp);
-ip = "127.0.0.1";
+ip = "127.0.0.2";
 isConnected = network_connect(socket, ip, 8000);
 global.buffer = buffer_create(1024, buffer_fixed, 1);
 latency = 0;
-
-with (oMessage) {
-    instance_destroy()
-}
-
-var notification = instance_create(0, 0, oMessage);
-notification.message = "Client initialised!";
+global.playerId = "";
 </string>
           </argument>
         </arguments>
@@ -59,12 +53,12 @@ notification.message = "Client initialised!";
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//update latency
-
+            <string>//update latency every couple of seconds
 buffer_seek(global.buffer, buffer_seek_start,0);
 buffer_write(global.buffer, buffer_u8, 1);
 buffer_write(global.buffer, buffer_u32, current_time);
 network_send_packet(socket, global.buffer, buffer_tell(global.buffer));
+
 </string>
           </argument>
         </arguments>
@@ -90,9 +84,9 @@ network_send_packet(socket, global.buffer, buffer_tell(global.buffer));
             <string>var eventType = ds_map_find_value(async_load, "type");
 
 switch(eventType) {
-    case network_type_data:
-        var buffer = ds_map_find_value(async_load, "buffer");
-        buffer_seek(buffer, buffer_seek_start, 0);
+    case network_type_data: // when we recieve data from a server
+        var buffer = ds_map_find_value(async_load, "buffer"); //create a read buffer and store the incoming information
+        buffer_seek(buffer, buffer_seek_start, 0); // seek out the beginning of the newly created read buffer
         
         HandleIncomingPackets(buffer)
     
@@ -145,8 +139,9 @@ buffer_delete(global.buffer);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_set_colour(c_black);
-draw_text(16, 16, "Latency: " + string(latency));
+            <string>draw_set_colour(c_purple);
+draw_set_font(font_Pixel);
+draw_text(128, 16, "Latency: " + string(latency));
 </string>
           </argument>
         </arguments>

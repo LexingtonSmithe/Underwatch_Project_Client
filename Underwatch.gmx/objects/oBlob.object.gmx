@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>-10</depth>
   <persistent>0</persistent>
-  <parentName>oBullet</parentName>
+  <parentName>oFire</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="3" enumb="0">
@@ -25,9 +25,10 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if grid_place_meeting(x,y) {
-    instance_destroy();
+            <string>if instance_place(x,y,oSolid) {
+    instance_destroy()
 }
+
 var Deceleration = 4 / room_speed
 speed = speed - Deceleration
 

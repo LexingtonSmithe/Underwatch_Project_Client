@@ -28,11 +28,11 @@
             <string>ispeed = 0.15;
 facingLeft = true;
 
-Gun = instance_create(x,y,oGauntlet)
-Gun.Owner = self.id
-
 MaxHP = 50
 HP = MaxHP
+
+Gun = instance_create(x,y,oGauntlet)
+Gun.Owner = self.id
 </string>
           </argument>
         </arguments>
@@ -62,8 +62,7 @@ var hspd = (keyboard_check(ord('D')) - keyboard_check(ord('A')))*spd;
 var vspd = (keyboard_check(ord('S')) - keyboard_check(ord('W')))*spd;
 
 //Move
-
-move(hspd,vspd);
+CollisionCheck(hspd,vspd);
 
 // Set the depth
 depth = -y

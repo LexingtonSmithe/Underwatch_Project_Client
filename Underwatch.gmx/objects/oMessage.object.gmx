@@ -27,8 +27,8 @@
             <kind>1</kind>
             <string>alpha = 1;
 message = "";
-x = room_width / 2;
-y = room_height / 6*5;
+x = room_width / 2
+y += 128
 </string>
           </argument>
         </arguments>
@@ -52,7 +52,7 @@ y = room_height / 6*5;
           <argument>
             <kind>1</kind>
             <string>if alpha &gt; 0 {
-    alpha -= 1 / room_speed
+    alpha -= 0.5 / room_speed
 } else {
     instance_destroy()
 }
@@ -61,7 +61,7 @@ y = room_height / 6*5;
         </arguments>
       </action>
     </event>
-    <event eventtype="8" enumb="64">
+    <event eventtype="8" enumb="0">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -78,8 +78,9 @@ y = room_height / 6*5;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_set_valign(fa_middle)
-draw_text_colour(x, y, message, c_black, c_black, c_black, c_black, alpha)
+            <string>
+draw_set_halign(fa_center)
+draw_text_colour(x, y, message, c_white, c_white, c_white, c_white, alpha)
 </string>
           </argument>
         </arguments>

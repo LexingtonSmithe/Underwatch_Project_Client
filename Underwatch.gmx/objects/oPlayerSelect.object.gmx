@@ -48,23 +48,6 @@ Hero = sEye;
 globalvar PlayerSelect;
 PlayerSelect = true;
 
-globalvar MaxCharacters;
-MaxCharacters = 10;
-
-Character[0] = 1;
-Character[1] = 2;
-Character[2] = 3;
-Character[3] = 4;
-Character[4] = 5;
-Character[5] = 6;
-Character[6] = 7;
-Character[7] = 8;
-Character[8] = 9;
-Character[9] = 10;
-
-
-
-Menu_index = 0;
 </string>
           </argument>
         </arguments>
@@ -87,18 +70,12 @@ Menu_index = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>
-var Player = instance_exists(oPlayer) 
-
-if Player {
-    PlayerSelect = false
+            <string>with (oLocalPlayer) {
+    self.PlayerSelect = false
     if keyboard_check(ord('H')) {
-        with(Player) {
             instance_destroy()
         }
-        PlayerSelect = true
-    }
-    
+    self.PlayerSelect = true    
 }
 </string>
           </argument>
@@ -125,7 +102,7 @@ if Player {
             <string>
 if PlayerSelect = true {
     draw_set_colour(c_navy)
-    draw_rectangle(0,0,view_xport,view_yport,false)
+    draw_rectangle(0,0,room_width,room_height,false)
     
     x = view_wport[0] / 2
     CurrentY = y;
