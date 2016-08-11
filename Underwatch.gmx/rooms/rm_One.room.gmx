@@ -70,6 +70,7 @@ ScreenResolution()</code>
   <instances>
     <instance objName="oCursor" x="112" y="80" name="inst_116C6BF5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oPlayerSpawn" x="256" y="256" name="inst_F5EBA7B4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oSpawnZone" x="256" y="256" name="inst_42F6756A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="bg_floor_sewer" x="224" y="224" w="64" h="64" xo="64" yo="256" id="10002444" name="inst_150E3501" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

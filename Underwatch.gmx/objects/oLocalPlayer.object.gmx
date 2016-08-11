@@ -91,6 +91,16 @@ if Shot = 1 {
 
 }
 
+//Healing
+var Heal = instance_place(x,y,oFloatingHealth)
+if  instance_exists(Heal){
+        if HP &lt; MaxHP {
+        with(Heal) {
+            instance_destroy()
+        }
+        HP = HP + 1
+    }
+}
 
 //DIE
 if HP &lt;= 0 {

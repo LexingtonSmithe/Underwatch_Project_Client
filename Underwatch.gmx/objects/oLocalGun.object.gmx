@@ -72,6 +72,8 @@ buffer_write(global.buffer, buffer_u32, global.playerId);
 buffer_write(global.buffer, buffer_f32, x);
 buffer_write(global.buffer, buffer_f32, y);
 buffer_write(global.buffer, buffer_f32, image_angle);
+buffer_write(global.buffer, buffer_f32, depth);
+buffer_write(global.buffer, buffer_u8, image_index);
 buffer_write(global.buffer, buffer_u8, YScale);
 network_send_packet(oController.socket, global.buffer, buffer_tell(global.buffer));
 </string>

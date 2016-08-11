@@ -101,6 +101,9 @@
     </sprites>
     <sprites name="Scenery">
       <sprite>sprites\sLava</sprite>
+      <sprite>sprites\sSpawnLocation</sprite>
+      <sprite>sprites\sprite84</sprite>
+      <sprite>sprites\sFloatingHealth</sprite>
       <sprite>sprites\sInvisibleWall</sprite>
       <sprite>sprites\sTorch</sprite>
       <sprites name="Critters">
@@ -234,7 +237,9 @@
       <object>objects\oBlood</object>
     </objects>
     <objects name="Scenery">
+      <object>objects\oSpawnZone</object>
       <object>objects\oLava</object>
+      <object>objects\oFloatingHealth</object>
       <object>objects\oTorch</object>
       <object>objects\oVoid</object>
       <objects name="Critters">
