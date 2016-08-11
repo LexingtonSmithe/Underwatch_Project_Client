@@ -57,7 +57,6 @@ SecondsSinceShot = SecondsSinceShot + 1/room_speed;
 if mouse_check_button(mb_left) {
     
     if SecondsSinceShot &gt; SecondsBetweenShots &amp;&amp; Ammo &gt; 0 {
-        Length = 5;
         Bullet = instance_create(x+lengthdir_x(Len, Dir), y+lengthdir_y(Len, Dir), oBlob);
         Bullet.speed = 3;
         Bullet.direction = image_angle;
@@ -116,7 +115,7 @@ if Reloading = true {
         Flip = 20
     }
     
-    //Delcare the variables
+    //Declare the variables
     var Length = 20
     var xx = Owner.x + lengthdir_x(Length,0 - Angle)
     var yy = Owner.y + lengthdir_y(Length,0 - Angle)

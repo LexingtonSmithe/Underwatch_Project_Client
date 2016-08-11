@@ -10,17 +10,21 @@
   <persistent>0</persistent>
   <colour>0</colour>
   <showcolour>-1</showcolour>
-  <code>ShowNotification("Joined Game!");
-
-
-
-// create our player randomly in the room
-instance_create(128, 128 ,oLocalPlayer);
-
+  <code>// create our player in the room
+if instance_exists(oTracker) {
+    // if they were in the middle of a game put them back where they were
+    var XX = oTracker.xx;
+    var YY = oTracker.yy;
+    instance_create(XX, YY ,oLocalPlayer);
+} else {
+    // other wise stick em in the corner
+    instance_create(128, 128 ,oLocalPlayer);
+}
 // tell the server we are joinging a game
 buffer_seek(global.buffer, buffer_seek_start, 0);
 buffer_write(global.buffer, buffer_u8, 6);
 buffer_write(global.buffer, buffer_u32,  global.playerId);
+buffer_write(global.buffer, buffer_u8,  global.PlayerType);
 network_send_packet(oController.socket, global.buffer, buffer_tell(global.buffer));
 
 ScreenResolution()</code>

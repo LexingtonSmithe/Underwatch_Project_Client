@@ -28,7 +28,7 @@
             <string>alpha = 1;
 message = "";
 x = room_width / 2
-y += 128
+y += 96
 </string>
           </argument>
         </arguments>
@@ -78,8 +78,7 @@ y += 128
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>
-draw_set_halign(fa_center)
+            <string>draw_set_halign(fa_center)
 draw_text_colour(x, y, message, c_white, c_white, c_white, c_white, alpha)
 </string>
           </argument>

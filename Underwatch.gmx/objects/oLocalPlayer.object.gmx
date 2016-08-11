@@ -27,16 +27,19 @@
             <kind>1</kind>
             <string>ispeed = 0.15;
 facingLeft = true;
+spriteNumber = 0;
 
-MaxHP = 50
+PlayerStats()
+
 HP = MaxHP
 
 SecondsSinceShot = 0;
 TimeToDisplayHealth = 2;
 Shot = 0;
 
-Gun = instance_create(x,y,oLocalGun)
-Gun.Owner = self.id
+var Gun = instance_create(x,y,oLocalGun);
+//Gun.Type = CharactersGun;
+Gun.Owner = self.id;
 </string>
           </argument>
         </arguments>
@@ -61,7 +64,7 @@ Gun.Owner = self.id
             <kind>1</kind>
             <string>///Damage
 
-var Hit = instance_place(x,y,oLaserPellet);
+var Hit = instance_place(x,y,oBullet);
 
 if instance_exists(Hit) {
     if Hit.Owner != global.playerId {
@@ -140,42 +143,43 @@ depth = -y;
 
 switch Direction {
     case 1:
-        sprite_index = sKrang_Walking_1;
+        sprite_index = ImageOne;
         image_xscale = 1;
         break;
     case 2:
-        sprite_index = sKrang_Walking_2;
+        sprite_index = ImageTwo;
         image_xscale = 1;
         break;
     case 3:
-        sprite_index = sKrang_Walking_3;
+        sprite_index = ImageThree;
         image_xscale = 1;
         break;
     case 4:
-        sprite_index = sKrang_Walking_2;
+        sprite_index = ImageTwo;
         image_xscale = -1;
         break;
     case 5:
-        sprite_index = sKrang_Walking_1;
+        sprite_index = ImageOne;
         image_xscale = -1;
         break;
     case 6:
-        sprite_index = sKrang_Walking_8;
+        sprite_index = ImageFive;
         image_xscale = -1 ;
         break;
     case 7:
-        sprite_index = sKrang_Walking_7;
+        sprite_index = ImageFour;
         image_xscale = 1;
         break;
     case 8:
-        sprite_index = sKrang_Walking_8;
+        sprite_index = ImageFive;
         image_xscale = 1;
         break;
 }
 
 // Change the sprite to an integer from 1 - 5
-var spriteNumber = 0;
 
+SpriteParse()
+/*
 switch (sprite_index) {
     case sKrang_Walking_1:
         spriteNumber = 1;
@@ -197,7 +201,7 @@ switch (sprite_index) {
         spriteNumber = 5;
     break;
 }
-
+*/
 var XScale = 0;
 if image_xscale = 1 {
     XScale = 1;
@@ -240,13 +244,7 @@ network_send_packet(oController.socket, global.buffer, buffer_tell(global.buffer
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>// telll the server we are leaving the game world
-
-buffer_seek(global.buffer, buffer_seek_start,0);
-buffer_write(global.buffer, buffer_u8, 6);
-buffer_write(global.buffer, buffer_u32, global.playerId);
-network_send_packet(oController.socket, global.buffer, buffer_tell(global.buffer));
-
+            <string>// tell the server we are leaving the game world
 room_goto(rm_Lobby)
 </string>
           </argument>
@@ -270,7 +268,9 @@ room_goto(rm_Lobby)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>HealthHud(sHealth_100,"Krang")
+            <string>
+var DisplayName = Name;
+HealthHud(sHealth_100,DisplayName)
 </string>
           </argument>
         </arguments>

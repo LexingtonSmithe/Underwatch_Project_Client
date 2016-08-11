@@ -25,7 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>GunStats(6,0.2,0.1)
+            <string>GunStats()
 </string>
           </argument>
         </arguments>
@@ -103,13 +103,12 @@ SecondsSinceShot = SecondsSinceShot + 1/room_speed;
 if mouse_check_button(mb_left) {
     
     if SecondsSinceShot &gt; SecondsBetweenShots &amp;&amp; Ammo &gt; 0 {
-        Length = 5;
-        Bullet = instance_create(x+lengthdir_x(Len, Dir), y+lengthdir_y(Len, Dir), oLaserPellet);
-        Bullet.speed = 5;
+        Bullet = instance_create(x+lengthdir_x(Len, Dir), y+lengthdir_y(Len, Dir), BulletType);
+        Bullet.speed = BulletSpeed;
         Bullet.direction = image_angle;
         Bullet.image_angle = Bullet.direction;
         Bullet.Owner = global.playerId
-        Bang = instance_create(x+lengthdir_x(Len, Dir), y+lengthdir_y(Len, Dir), oMuzzle);
+        Bang = instance_create(x+lengthdir_x(Len, Dir), y+lengthdir_y(Len, Dir), MuzzleType);
         Bang.image_angle = image_angle;
         Ammo = Ammo - 1;
         SecondsSinceShot = 0;
@@ -117,6 +116,7 @@ if mouse_check_button(mb_left) {
         buffer_seek(global.buffer, buffer_seek_start,0);
         buffer_write(global.buffer, buffer_u8, 9);
         buffer_write(global.buffer, buffer_u32, Bullet.Owner);
+        buffer_write(global.buffer, buffer_u8, global.PlayerType);
         buffer_write(global.buffer, buffer_f32, Bullet.x);
         buffer_write(global.buffer, buffer_f32, Bullet.y);
         buffer_write(global.buffer, buffer_f32, Bullet.image_angle);

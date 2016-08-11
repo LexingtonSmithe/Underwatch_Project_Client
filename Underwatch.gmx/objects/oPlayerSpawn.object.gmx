@@ -60,10 +60,11 @@
             }
         }
     }
-    // tell the server we are joinging a game
+    // tell the server we died
     buffer_seek(global.buffer, buffer_seek_start, 0);
     buffer_write(global.buffer, buffer_u8, 10);
     buffer_write(global.buffer, buffer_u32,  global.playerId);
+    buffer_write(global.buffer, buffer_u8, global.PlayerType);
     buffer_write(global.buffer, buffer_u8,  LivingStatus);
     network_send_packet(oController.socket, global.buffer, buffer_tell(global.buffer));
 }

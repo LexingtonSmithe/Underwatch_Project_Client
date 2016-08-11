@@ -21,5 +21,9 @@ if displayWidth >= displayHeight {
     var width = height * aspect;
 }
 
+//sort out the port nonsense
+view_hport = displayHeight;
+view_wport = displayWidth;
+
 // resize the application surface to our adjusted view
-surface_resize(application_surface,width, height);
+surface_resize(application_surface,displayWidth, displayHeight);

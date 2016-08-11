@@ -41,6 +41,7 @@
       <sprite>sprites\sLaserEnd</sprite>
     </sprites>
     <sprites name="Characters">
+      <sprite>sprites\sPlayerSpawn</sprite>
       <sprites name="Krang">
         <sprite>sprites\sKrang_Idle</sprite>
         <sprite>sprites\sKrang_Walking_3</sprite>
@@ -66,13 +67,18 @@
         <sprite>sprites\sGloop_Walking_2</sprite>
         <sprite>sprites\sGloop_Walking_3</sprite>
       </sprites>
-      <sprite>sprites\sPlayerSpawn</sprite>
+      <sprites name="Player Select">
+        <sprite>sprites\sKrang_Select</sprite>
+        <sprite>sprites\sGloop_Select</sprite>
+      </sprites>
     </sprites>
     <sprites name="Menu">
       <sprite>sprites\sTitle</sprite>
       <sprite>sprites\sEye</sprite>
       <sprite>sprites\Icon</sprite>
       <sprite>sprites\sTextBox</sprite>
+      <sprite>sprites\sResumeGame</sprite>
+      <sprite>sprites\sLeaveGame</sprite>
       <sprite>sprites\sResolutions</sprite>
       <sprite>sprites\sOptions</sprite>
       <sprite>sprites\sCancel</sprite>
@@ -82,6 +88,7 @@
       <sprite>sprites\sJoinGame</sprite>
       <sprite>sprites\sBack</sprite>
       <sprite>sprites\sExit</sprite>
+      <sprite>sprites\sSelect</sprite>
       <sprite>sprites\sSearching</sprite>
     </sprites>
     <sprites name="GUI">
@@ -151,6 +158,8 @@
       <script>scripts\WhenShotByArrow.gml</script>
       <script>scripts\WhenShot.gml</script>
       <script>scripts\HealthHud.gml</script>
+      <script>scripts\PlayerStats.gml</script>
+      <script>scripts\SpriteParse.gml</script>
     </scripts>
     <scripts name="Effects">
       <script>scripts\Fade.gml</script>
@@ -172,6 +181,7 @@
     <scripts name="Multiplayer">
       <script>scripts\HandleIncomingPackets.gml</script>
       <script>scripts\ShowNotification.gml</script>
+      <script>scripts\IncomingSprite.gml</script>
     </scripts>
   </scripts>
   <fonts name="fonts">
@@ -181,7 +191,6 @@
   </fonts>
   <objects name="objects">
     <object>objects\oBasicPlayer</object>
-    <object>objects\oBasicReturn</object>
     <objects name="Characters">
       <object>objects\oKrang</object>
       <object>objects\oBrorus</object>
@@ -209,7 +218,6 @@
         <object>objects\oRocket</object>
         <object>objects\oStaffLaser_End</object>
         <object>objects\oStaff_Laser</object>
-        <object>objects\oSawBlade</object>
       </objects>
       <objects name="Effects">
         <object>objects\oHand</object>
@@ -247,6 +255,7 @@
         <object>objects\oBullet</object>
         <object>objects\oFire</object>
         <object>objects\oSolid</object>
+        <object>objects\oSelect_Player</object>
       </objects>
     </objects>
     <objects name="Menus">
@@ -254,6 +263,8 @@
       <object>objects\oEye</object>
       <objects name="Main Menu">
         <object>objects\oButton_Join</object>
+        <object>objects\oButton_Leave</object>
+        <object>objects\oButton_Resume</object>
         <object>objects\oButton_Cancel</object>
         <object>objects\oButton_Logout</object>
         <object>objects\oOptions</object>
@@ -277,6 +288,11 @@
         <object>objects\oResolution</object>
         <object>objects\oReolutionButtonMaker</object>
       </objects>
+      <objects name="PlayerSelect">
+        <object>objects\oSelect_Krang</object>
+        <object>objects\oSelect_Gloop</object>
+        <object>objects\oSelect</object>
+      </objects>
     </objects>
     <objects name="Multiplayer">
       <object>objects\oController</object>
@@ -286,6 +302,7 @@
       <object>objects\oRemoteGun</object>
       <object>objects\oLocalGun</object>
       <object>objects\oPlayerSpawn</object>
+      <object>objects\oTracker</object>
     </objects>
   </objects>
   <rooms name="rooms">
@@ -294,6 +311,7 @@
     <room>rooms\rm_Login</room>
     <room>rooms\rm_Lobby</room>
     <room>rooms\rm_Options</room>
+    <room>rooms\rm_PlayerSelect</room>
     <room>rooms\rm_One</room>
     <room>rooms\rm_Two</room>
     <room>rooms\rm_Level_Look</room>

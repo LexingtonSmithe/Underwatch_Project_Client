@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>-10</depth>
   <persistent>0</persistent>
-  <parentName>&lt;undefined&gt;</parentName>
+  <parentName>oBullet</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -25,7 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>image_speed = 0.4
+            <string>Owner = "";
+image_speed = 0.4
 </string>
           </argument>
         </arguments>
@@ -51,20 +52,22 @@
             <string>if instance_place(x,y,oSolid) {
     instance_destroy()
 }
+DestroyOutsideRoom()
 
 // Spin in flight
 image_angle += 1;
 
-var dummy = instance_nearest(x,y,oTargetDummy);
+var dummy = instance_nearest(x,y,oPlayer);
 
 if instance_exists(dummy){
-    var Odds = 2
+    var Odds = 10
     var ang = point_direction(x,y,dummy.x,dummy.y)
     if distance_to_object(dummy) &lt; 50 {
         if irandom(Odds) == Odds {
             var zap = instance_create(x,y,oZap);
+            zap.Owner = Owner;
             zap.speed = 4;
-            zap.direction = ang + random_range(-20,20);
+            zap.direction = ang;
             zap.image_angle = zap.direction
             
         }

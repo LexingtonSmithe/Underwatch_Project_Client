@@ -20,7 +20,7 @@ if instance_exists(Owner) {
     var mx = point_direction(x,y,mouse_x,mouse_y)
     
     //Set depth based on which way the player is facing
-    if Owner.Direction = 1 or Owner.Direction = 2 or Owner.Direction = 8 {
+    if Owner.Direction = 2 or Owner.Direction = 3 or Owner.Direction = 4 {
         depth = Owner.depth +1;
     } else {
         depth = Owner.depth -1;

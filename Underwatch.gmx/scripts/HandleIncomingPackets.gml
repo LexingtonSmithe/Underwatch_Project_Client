@@ -62,6 +62,7 @@ switch (messageID) {
     
     case 6: // when someone joins the game create a remote player and give it the appropriate ID's
         var pId = buffer_read(buffer, buffer_u32);
+        var pType = buffer_read(buffer, buffer_u8);
         var pName = buffer_read(buffer, buffer_string);
         var instance = noone;
         
@@ -78,8 +79,10 @@ switch (messageID) {
                 var remotePlayer = instance_create(room_width/2, room_height/2, oRemotePlayer);
                 remotePlayer.remotePlayerId = pId;
                 remotePlayer.remotePlayerName = pName;
+                remotePlayer.remotePlayerType = pType;
                 var remoteGun = instance_create(room_width/2, room_height/2, oRemoteGun);
                 remoteGun.OwnerPID = pId;
+                remoteGun.OwnerType = pType;
             } else {
                 with(instance) {
                     instance_destroy()
@@ -107,29 +110,13 @@ switch (messageID) {
             HP = Health;
             MaxHP = MaxHealth;
             
-            switch (spriteNumber) {
-                case 1: 
-                    sprite_index = sKrang_Walking_1;
-                break;
-
-                case 2: 
-                    sprite_index = sKrang_Walking_2;
-                break;
-
-                case 3: 
-                    sprite_index = sKrang_Walking_3;
-                break;
-
-                case 4: 
-                    sprite_index = sKrang_Walking_7;
-                break;
-
-                case 5: 
-                    sprite_index = sKrang_Walking_8;
-                break;
-            }
-                image_index = imageIndex;
-                
+            // Change the sprite
+            Sprite = spriteNumber;
+            
+            //make sure its the correct index
+            image_index = imageIndex;
+            
+            //face the same way
             switch(XScale) {
                 case 1:
                     image_xscale = 1;
@@ -139,7 +126,7 @@ switch (messageID) {
                     image_xscale = -1;
                 break;
             }
-            
+            //and if we are shot display he health bar
             switch(Shot) {
                 case 0:
                     DrawHealth = false;
@@ -165,46 +152,55 @@ switch (messageID) {
         if OwnerPID == pId {
             x = gx;
             y = gy;
-            
             image_angle = Angle;
-                            
             switch(YScale) {
                 case 1:
                     image_yscale = 1;
-                    Flip = -20;
                 break;
                 
                 case 2:
                     image_yscale = -1;
-                    Flip = 20;
                 break;
             }
         }
-
-    
     }
     
     break;
     
     case 9: // someone has shot a bullet, this is the info about that bullet
         var BulletID = buffer_read(buffer, buffer_u32);
+        var bType = buffer_read(buffer, buffer_u8);
         var bx = buffer_read(buffer, buffer_f32);
         var by = buffer_read(buffer, buffer_f32);
         var BAngle = buffer_read(buffer, buffer_f32);
         var BSpeed = buffer_read(buffer, buffer_f32);
+
+        switch(bType) {
+            case 1:
+                var BulletToMake = oLightning;
+                var MuzzleToMake = oGauntletMuzzle;
+            break;
+            
+            case 2:
+                var BulletToMake = oBlob;
+                var MuzzleToMake = oMuzzle;
+            break
+        }
         
-        var Boop = instance_create(bx, by, oLaserPellet);
+        //Do action
+        var Boop = instance_create(bx, by, BulletToMake);
         Boop.image_angle = BAngle;
         Boop.speed = BSpeed;
         Boop.direction = Boop.image_angle;
         Boop.Owner = BulletID;
-        Bang = instance_create(bx, by, oMuzzle);
+        Bang = instance_create(bx, by, MuzzleToMake);
         Bang.image_angle = BAngle;
         
     break;
     
     case 10: // someone has died or come back to life either create the player if they live or get rid of them if they died
         var pId = buffer_read(buffer, buffer_u32);
+        var pType = buffer_read(buffer, buffer_u8);
         var LivingStatus = buffer_read(buffer, buffer_u8);
         var pName = buffer_read(buffer, buffer_string);
 
@@ -231,6 +227,7 @@ switch (messageID) {
                 remotePlayer.remotePlayerName = pName;
                 var remoteGun = instance_create(room_width/2, room_height/2, oRemoteGun);
                 remoteGun.OwnerPID = pId;
+                remoteGun.OwnerType = pType;
             }
             
             
@@ -267,21 +264,25 @@ switch (messageID) {
         switch(Level) {
             case 0: // Sewers
             
-            room_goto(rm_One)
+            global.Level = (rm_One)
             
             break;
             
             case 1: // Dojo
             
-            room_goto(rm_Two)
+            global.Level = (rm_Two)
                         
             break;
             
-        }   // Acknoledge receipt of this instruction by repeating it back to the Server
-            buffer_seek(global.buffer, buffer_seek_start,0);
-            buffer_write(global.buffer, buffer_u8, 12);
-            buffer_write(global.buffer, buffer_u32, global.playerId);
-            buffer_write(global.buffer, buffer_u8, Level);
-            network_send_packet(oController.socket, global.buffer, buffer_tell(global.buffer));
+        }
+        //go to the player select screen
+        room_goto(rm_PlayerSelect);
+        
+       // Acknoledge receipt of this instruction by repeating it back to the Server
+        buffer_seek(global.buffer, buffer_seek_start,0);
+        buffer_write(global.buffer, buffer_u8, 12);
+        buffer_write(global.buffer, buffer_u32, global.playerId);
+        buffer_write(global.buffer, buffer_u8, Level);
+        network_send_packet(oController.socket, global.buffer, buffer_tell(global.buffer));
     break;      
 }

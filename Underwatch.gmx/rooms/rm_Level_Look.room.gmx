@@ -56,7 +56,6 @@ ScreenResolution()</code>
     <instance objName="oBasicPlayer" x="320" y="256" name="inst_1F6D6143" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oRoombaHatch" x="736" y="640" name="inst_C69AA437" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oScorpionHole" x="1056" y="224" name="inst_B8A2550A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oBasicReturn" x="64" y="64" name="inst_984D8900" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="bg_floor_sewer" x="256" y="192" w="64" h="64" xo="0" yo="192" id="10001663" name="inst_421F618D" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

@@ -26,8 +26,9 @@
           <argument>
             <kind>1</kind>
             <string>OwnerPID = 0;
-Shoot = false
-Flip = 0
+OwnerType = 0;
+
+Shoot = false;
 </string>
           </argument>
         </arguments>
@@ -50,18 +51,15 @@ Flip = 0
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>var Len = 12;
-var Dir = image_angle + Flip;
-
-if Shoot = true {
-        var Length = 5;
-        Bullet = instance_create(x+lengthdir_x(Len, Dir), y+lengthdir_y(Len, Dir), oLaserPellet);
-        Bullet.speed = 5;
-        Bullet.direction = image_angle;
-        Bullet.image_angle = Bullet.direction;
-        Bullet.Owner = OwnerPID
-        Bang = instance_create(x+lengthdir_x(Len, Dir), y+lengthdir_y(Len, Dir), oMuzzle);
-        Bang.image_angle = image_angle;
+            <string>///sprite update
+switch(OwnerType){
+    case 1:
+        sprite_index = sGauntlet;
+    break;
+    
+    case 2:
+        sprite_index = sOozer;
+    break;
 }
 </string>
           </argument>

@@ -1,7 +1,7 @@
 ///HealthHud(Sprite,Name)
 
-Sprite = argument[0]
-Name = argument[1]
+var Sprite = argument[0];
+var Name = argument[1];
 
 //Health Counter
 var xx = 128;

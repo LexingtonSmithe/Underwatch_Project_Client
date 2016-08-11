@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>&lt;undefined&gt;</parentName>
+  <parentName>oPlayer</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -27,10 +27,12 @@
             <kind>1</kind>
             <string>remotePlayerName = "";
 remotePlayerId = 0;
+remotePlayerType = 0;
 
-DrawHealth = false
-HP = 0 
-MaxHP = 0
+DrawHealth = false;
+HP = 0;
+MaxHP = 0;
+Sprite = "";
 </string>
           </argument>
         </arguments>
@@ -55,7 +57,7 @@ MaxHP = 0
             <kind>1</kind>
             <string>image_speed = 0.15;
 
-var Hit = instance_place(x,y,oLaserPellet);
+var Hit = instance_place(x,y,oBullet);
 
 if instance_exists(Hit) {
     if Hit.Owner != remotePlayerId{
@@ -66,6 +68,8 @@ if instance_exists(Hit) {
     }
     
 }
+
+IncomingSprite()
 </string>
           </argument>
         </arguments>
