@@ -11,6 +11,7 @@
   <colour>16777215</colour>
   <showcolour>-1</showcolour>
   <code>global.PlayerType = 0;
+ds_grid_set(global.PlayerGrid,3 ,0 ,0)
 ScreenResolution();</code>
   <enableViews>-1</enableViews>
   <clearViewBackground>-1</clearViewBackground>
@@ -54,10 +55,12 @@ ScreenResolution();</code>
   <instances>
     <instance objName="oCursor" x="128" y="128" name="inst_4461865C" locked="0" code="" scaleX="2.5" scaleY="2.5" colour="4294967295" rotation="0"/>
     <instance objName="oTitle" x="640" y="96" name="inst_AE9F56F7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oSelect_Krang" x="512" y="288" name="inst_6D4922E1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oSelect_Krang" x="352" y="480" name="inst_6D4922E1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oSelect" x="640" y="608" name="inst_EBF452C9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oSelect_Gloop" x="768" y="288" name="inst_9BA9C1A4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oSelect_Gloop" x="928" y="480" name="inst_9BA9C1A4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oTracker" x="160" y="160" name="inst_1EC3F103" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oSideDisplay" x="640" y="192" name="inst_8235D96E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oTeamDisplay" x="224" y="288" name="inst_CC713A34" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

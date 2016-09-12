@@ -44,6 +44,7 @@
       <sprite>sprites\sPlayerSpawn</sprite>
       <sprites name="Krang">
         <sprite>sprites\sKrang_Idle</sprite>
+        <sprite>sprites\sKrang_Portrait</sprite>
         <sprite>sprites\sKrang_Walking_3</sprite>
         <sprite>sprites\sKrang_Walking_2</sprite>
         <sprite>sprites\sKrang_Walking_8</sprite>
@@ -59,6 +60,7 @@
         <sprite>sprites\sBrorus_Walking_7</sprite>
       </sprites>
       <sprites name="Gloop">
+        <sprite>sprites\sGloop_Portrait</sprite>
         <sprite>sprites\sSlimeTrail</sprite>
         <sprite>sprites\sMukler_Base</sprite>
         <sprite>sprites\sGloop_Walking_8</sprite>
@@ -74,6 +76,8 @@
     </sprites>
     <sprites name="Menu">
       <sprite>sprites\sTitle</sprite>
+      <sprite>sprites\sAttacking</sprite>
+      <sprite>sprites\sDefending</sprite>
       <sprite>sprites\sEye</sprite>
       <sprite>sprites\Icon</sprite>
       <sprite>sprites\sTextBox</sprite>
@@ -117,6 +121,7 @@
         <sprite>sprites\sRoomba_Walk</sprite>
       </sprites>
     </sprites>
+    <sprite>sprites\sTeamSelect</sprite>
   </sprites>
   <backgrounds name="background">
     <backgrounds name="Sewers">
@@ -167,6 +172,10 @@
     <scripts name="Effects">
       <script>scripts\Fade.gml</script>
       <script>scripts\scr_herd.gml</script>
+      <scripts name="Particles">
+        <script>scripts\scr_red_sparks.gml</script>
+        <script>scripts\scr_blue_sparks.gml</script>
+      </scripts>
     </scripts>
     <scripts name="Gun Scripts">
       <script>scripts\GunStats.gml</script>
@@ -194,49 +203,52 @@
   </fonts>
   <objects name="objects">
     <object>objects\oBasicPlayer</object>
-    <objects name="Characters">
-      <object>objects\oKrang</object>
-      <object>objects\oBrorus</object>
-      <object>objects\oGloop</object>
-      <objects name="Effects">
-        <object>objects\oSlimeTrail</object>
+    <objects name="SinglePlayer">
+      <objects name="Characters">
+        <object>objects\oKrang</object>
+        <object>objects\oBrorus</object>
+        <object>objects\oGloop</object>
+        <objects name="Effects">
+          <object>objects\oSlimeTrail</object>
+        </objects>
       </objects>
-    </objects>
-    <objects name="Guns">
-      <object>objects\oGunLeft</object>
-      <object>objects\oGunRight</object>
-      <object>objects\oOozer</object>
-      <object>objects\oGauntlet</object>
-      <object>objects\oStaff</object>
-      <object>objects\oBazooka</object>
-      <object>objects\oBow</object>
-      <objects name="Bullets">
-        <object>objects\oArrow</object>
-        <object>objects\oHarmlessArrow</object>
-        <object>objects\oLaserPellet</object>
-        <object>objects\oBlob</object>
-        <object>objects\oBloblet</object>
-        <object>objects\oZap</object>
-        <object>objects\oLightning</object>
-        <object>objects\oRocket</object>
-        <object>objects\oStaffLaser_End</object>
-        <object>objects\oStaff_Laser</object>
+      <objects name="Tests">
+        <object>objects\oTargetDummy</object>
+        <object>objects\oBlood</object>
       </objects>
-      <objects name="Effects">
-        <object>objects\oHand</object>
-        <object>objects\oMuzzle</object>
-        <object>objects\oGauntletMuzzle</object>
-        <object>objects\oStaffMuzzle</object>
-        <object>objects\oExplosion</object>
-        <object>objects\oSmoke</object>
-        <object>objects\oFlames</object>
+      <objects name="Guns">
+        <object>objects\oGunLeft</object>
+        <object>objects\oGunRight</object>
+        <object>objects\oOozer</object>
+        <object>objects\oGauntlet</object>
+        <object>objects\oStaff</object>
+        <object>objects\oBazooka</object>
+        <object>objects\oBow</object>
+        <objects name="Bullets">
+          <object>objects\oArrow</object>
+          <object>objects\oHarmlessArrow</object>
+          <object>objects\oLaserPellet</object>
+          <object>objects\oBlob</object>
+          <object>objects\oBloblet</object>
+          <object>objects\oZap</object>
+          <object>objects\oLightning</object>
+          <object>objects\oRocket</object>
+          <object>objects\oStaffLaser_End</object>
+          <object>objects\oStaff_Laser</object>
+        </objects>
+        <objects name="Effects">
+          <object>objects\oHand</object>
+          <object>objects\oMuzzle</object>
+          <object>objects\oGauntletMuzzle</object>
+          <object>objects\oStaffMuzzle</object>
+          <object>objects\oExplosion</object>
+          <object>objects\oSmoke</object>
+          <object>objects\oFlames</object>
+        </objects>
       </objects>
-    </objects>
-    <objects name="Tests">
-      <object>objects\oTargetDummy</object>
-      <object>objects\oBlood</object>
     </objects>
     <objects name="Scenery">
+      <object>objects\oScreenFill</object>
       <object>objects\oSpawnZone</object>
       <object>objects\oLava</object>
       <object>objects\oFloatingHealth</object>
@@ -253,7 +265,6 @@
       </objects>
     </objects>
     <objects name="Settings">
-      <object>objects\oScreenFill</object>
       <object>objects\oCursor</object>
       <objects name="Parents">
         <object>objects\oPlayer</object>
@@ -297,6 +308,8 @@
         <object>objects\oSelect_Krang</object>
         <object>objects\oSelect_Gloop</object>
         <object>objects\oSelect</object>
+        <object>objects\oSideDisplay</object>
+        <object>objects\oTeamDisplay</object>
       </objects>
     </objects>
     <objects name="Multiplayer">

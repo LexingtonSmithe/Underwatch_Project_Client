@@ -50,6 +50,7 @@
             <kind>1</kind>
             <string>if !instance_exists(oLocalPlayer) {
         LivingStatus = 0; //dead
+
     if keyboard_check(ord('H')) {
         var Player = instance_create(x, y, oLocalPlayer);
         LivingStatus = 1; //alive
@@ -67,6 +68,8 @@
     buffer_write(global.buffer, buffer_u8, global.PlayerType);
     buffer_write(global.buffer, buffer_u8,  LivingStatus);
     network_send_packet(oController.socket, global.buffer, buffer_tell(global.buffer));
+    
+    ds_grid_set(global.PlayerGrid,4 , 0, LivingStatus);
 }
 
 </string>

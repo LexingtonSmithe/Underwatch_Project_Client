@@ -55,6 +55,8 @@ alpha = 0.5
 
 alpha = 1;
 global.PlayerType = 1 // Krang
+
+ds_grid_set(global.PlayerGrid,3 ,0 ,1)
 </string>
           </argument>
         </arguments>

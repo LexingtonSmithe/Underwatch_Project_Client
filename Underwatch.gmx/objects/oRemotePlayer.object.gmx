@@ -28,6 +28,7 @@
             <string>remotePlayerName = "";
 remotePlayerId = 0;
 remotePlayerType = 0;
+remotePlayerTeam = 0;
 
 DrawHealth = false;
 HP = 0;
@@ -95,12 +96,16 @@ IncomingSprite()
             <string>draw_self()
 var Height = sprite_height / 2
 var Width = sprite_width / 2
-draw_set_colour(c_red)
+
+if remotePlayerTeam == global.Team {
+    draw_set_colour(c_green)
+} else {
+    draw_set_colour(c_red)
+}
+
 draw_set_halign(fa_center)
 draw_set_font(fSmall);
 draw_text(x, y+Height+10, string(remotePlayerName));
-
-
 
 if DrawHealth = true {
     draw_healthbar(x-Width,(y-8)-Height,x+Width,(y-3)-Height,(HP/MaxHP)*100,c_black,c_red,c_green,0,false,true)

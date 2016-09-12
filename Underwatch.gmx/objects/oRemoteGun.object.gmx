@@ -27,6 +27,7 @@
             <kind>1</kind>
             <string>OwnerPID = 0;
 OwnerType = 0;
+OwnerTeam = 0;
 
 Shoot = false;
 </string>

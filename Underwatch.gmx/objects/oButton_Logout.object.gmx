@@ -28,6 +28,7 @@
             <string>var playerUsername = "";
 var playerPasswordHash = "";
 var LoggedInChange = 2;
+ds_grid_set(global.PlayerGrid,0, 1, 0)
 oController.LoggedIn = false
 
 buffer_seek(global.buffer, buffer_seek_start, 0);

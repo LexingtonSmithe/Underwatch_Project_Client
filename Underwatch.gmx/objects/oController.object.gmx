@@ -29,9 +29,19 @@
 ip = "127.0.0.2";
 isConnected = network_connect(socket, ip, 8000);
 global.buffer = buffer_create(1024, buffer_fixed, 1);
-latency = 0;
+global.latency = 0;
 global.playerId = "";
 LoggedIn = false
+global.Team = 0;
+var Name = "";
+
+global.PlayerGrid = ds_grid_create(5,1);
+
+ds_grid_set(global.PlayerGrid, 0, 0, global.playerId)
+ds_grid_set(global.PlayerGrid, 1, 0, Name)
+ds_grid_set(global.PlayerGrid, 2, 0, global.Team)
+ds_grid_set(global.PlayerGrid, 3, 0, 0)
+ds_grid_set(global.PlayerGrid, 4, 0, 0)
 </string>
           </argument>
         </arguments>
@@ -142,7 +152,7 @@ buffer_delete(global.buffer);
             <kind>1</kind>
             <string>draw_set_colour(c_purple);
 draw_set_font(font_Pixel);
-draw_text(128, 16, "Latency: " + string(latency));
+draw_text(128, 16, "Latency: " + string(global.latency));
 </string>
           </argument>
         </arguments>

@@ -40,7 +40,6 @@ if (room == rm_Login) {
     var playerPassword = oTextBox_Password1.txt;
     var playerPasswordHash = sha1_string_unicode(playerPassword);
     var LoggedInChange = 1; //login
-    global.Name = playerUsername;
     
     buffer_seek(global.buffer, buffer_seek_start, 0);
     buffer_write(global.buffer, buffer_u8, 3);
@@ -50,6 +49,8 @@ if (room == rm_Login) {
     buffer_write(global.buffer, buffer_u8, LoggedInChange);
     network_send_packet(oController.socket, global.buffer, buffer_tell(global.buffer));
  
+    ds_grid_set(global.PlayerGrid, 1, 0, playerUsername);
+    
 } else {
     room_goto(rm_Login)
 }
