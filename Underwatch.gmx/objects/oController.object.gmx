@@ -150,9 +150,12 @@ buffer_delete(global.buffer);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_set_colour(c_purple);
+            <string>/*
+draw_set_colour(c_purple);
 draw_set_font(font_Pixel);
-draw_text(128, 16, "Latency: " + string(global.latency));
+draw_set_halign(fa_center);
+draw_text(128, 32, "Latency: " + string(global.latency));
+*/
 </string>
           </argument>
         </arguments>

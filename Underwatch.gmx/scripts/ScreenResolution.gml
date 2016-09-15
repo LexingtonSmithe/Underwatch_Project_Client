@@ -1,6 +1,6 @@
 //set the resolutions we want to dispay or get this information from the device
 var displayWidth = global.displayWidth; //display_get_width()
-var displayHeight = global.displayHeight; //display_get_height(
+var displayHeight = global.displayHeight; //display_get_height()
 
 //set the size of the gui
 display_set_gui_size(displayWidth, displayHeight);
@@ -20,10 +20,10 @@ if displayWidth >= displayHeight {
     var height = min(baseHeight, displayHeight)
     var width = height * aspect;
 }
-
+/*
 //sort out the port nonsense
 view_hport = displayHeight;
 view_wport = displayWidth;
-
+*/
 // resize the application surface to our adjusted view
-surface_resize(application_surface,displayWidth, displayHeight);
+surface_resize(application_surface, displayWidth, displayHeight);

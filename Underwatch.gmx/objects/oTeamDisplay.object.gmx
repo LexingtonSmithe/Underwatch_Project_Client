@@ -40,6 +40,10 @@ for (var i = 0; i &lt; ds_grid_height(global.PlayerGrid); i++) {
         count++; 
         
         switch(PlayerType) {
+            case 0: // NOT SELECTED
+                Portrait = sTeamSelect;
+            break;
+            
             case 1: // Krang
                 Portrait = sKrang_Portrait
             break;
@@ -50,7 +54,7 @@ for (var i = 0; i &lt; ds_grid_height(global.PlayerGrid); i++) {
         }
         draw_sprite(Portrait,image_index,xx,yy)
         draw_text(xx, yy + 64, string(PlayerName));
-        xx += 128
+        xx += 164
     }
   
 }
@@ -59,7 +63,7 @@ if count &lt; 6 {
     for (var i = count; i &lt; 6; i++ ) {
         draw_sprite(sTeamSelect,image_index,xx,yy)
         draw_text(xx, yy + 64, "NO");
-        xx += 128
+        xx += 164
         
     }
 }

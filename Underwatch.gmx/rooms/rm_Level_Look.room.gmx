@@ -10,7 +10,13 @@
   <persistent>0</persistent>
   <colour>0</colour>
   <showcolour>-1</showcolour>
-  <code>ShowNotification("Joined Game!");
+  <code>ini_open("game_settings.ini");
+global.displayWidth = ini_read_real("settings", "width", 1280);
+global.displayHeight = ini_read_real("settings", "height", 720);
+ini_close();
+
+global.Level = "";
+
 ScreenResolution()</code>
   <enableViews>-1</enableViews>
   <clearViewBackground>-1</clearViewBackground>
@@ -42,7 +48,7 @@ ScreenResolution()</code>
     <background visible="0" foreground="0" name="" x="0" y="0" htiled="-1" vtiled="-1" hspeed="0" vspeed="0" stretch="0"/>
   </backgrounds>
   <views>
-    <view visible="-1" objName="oPlayer" xview="0" yview="0" wview="240" hview="240" xport="0" yport="0" wport="960" hport="960" hborder="240" vborder="240" hspeed="-1" vspeed="-1"/>
+    <view visible="-1" objName="oPlayer" xview="0" yview="0" wview="426" hview="240" xport="0" yport="0" wport="960" hport="960" hborder="210" vborder="120" hspeed="-1" vspeed="-1"/>
     <view visible="0" objName="&lt;undefined&gt;" xview="0" yview="0" wview="1024" hview="768" xport="0" yport="0" wport="1024" hport="768" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
     <view visible="0" objName="&lt;undefined&gt;" xview="0" yview="0" wview="1024" hview="768" xport="0" yport="0" wport="1024" hport="768" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
     <view visible="0" objName="&lt;undefined&gt;" xview="0" yview="0" wview="1024" hview="768" xport="0" yport="0" wport="1024" hport="768" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>

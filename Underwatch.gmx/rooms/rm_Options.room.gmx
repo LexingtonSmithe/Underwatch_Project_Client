@@ -55,6 +55,7 @@
     <instance objName="oButton_Back" x="1024" y="608" name="inst_645072E6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oTitle" x="640" y="96" name="inst_AE9F56F7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oReolutionButtonMaker" x="224" y="160" name="inst_A265A13E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oEye" x="832" y="384" name="inst_7A24F6BC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

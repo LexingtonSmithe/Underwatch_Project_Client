@@ -10,7 +10,7 @@
   <persistent>0</persistent>
   <colour>0</colour>
   <showcolour>0</showcolour>
-  <code>ini_open("game_settings,ini");
+  <code>ini_open("game_settings.ini");
 global.displayWidth = ini_read_real("settings", "width", 1280);
 global.displayHeight = ini_read_real("settings", "height", 720);
 ini_close();

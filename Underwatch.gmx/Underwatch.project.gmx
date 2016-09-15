@@ -94,22 +94,10 @@
       <sprite>sprites\sExit</sprite>
       <sprite>sprites\sSelect</sprite>
       <sprite>sprites\sSearching</sprite>
+      <sprite>sprites\sTeamSelect</sprite>
     </sprites>
-    <sprites name="GUI">
-      <sprite>sprites\sSprite_Box</sprite>
-      <sprite>sprites\sPlayer_Sprites</sprite>
-      <sprite>sprites\sReload_Slider</sprite>
-      <sprite>sprites\sReload_Bar</sprite>
-      <sprite>sprites\sCursor</sprite>
-      <sprite>sprites\sHealth_100</sprite>
-    </sprites>
-    <sprites name="Scenery">
-      <sprite>sprites\sLava</sprite>
+    <sprites name="Level Objects">
       <sprite>sprites\sSpawnLocation</sprite>
-      <sprite>sprites\sprite84</sprite>
-      <sprite>sprites\sFloatingHealth</sprite>
-      <sprite>sprites\sInvisibleWall</sprite>
-      <sprite>sprites\sTorch</sprite>
       <sprites name="Critters">
         <sprite>sprites\sCockroach_Walk</sprite>
         <sprite>sprites\sScorpion_Idle</sprite>
@@ -121,7 +109,22 @@
         <sprite>sprites\sRoomba_Walk</sprite>
       </sprites>
     </sprites>
-    <sprite>sprites\sTeamSelect</sprite>
+    <sprites name="GUI">
+      <sprite>sprites\sSprite_Box</sprite>
+      <sprite>sprites\sSpawnTimer</sprite>
+      <sprite>sprites\sPlayer_Sprites</sprite>
+      <sprite>sprites\sReload_Slider</sprite>
+      <sprite>sprites\sReload_Bar</sprite>
+      <sprite>sprites\sCursor</sprite>
+      <sprite>sprites\sHealth_100</sprite>
+    </sprites>
+    <sprites name="Misc">
+      <sprite>sprites\sLava</sprite>
+      <sprite>sprites\sprite84</sprite>
+      <sprite>sprites\sFloatingHealth</sprite>
+      <sprite>sprites\sInvisibleWall</sprite>
+      <sprite>sprites\sTorch</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background">
     <backgrounds name="Sewers">
@@ -182,18 +185,19 @@
       <script>scripts\LeftGunPosition.gml</script>
       <script>scripts\RightGunPosition.gml</script>
       <script>scripts\AmmoCounter.gml</script>
-      <script>scripts\DestroyOutsideRoom.gml</script>
     </scripts>
     <scripts name="Settings">
       <script>scripts\ScreenResolution.gml</script>
       <script>scripts\ButtonPressed.gml</script>
       <script>scripts\DrawTextThenMoveDown.gml</script>
       <script>scripts\CollisionCheck.gml</script>
+      <script>scripts\DestroyOutsideRoom.gml</script>
     </scripts>
     <scripts name="Multiplayer">
       <script>scripts\HandleIncomingPackets.gml</script>
       <script>scripts\ShowNotification.gml</script>
       <script>scripts\IncomingSprite.gml</script>
+      <script>scripts\CreateExistingPlayers.gml</script>
     </scripts>
   </scripts>
   <fonts name="fonts">
@@ -249,7 +253,6 @@
     </objects>
     <objects name="Scenery">
       <object>objects\oScreenFill</object>
-      <object>objects\oSpawnZone</object>
       <object>objects\oLava</object>
       <object>objects\oFloatingHealth</object>
       <object>objects\oTorch</object>

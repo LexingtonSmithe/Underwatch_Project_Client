@@ -28,6 +28,9 @@
             <string>ispeed = 0.15;
 facingLeft = true;
 
+MaxHP = 50
+HP = MaxHP
+
 var gun = instance_create(x,y,oGunRight);
 gun.Owner = self.id;
 
@@ -120,7 +123,9 @@ GetOrientationAndFace()
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//draw the instance count
+            <string>
+HealthHud(sHealth_100,"Generico")
+//draw the instance count
 draw_set_font(font_Pixel)
 draw_set_alpha(0.8)
 draw_set_colour(c_black)

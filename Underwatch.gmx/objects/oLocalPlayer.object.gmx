@@ -66,20 +66,30 @@ Gun.Owner = self.id;
 
 var Hit = instance_place(x,y,oBullet);
 
+
 if instance_exists(Hit) {
-    if Hit.Owner != global.playerId {
-        
-        HP = HP - 2;
-        Shot = 1;
-        SecondsSinceShot = 0;
-        var WhoShotMe = Hit.Owner;
-        with Hit {
-            instance_destroy()
-        }
-        
-    }
+
+    var ID = Hit.Owner;
     
+    if (ds_grid_value_exists(global.PlayerGrid,0,0,0, ds_grid_height(global.PlayerGrid), ID)) {
+        var playerRow = ds_grid_value_y(global.PlayerGrid,0,0,0,ds_grid_height(global.PlayerGrid)-1,ID);
+        var shooterTeam = ds_grid_get(global.PlayerGrid, 2, playerRow);
+        
+        if shooterTeam != global.Team {
+        
+            HP = HP - 2;
+            Shot = 1;
+            SecondsSinceShot = 0;
+            var WhoShotMe = Hit.Owner;
+            with Hit {
+                instance_destroy()
+            }
+        }
+    }
 }
+
+
+
 if Shot = 1 {
     SecondsSinceShot = SecondsSinceShot + 1 /room_speed;
     

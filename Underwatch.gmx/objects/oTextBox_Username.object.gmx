@@ -127,10 +127,13 @@
             <kind>1</kind>
             <string>event_inherited();
 
+var sample = "THIS IS AN EXAMPLE";
+var sh = string_height(sample) / 2
+
 if (txt == "") {
 
     if !Selected {
-        draw_text(x, y, "Enter Username")
+        draw_text(x, y - sh, "Enter Username")
     } else {
         txt = "";
         
@@ -139,9 +142,9 @@ if (txt == "") {
 } else {
 
     if (!blink or !Selected) {
-        draw_text(x, y, txt)
+        draw_text(x, y - sh, txt)
     } else {
-        draw_text(x, y, txt + "|" )
+        draw_text(x, y - sh, txt + "|" )
     }
     
 }

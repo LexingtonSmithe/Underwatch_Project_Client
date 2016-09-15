@@ -25,7 +25,19 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>GunStats(6,0.2,0.1)
+            <string>//GunStats(6,0.2,0.1)
+Flip = 20;
+SecondsSinceShot = 0.3;
+SecondsBetweenShots = 0.3;
+MaxAmmo = 6;
+Ammo = MaxAmmo;
+Reloading = false;
+SecondsReloading = 0;
+SecondsUntilReloaded = 3;
+sprite_index = sGun;
+BulletType = oLaserPellet;
+MuzzleType = oMuzzle;
+BulletSpeed = 2;
 </string>
           </argument>
         </arguments>

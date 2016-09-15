@@ -15,6 +15,7 @@ switch(global.PlayerType){
         BulletType = oLightning;
         MuzzleType = oGauntletMuzzle;
         BulletSpeed = 2;
+        
     break;
     
     case 2: // Gloops Oozer

@@ -60,14 +60,22 @@ Sprite = "";
 
 var Hit = instance_place(x,y,oBullet);
 
+
 if instance_exists(Hit) {
-    if Hit.Owner != remotePlayerId{
-        with Hit {
-            instance_destroy()
-        }
-        
-    }
     
+    var ID = Hit.Owner;
+    
+    if (ds_grid_value_exists(global.PlayerGrid,0,0,0, ds_grid_height(global.PlayerGrid), ID)) {
+    
+        var playerRow = ds_grid_value_y(global.PlayerGrid,0,0,0,ds_grid_height(global.PlayerGrid)-1,ID);
+        var shooterTeam = ds_grid_get(global.PlayerGrid, 2, playerRow);
+        
+        if shooterTeam != remotePlayerTeam {
+            with Hit {
+                instance_destroy()
+            }
+        }
+    }
 }
 
 IncomingSprite()
