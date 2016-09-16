@@ -55,6 +55,8 @@ Nope = false;
         Nope = false
     }
 }
+
+ButtonHover();
 </string>
           </argument>
         </arguments>

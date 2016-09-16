@@ -76,7 +76,40 @@ if image_xscale &gt;= 1 &amp;&amp; pop = 0 {
     pop = 1;
 }
 
-
+ButtonHover();
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="6" enumb="4">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if instance_exists(oCursor) {
+    if global.Team = 2 {
+        with(oCursor) {
+            scr_blue_sparks();
+        }
+    } else {
+        with(oCursor) {
+            scr_red_sparks();
+        }
+    }
+}
 </string>
           </argument>
         </arguments>

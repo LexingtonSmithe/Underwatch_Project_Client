@@ -80,6 +80,7 @@ if instance_exists(Hit) {
             HP = HP - 2;
             Shot = 1;
             SecondsSinceShot = 0;
+            var shakeShakeShake = instance_create(x,y,oScreenShake); // shake that booooty...
             var WhoShotMe = Hit.Owner;
             with Hit {
                 instance_destroy()

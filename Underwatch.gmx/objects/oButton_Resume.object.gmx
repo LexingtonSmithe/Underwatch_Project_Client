@@ -25,7 +25,9 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if !instance_exists(oButton_Leave) {
+            <string>ButtonHover()
+
+if !instance_exists(oButton_Leave) {
     instance_destroy()
 }
 </string>

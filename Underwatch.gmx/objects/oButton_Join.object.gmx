@@ -47,7 +47,9 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if global.Level != noone {
+            <string>ButtonHover();
+
+if global.Level != noone {
     var margin = 640;
     instance_create(x, y, oButton_Resume)
     instance_create(x + margin, y, oButton_Leave)

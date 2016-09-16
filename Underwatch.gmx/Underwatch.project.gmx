@@ -81,6 +81,7 @@
       <sprite>sprites\sEye</sprite>
       <sprite>sprites\Icon</sprite>
       <sprite>sprites\sTextBox</sprite>
+      <sprite>sprites\sTextBox_Small</sprite>
       <sprite>sprites\sResumeGame</sprite>
       <sprite>sprites\sLeaveGame</sprite>
       <sprite>sprites\sResolutions</sprite>
@@ -175,9 +176,11 @@
     <scripts name="Effects">
       <script>scripts\Fade.gml</script>
       <script>scripts\scr_herd.gml</script>
+      <script>scripts\ButtonHover.gml</script>
       <scripts name="Particles">
         <script>scripts\scr_red_sparks.gml</script>
         <script>scripts\scr_blue_sparks.gml</script>
+        <script>scripts\scr_green_flare.gml</script>
       </scripts>
     </scripts>
     <scripts name="Gun Scripts">
@@ -253,6 +256,7 @@
     </objects>
     <objects name="Scenery">
       <object>objects\oScreenFill</object>
+      <object>objects\oScreenShake</object>
       <object>objects\oLava</object>
       <object>objects\oFloatingHealth</object>
       <object>objects\oTorch</object>
@@ -304,8 +308,9 @@
         <object>objects\oButton_Login</object>
       </objects>
       <objects name="Options">
-        <object>objects\oResolution</object>
-        <object>objects\oReolutionButtonMaker</object>
+        <object>objects\oResolutionMenu</object>
+        <object>objects\oResolutionMenuItem</object>
+        <object>objects\oResoController</object>
       </objects>
       <objects name="PlayerSelect">
         <object>objects\oSelect_Krang</object>
@@ -332,10 +337,12 @@
     <room>rooms\rm_Login</room>
     <room>rooms\rm_Lobby</room>
     <room>rooms\rm_Options</room>
+    <room>rooms\rm_Controls</room>
     <room>rooms\rm_PlayerSelect</room>
     <room>rooms\rm_One</room>
     <room>rooms\rm_Two</room>
     <room>rooms\rm_Level_Look</room>
+    <room>rooms\rm_MenuTesting</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
