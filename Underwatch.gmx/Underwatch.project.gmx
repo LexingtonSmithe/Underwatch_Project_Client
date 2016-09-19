@@ -133,6 +133,8 @@
       <sprite>sprites\sReload_Bar</sprite>
       <sprite>sprites\sCursor</sprite>
       <sprite>sprites\sHealth_100</sprite>
+      <sprite>sprites\sSwitch</sprite>
+      <sprite>sprites\sClockBackground</sprite>
     </sprites>
     <sprites name="Misc">
       <sprite>sprites\sLava</sprite>
@@ -200,6 +202,7 @@
       <script>scripts\HealthHud.gml</script>
       <script>scripts\PlayerStats.gml</script>
       <script>scripts\SpriteParse.gml</script>
+      <script>scripts\IncomingSprite.gml</script>
     </scripts>
     <scripts name="Effects">
       <script>scripts\Fade.gml</script>
@@ -220,17 +223,19 @@
       <script>scripts\GenericShooting.gml</script>
     </scripts>
     <scripts name="Settings">
-      <script>scripts\ScreenResolution.gml</script>
       <script>scripts\ButtonPressed.gml</script>
       <script>scripts\DrawTextThenMoveDown.gml</script>
       <script>scripts\CollisionCheck.gml</script>
-      <script>scripts\DestroyOutsideRoom.gml</script>
+      <scripts name="Room Scripts">
+        <script>scripts\ObjectSetup.gml</script>
+        <script>scripts\DestroyOutsideRoom.gml</script>
+        <script>scripts\ScreenResolution.gml</script>
+        <script>scripts\CreateExistingPlayers.gml</script>
+      </scripts>
+      <script>scripts\ShowNotification.gml</script>
     </scripts>
     <scripts name="Multiplayer">
       <script>scripts\HandleIncomingPackets.gml</script>
-      <script>scripts\ShowNotification.gml</script>
-      <script>scripts\IncomingSprite.gml</script>
-      <script>scripts\CreateExistingPlayers.gml</script>
       <script>scripts\SendPacket.gml</script>
       <scripts name="Incoming Packets">
         <script>scripts\Latency_Update.gml</script>
@@ -245,6 +250,7 @@
         <script>scripts\Remote_Player_Life_Change.gml</script>
         <script>scripts\Game_Found.gml</script>
         <script>scripts\Item_Creation.gml</script>
+        <script>scripts\Game_Time.gml</script>
       </scripts>
       <scripts name="Outgoing Packets">
         <script>scripts\Latency_Request.gml</script>
@@ -265,6 +271,7 @@
     <font>fonts\fSmall</font>
     <font>fonts\font_Pixel</font>
     <font>fonts\font_HUD</font>
+    <font>fonts\font_Clock</font>
   </fonts>
   <objects name="objects">
     <object>objects\oBasicPlayer</object>
@@ -360,6 +367,7 @@
         <object>objects\oFire</object>
         <object>objects\oSolid</object>
         <object>objects\oSelect_Player</object>
+        <object>objects\oPlayerSpawn</object>
       </objects>
     </objects>
     <objects name="Menus">
@@ -410,8 +418,8 @@
       <object>objects\oLocalPlayer</object>
       <object>objects\oRemoteGun</object>
       <object>objects\oLocalGun</object>
-      <object>objects\oPlayerSpawn</object>
-      <object>objects\oTracker</object>
+      <object>objects\oPlayerSpawnAttack</object>
+      <object>objects\oPlayerSpawnDefend</object>
     </objects>
   </objects>
   <rooms name="rooms">

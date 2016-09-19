@@ -55,9 +55,6 @@ if global.Level != noone {
     instance_create(x + margin, y, oButton_Leave)
     instance_destroy() 
 } else {
-    with(oTracker){
-        instance_destroy()
-    }
     ds_grid_resize(global.PlayerGrid,5,1)
     ds_grid_set(global.PlayerGrid, 2, 0, 0)
     ds_grid_set(global.PlayerGrid, 3, 0, 0)

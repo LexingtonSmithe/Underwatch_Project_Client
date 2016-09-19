@@ -35,6 +35,9 @@ LoggedIn = false
 global.Team = 0;
 var Name = "";
 
+TimeString = "10:00";
+drawTime = false
+
 global.PlayerGrid = ds_grid_create(5,1);
 
 ds_grid_set(global.PlayerGrid, 0, 0, global.playerId)
@@ -65,6 +68,20 @@ ds_grid_set(global.PlayerGrid, 4, 0, 0)
           <argument>
             <kind>1</kind>
             <string>Latency_Request();
+
+var m = global.Minutes;
+var s = global.Seconds;
+
+if global.Team != 0 {
+    drawTime = true
+    if s &gt;= 10 { // 09 : 19
+        TimeString = "0" + string(m) + ":" + string(s);
+    } else { // 09 : 09
+        TimeString = "0" + string(m) + ":0" + string(s);
+    }
+} else {
+    drawTime = false
+}
 </string>
           </argument>
         </arguments>
@@ -145,12 +162,18 @@ buffer_delete(global.buffer);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/*
-draw_set_colour(c_purple);
-draw_set_font(font_Pixel);
-draw_set_halign(fa_center);
-draw_text(128, 32, "Latency: " + string(global.latency));
-*/
+            <string>if drawTime = true{
+    draw_set_colour(c_yellow);
+    draw_set_font(font_Clock);
+    draw_set_halign(fa_center);
+    draw_set_valign(fa_middle);
+    var xx = global.displayWidth / 2;
+    var yy = 48;
+    
+    draw_sprite(sClockBackground,0,xx,yy);
+    draw_text(xx, yy, TimeString);
+    draw_set_valign(fa_top);
+}
 </string>
           </argument>
         </arguments>

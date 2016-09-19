@@ -57,12 +57,10 @@ Joined_Game();</code>
   </views>
   <instances>
     <instance objName="oCursor" x="128" y="128" name="inst_4461865C" locked="0" code="" scaleX="2.5" scaleY="2.5" colour="4294967295" rotation="0"/>
-    <instance objName="oTitle" x="640" y="96" name="inst_AE9F56F7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oSelect_Krang" x="352" y="448" name="inst_6D4922E1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oSelect" x="640" y="640" name="inst_EBF452C9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oSelect_Gloop" x="544" y="448" name="inst_9BA9C1A4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oTracker" x="160" y="160" name="inst_1EC3F103" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oSideDisplay" x="640" y="160" name="inst_8235D96E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oSideDisplay" x="640" y="128" name="inst_8235D96E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oTeamDisplay" x="320" y="256" name="inst_CC713A34" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oSelect_Brorus" x="928" y="448" name="inst_1A6ABCC6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oSelect_Generico" x="736" y="448" name="inst_85C673AC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

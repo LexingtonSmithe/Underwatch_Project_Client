@@ -20,6 +20,8 @@ global.playerId = "";
 global.PlayerType = 0;
 global.Latency = 0;
 global.Team = 0;
+global.Minutes = 10;
+global.Seconds = 0;
 
 ScreenResolution()</code>
   <enableViews>-1</enableViews>

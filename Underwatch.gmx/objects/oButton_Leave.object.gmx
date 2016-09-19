@@ -54,6 +54,7 @@ Join_Leave_Game();
 //reset the variables
 global.Level = noone;
 global.PlayerType = 0;
+global.Team = 0;
 // no need for the tracker if we are not in game. 
 
 //re create the join button
