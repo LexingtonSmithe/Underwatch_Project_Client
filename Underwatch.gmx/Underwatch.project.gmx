@@ -14,9 +14,11 @@
     <sprites name="Guns">
       <sprite>sprites\sGunLeft</sprite>
       <sprite>sprites\sGun</sprite>
+      <sprite>sprites\sBanana</sprite>
       <sprite>sprites\sOozer</sprite>
       <sprite>sprites\sGauntlet</sprite>
       <sprite>sprites\sBazooka</sprite>
+      <sprite>sprites\sMinigun</sprite>
       <sprite>sprites\sStaff</sprite>
       <sprite>sprites\sBow</sprite>
       <sprites name="Bullets">
@@ -27,6 +29,7 @@
         <sprite>sprites\sRocket</sprite>
         <sprite>sprites\sArrow</sprite>
         <sprite>sprites\sBullet</sprite>
+        <sprite>sprites\sSmallBullet</sprite>
         <sprite>sprites\sZap</sprite>
         <sprite>sprites\sBallLightning</sprite>
       </sprites>
@@ -35,15 +38,21 @@
       <sprite>sprites\sFire</sprite>
       <sprite>sprites\sBlood</sprite>
       <sprite>sprites\sSmoke</sprite>
-      <sprite>sprites\sMuzzle</sprite>
+      <sprite>sprites\sLaserMuzzle</sprite>
+      <sprite>sprites\sGunMuzzle</sprite>
       <sprite>sprites\sGauntletMuzzle</sprite>
       <sprite>sprites\sStaff_Muzzle</sprite>
       <sprite>sprites\sLaserEnd</sprite>
+      <sprite>sprites\sDust</sprite>
+      <sprite>sprites\sDustLead</sprite>
+      <sprite>sprites\sShellCasing</sprite>
+      <sprite>sprites\sPopMuzzle</sprite>
     </sprites>
     <sprites name="Characters">
-      <sprite>sprites\sPlayerSpawn</sprite>
+      <sprite>sprites\sPortrait_Template</sprite>
       <sprites name="Krang">
         <sprite>sprites\sKrang_Idle</sprite>
+        <sprite>sprites\sKrang_Death</sprite>
         <sprite>sprites\sKrang_Portrait</sprite>
         <sprite>sprites\sKrang_Walking_3</sprite>
         <sprite>sprites\sKrang_Walking_2</sprite>
@@ -53,6 +62,7 @@
       </sprites>
       <sprites name="Brorus">
         <sprite>sprites\sBrorus_Idle</sprite>
+        <sprite>sprites\sBrorus_Portrait</sprite>
         <sprite>sprites\sBrorus_Walking_3</sprite>
         <sprite>sprites\sBrorus_Walking_2</sprite>
         <sprite>sprites\sBrorus_Walking_1</sprite>
@@ -60,8 +70,8 @@
         <sprite>sprites\sBrorus_Walking_7</sprite>
       </sprites>
       <sprites name="Gloop">
-        <sprite>sprites\sGloop_Portrait</sprite>
         <sprite>sprites\sSlimeTrail</sprite>
+        <sprite>sprites\sGloop_Portrait</sprite>
         <sprite>sprites\sMukler_Base</sprite>
         <sprite>sprites\sGloop_Walking_8</sprite>
         <sprite>sprites\sGloop_Walking_1</sprite>
@@ -69,8 +79,13 @@
         <sprite>sprites\sGloop_Walking_2</sprite>
         <sprite>sprites\sGloop_Walking_3</sprite>
       </sprites>
+      <sprites name="Generico">
+        <sprite>sprites\sGenerico_Portrait</sprite>
+      </sprites>
       <sprites name="Player Select">
         <sprite>sprites\sKrang_Select</sprite>
+        <sprite>sprites\sGenerico_Select</sprite>
+        <sprite>sprites\sBrorus_Select</sprite>
         <sprite>sprites\sGloop_Select</sprite>
       </sprites>
     </sprites>
@@ -99,6 +114,7 @@
     </sprites>
     <sprites name="Level Objects">
       <sprite>sprites\sSpawnLocation</sprite>
+      <sprite>sprites\sPlayerSpawn</sprite>
       <sprites name="Critters">
         <sprite>sprites\sCockroach_Walk</sprite>
         <sprite>sprites\sScorpion_Idle</sprite>
@@ -113,7 +129,6 @@
     <sprites name="GUI">
       <sprite>sprites\sSprite_Box</sprite>
       <sprite>sprites\sSpawnTimer</sprite>
-      <sprite>sprites\sPlayer_Sprites</sprite>
       <sprite>sprites\sReload_Slider</sprite>
       <sprite>sprites\sReload_Bar</sprite>
       <sprite>sprites\sCursor</sprite>
@@ -125,6 +140,19 @@
       <sprite>sprites\sFloatingHealth</sprite>
       <sprite>sprites\sInvisibleWall</sprite>
       <sprite>sprites\sTorch</sprite>
+    </sprites>
+    <sprites name="Lights">
+      <sprite>sprites\sFocus_Light</sprite>
+      <sprite>sprites\sMuzzle_Light_pt1</sprite>
+      <sprite>sprites\sMuzzle_Light_pt2</sprite>
+      <sprite>sprites\sCone_Light</sprite>
+      <sprite>sprites\sCircle_Light</sprite>
+      <sprite>sprites\sFlickering_Light</sprite>
+    </sprites>
+    <sprites name="Wall Objects">
+      <sprites name="Laboratory">
+        <sprite>sprites\sComputer_one</sprite>
+      </sprites>
     </sprites>
   </sprites>
   <backgrounds name="background">
@@ -176,6 +204,7 @@
     <scripts name="Effects">
       <script>scripts\Fade.gml</script>
       <script>scripts\scr_herd.gml</script>
+      <script>scripts\ImpactDust.gml</script>
       <script>scripts\ButtonHover.gml</script>
       <scripts name="Particles">
         <script>scripts\scr_red_sparks.gml</script>
@@ -188,6 +217,7 @@
       <script>scripts\LeftGunPosition.gml</script>
       <script>scripts\RightGunPosition.gml</script>
       <script>scripts\AmmoCounter.gml</script>
+      <script>scripts\GenericShooting.gml</script>
     </scripts>
     <scripts name="Settings">
       <script>scripts\ScreenResolution.gml</script>
@@ -201,6 +231,34 @@
       <script>scripts\ShowNotification.gml</script>
       <script>scripts\IncomingSprite.gml</script>
       <script>scripts\CreateExistingPlayers.gml</script>
+      <script>scripts\SendPacket.gml</script>
+      <scripts name="Incoming Packets">
+        <script>scripts\Latency_Update.gml</script>
+        <script>scripts\Registration.gml</script>
+        <script>scripts\Logon.gml</script>
+        <script>scripts\ID_Received.gml</script>
+        <script>scripts\Player_Left.gml</script>
+        <script>scripts\Player_Joined.gml</script>
+        <script>scripts\Remote_Player_Movement.gml</script>
+        <script>scripts\Remote_Gun_Movement.gml</script>
+        <script>scripts\Bullet_Creation.gml</script>
+        <script>scripts\Remote_Player_Life_Change.gml</script>
+        <script>scripts\Game_Found.gml</script>
+        <script>scripts\Item_Creation.gml</script>
+      </scripts>
+      <scripts name="Outgoing Packets">
+        <script>scripts\Latency_Request.gml</script>
+        <script>scripts\Registration_Attempt.gml</script>
+        <script>scripts\Login_Attempt.gml</script>
+        <script>scripts\Joined_Game.gml</script>
+        <script>scripts\Local_Player_Movement.gml</script>
+        <script>scripts\Local_Gun_Movement.gml</script>
+        <script>scripts\Send_Bullet_Created.gml</script>
+        <script>scripts\Local_Player_Life_Change.gml</script>
+        <script>scripts\Join_Leave_Game.gml</script>
+        <script>scripts\Send_Item_Created.gml</script>
+        <script>scripts\Game_Found_Reciept.gml</script>
+      </scripts>
     </scripts>
   </scripts>
   <fonts name="fonts">
@@ -218,49 +276,67 @@
         <objects name="Effects">
           <object>objects\oSlimeTrail</object>
         </objects>
-      </objects>
-      <objects name="Tests">
-        <object>objects\oTargetDummy</object>
-        <object>objects\oBlood</object>
+        <objects name="Dead Bodies">
+          <object>objects\oKrang_Corpse</object>
+        </objects>
       </objects>
       <objects name="Guns">
         <object>objects\oGunLeft</object>
         <object>objects\oGunRight</object>
+        <object>objects\oMinigun</object>
         <object>objects\oOozer</object>
         <object>objects\oGauntlet</object>
         <object>objects\oStaff</object>
         <object>objects\oBazooka</object>
         <object>objects\oBow</object>
-        <objects name="Bullets">
-          <object>objects\oArrow</object>
-          <object>objects\oHarmlessArrow</object>
-          <object>objects\oLaserPellet</object>
-          <object>objects\oBlob</object>
-          <object>objects\oBloblet</object>
-          <object>objects\oZap</object>
-          <object>objects\oLightning</object>
-          <object>objects\oRocket</object>
-          <object>objects\oStaffLaser_End</object>
-          <object>objects\oStaff_Laser</object>
-        </objects>
-        <objects name="Effects">
-          <object>objects\oHand</object>
-          <object>objects\oMuzzle</object>
-          <object>objects\oGauntletMuzzle</object>
-          <object>objects\oStaffMuzzle</object>
-          <object>objects\oExplosion</object>
-          <object>objects\oSmoke</object>
-          <object>objects\oFlames</object>
-        </objects>
+      </objects>
+      <objects name="Bullets">
+        <object>objects\oArrow</object>
+        <object>objects\oHarmlessArrow</object>
+        <object>objects\oLaserPellet</object>
+        <object>objects\oSmallBullet</object>
+        <object>objects\oBlob</object>
+        <object>objects\oBloblet</object>
+        <object>objects\oZap</object>
+        <object>objects\oLightning</object>
+        <object>objects\oRocket</object>
+        <object>objects\oStaffLaser_End</object>
+        <object>objects\oStaff_Laser</object>
+      </objects>
+      <objects name="Gun Effects">
+        <object>objects\oHand</object>
+        <object>objects\oMuzzle</object>
+        <object>objects\oPopMuzzle</object>
+        <object>objects\oGunMuzzle</object>
+        <object>objects\oGauntletMuzzle</object>
+        <object>objects\oStaffMuzzle</object>
+        <object>objects\oExplosion</object>
+        <object>objects\oSmoke</object>
+        <object>objects\oFlames</object>
+        <object>objects\oShellCasing</object>
+      </objects>
+      <objects name="Tests">
+        <object>objects\oTargetDummy</object>
+        <object>objects\oBlood</object>
       </objects>
     </objects>
-    <objects name="Scenery">
-      <object>objects\oScreenFill</object>
+    <objects name="Effects">
+      <objects name="Lighting">
+        <object>objects\oMenuLight</object>
+        <object>objects\oMuzzle_Light</object>
+        <object>objects\oMoving_Circle_Light</object>
+        <object>objects\oLighting</object>
+      </objects>
+      <objects name="Scenic">
+        <object>objects\oDustLead</object>
+        <object>objects\oDust</object>
+      </objects>
       <object>objects\oScreenShake</object>
+    </objects>
+    <objects name="Room Filler">
       <object>objects\oLava</object>
       <object>objects\oFloatingHealth</object>
       <object>objects\oTorch</object>
-      <object>objects\oVoid</object>
       <objects name="Critters">
         <object>objects\oCockroachHerd</object>
         <object>objects\oCockroach</object>
@@ -270,9 +346,14 @@
         <object>objects\oScorpionHole</object>
         <object>objects\oScorpion</object>
       </objects>
+      <objects name="Wall Objects">
+        <object>objects\oComputer_One</object>
+      </objects>
     </objects>
     <objects name="Settings">
       <object>objects\oCursor</object>
+      <object>objects\oScreenFill</object>
+      <object>objects\oVoid</object>
       <objects name="Parents">
         <object>objects\oPlayer</object>
         <object>objects\oBullet</object>
@@ -315,6 +396,8 @@
       <objects name="PlayerSelect">
         <object>objects\oSelect_Krang</object>
         <object>objects\oSelect_Gloop</object>
+        <object>objects\oSelect_Brorus</object>
+        <object>objects\oSelect_Generico</object>
         <object>objects\oSelect</object>
         <object>objects\oSideDisplay</object>
         <object>objects\oTeamDisplay</object>
@@ -341,8 +424,8 @@
     <room>rooms\rm_PlayerSelect</room>
     <room>rooms\rm_One</room>
     <room>rooms\rm_Two</room>
-    <room>rooms\rm_Level_Look</room>
     <room>rooms\rm_MenuTesting</room>
+    <room>rooms\rm_Level_Look</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>

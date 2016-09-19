@@ -51,6 +51,14 @@ for (var i = 0; i &lt; ds_grid_height(global.PlayerGrid); i++) {
             case 2: // Gloop
                 Portrait = sGloop_Portrait
             break;
+            
+            case 3: // Brorus
+                Portrait = sBrorus_Portrait
+            break;
+            
+            case 4: // Generico
+                Portrait = sGenerico_Portrait
+            break;
         }
         draw_sprite(Portrait,image_index,xx,yy)
         draw_text(xx, yy + 64, string(PlayerName));
@@ -62,7 +70,7 @@ for (var i = 0; i &lt; ds_grid_height(global.PlayerGrid); i++) {
 if count &lt; 6 {
     for (var i = count; i &lt; 6; i++ ) {
         draw_sprite(sTeamSelect,image_index,xx,yy)
-        draw_text(xx, yy + 64, "NO");
+        draw_text(xx, yy + 64, "...");
         xx += 164
         
     }

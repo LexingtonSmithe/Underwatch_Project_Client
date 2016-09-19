@@ -91,11 +91,8 @@ var cancel = instance_create(x, y, oButton_Cancel);
 cancel.nextX = x+margin;
 
 var StatusChange = 2;
-buffer_seek(global.buffer, buffer_seek_start, 0);
-buffer_write(global.buffer, buffer_u8, 11);
-buffer_write(global.buffer, buffer_u32,  global.playerId);
-buffer_write(global.buffer, buffer_u8,  StatusChange);
-network_send_packet(oController.socket, global.buffer, buffer_tell(global.buffer));
+
+Join_Leave_Game(StatusChange);
 
 instance_destroy()
 

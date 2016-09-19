@@ -15,7 +15,11 @@ global.displayWidth = ini_read_real("settings", "width", 1280);
 global.displayHeight = ini_read_real("settings", "height", 720);
 ini_close();
 
-global.Level = "";
+global.Level = noone;
+global.playerId = "";
+global.PlayerType = 4;
+global.Latency = 0;
+global.Team = 0;
 
 ScreenResolution()</code>
   <enableViews>-1</enableViews>
@@ -62,6 +66,15 @@ ScreenResolution()</code>
     <instance objName="oBasicPlayer" x="320" y="256" name="inst_1F6D6143" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oRoombaHatch" x="736" y="640" name="inst_C69AA437" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oScorpionHole" x="1056" y="224" name="inst_B8A2550A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oVoid" x="160" y="288" name="inst_443FFAF6" locked="0" code="" scaleX="1" scaleY="6" colour="4294967295" rotation="0"/>
+    <instance objName="oVoid" x="352" y="96" name="inst_5E6BCEFF" locked="0" code="" scaleX="7.5" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oVoid" x="320" y="480" name="inst_8777AB81" locked="0" code="" scaleX="7.5" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oVoid" x="544" y="224" name="inst_9E9FB2DC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oVoid" x="544" y="160" name="inst_2F8C140A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oVoid" x="544" y="352" name="inst_764D7599" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oVoid" x="544" y="416" name="inst_2CD825E2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oLighting" x="96" y="160" name="inst_36C9ECEC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oComputer_One" x="864" y="480" name="inst_7E6E9C2A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="bg_floor_sewer" x="256" y="192" w="64" h="64" xo="0" yo="192" id="10001663" name="inst_421F618D" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

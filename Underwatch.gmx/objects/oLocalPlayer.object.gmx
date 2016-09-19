@@ -38,7 +38,6 @@ TimeToDisplayHealth = 2;
 Shot = 0;
 
 var Gun = instance_create(x,y,oLocalGun);
-//Gun.Type = CharactersGun;
 Gun.Owner = self.id;
 </string>
           </argument>
@@ -66,11 +65,8 @@ Gun.Owner = self.id;
 
 var Hit = instance_place(x,y,oBullet);
 
-
 if instance_exists(Hit) {
-
     var ID = Hit.Owner;
-    
     if (ds_grid_value_exists(global.PlayerGrid,0,0,0, ds_grid_height(global.PlayerGrid), ID)) {
         var playerRow = ds_grid_value_y(global.PlayerGrid,0,0,0,ds_grid_height(global.PlayerGrid)-1,ID);
         var shooterTeam = ds_grid_get(global.PlayerGrid, 2, playerRow);
@@ -89,17 +85,12 @@ if instance_exists(Hit) {
     }
 }
 
-
-
 if Shot = 1 {
     SecondsSinceShot = SecondsSinceShot + 1 /room_speed;
-    
     if SecondsSinceShot &gt; TimeToDisplayHealth {
         Shot = 0;
         SecondsSinceShot = 0;
     }
-
-
 }
 
 //Healing
@@ -200,29 +191,7 @@ switch Direction {
 // Change the sprite to an integer from 1 - 5
 
 SpriteParse()
-/*
-switch (sprite_index) {
-    case sKrang_Walking_1:
-        spriteNumber = 1;
-    break;
-    
-    case sKrang_Walking_2:
-        spriteNumber = 2;
-    break;
-    
-    case sKrang_Walking_3:
-        spriteNumber = 3;
-    break;
-    
-    case sKrang_Walking_7:
-        spriteNumber = 4;
-    break;
-    
-    case sKrang_Walking_8:
-        spriteNumber = 5;
-    break;
-}
-*/
+
 var XScale = 0;
 if image_xscale = 1 {
     XScale = 1;
@@ -230,19 +199,11 @@ if image_xscale = 1 {
     XScale = 2;
 }
 //update coordinates, what sprite we are and what number sprite as well as which direction we are facing (xscale)
+var xx = x;
+var yy = y;
+var imageIndex = image_index;
 
-buffer_seek(global.buffer, buffer_seek_start,0);
-buffer_write(global.buffer, buffer_u8, 7);
-buffer_write(global.buffer, buffer_u32, global.playerId);
-buffer_write(global.buffer, buffer_f32, x);
-buffer_write(global.buffer, buffer_f32, y);
-buffer_write(global.buffer, buffer_u8, image_index);
-buffer_write(global.buffer, buffer_u8, spriteNumber);
-buffer_write(global.buffer, buffer_u8, XScale);
-buffer_write(global.buffer, buffer_u8, Shot);
-buffer_write(global.buffer, buffer_u8, HP);
-buffer_write(global.buffer, buffer_u8, MaxHP);
-network_send_packet(oController.socket, global.buffer, buffer_tell(global.buffer));
+Local_Player_Movement(xx,yy,imageIndex,spriteNumber,XScale,Shot,HP,MaxHP)
 </string>
           </argument>
         </arguments>

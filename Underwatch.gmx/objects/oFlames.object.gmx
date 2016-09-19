@@ -25,7 +25,9 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>alarm[0] = 10;
+            <string>Owner = 0;
+Time = 1;
+alarm[0] = 10;
 </string>
           </argument>
         </arguments>
@@ -74,10 +76,11 @@ alarm[0] = 10;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>Fade(2);
+            <string>Time = Time - 2 / room_speed
 
-
-
+if Time &lt; 0 {
+    instance_destroy()
+}
 </string>
           </argument>
         </arguments>

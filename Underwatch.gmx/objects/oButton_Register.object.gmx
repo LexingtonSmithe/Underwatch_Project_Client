@@ -68,11 +68,7 @@
         var playerPassword = oTextBox_Password1.txt;
         var playerPasswordHash = sha1_string_unicode(playerPassword);
         
-        buffer_seek(global.buffer, buffer_seek_start, 0);
-        buffer_write(global.buffer, buffer_u8, 2);
-        buffer_write(global.buffer, buffer_string, playerUsername);
-        buffer_write(global.buffer, buffer_string, playerPasswordHash);
-        network_send_packet(oController.socket, global.buffer, buffer_tell(global.buffer));
+        Registration_Attempt(playerUsername,playerPasswordHash);
         
     } else {
         ShowNotification("Passwords don't match!")

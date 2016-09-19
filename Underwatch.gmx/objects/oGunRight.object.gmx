@@ -64,43 +64,7 @@ BulletSpeed = 2;
 
 RightGunPosition();
 
-///Shooting
-var Len = 12;
-var Dir = image_angle + Flip;
-
-SecondsSinceShot = SecondsSinceShot + 1/room_speed;
-
-if mouse_check_button(mb_left) {
-    
-    if SecondsSinceShot &gt; SecondsBetweenShots &amp;&amp; Ammo &gt; 0 {
-        Length = 5;
-        Bullet = instance_create(x+lengthdir_x(Len, Dir), y+lengthdir_y(Len, Dir), oLaserPellet);
-        Bullet.speed = 5;
-        Bullet.direction = image_angle;
-        Bullet.image_angle = Bullet.direction;
-        Bang = instance_create(x+lengthdir_x(Len, Dir), y+lengthdir_y(Len, Dir), oMuzzle);
-        Bang.image_angle = image_angle;
-        Ammo = Ammo - 1;
-        SecondsSinceShot = 0;
-        
-    }
-    
-}
-if Ammo &lt;= 0 {
-    Reloading = true;
-}
-
-if Reloading = true &amp;&amp; Ammo != MaxAmmo {
-    Ammo = 0;
-    SecondsReloading = SecondsReloading + 1 / room_speed;
-    
-    if SecondsReloading &gt; SecondsUntilReloaded {
-        Ammo = MaxAmmo;
-        SecondsReloading = 0; 
-        Reloading = false;
-    }
-    
-}
+GenericShooting();
 </string>
           </argument>
         </arguments>

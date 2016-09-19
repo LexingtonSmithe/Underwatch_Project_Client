@@ -29,5 +29,34 @@ switch(Character){
     //var CharactersGun = oOozer;
     
     break;
+    
+    case 3:
+    Name = "Brorus"
+    HudSprite = sHealth_100;
+    MaxHP = 75;
+    ImageOne = sBrorus_Walking_1;
+    ImageTwo = sBrorus_Walking_2;
+    ImageThree = sBrorus_Walking_3;
+    ImageFour = sBrorus_Walking_7;
+    ImageFive = sBrorus_Walking_8;
+    
+    //var CharactersGun = oOozer;
+    
+    break;
+    
+    case 4:
+    Name = "Generico"
+    HudSprite = sHealth_100;
+    MaxHP = 100;
+    ImageOne = sPlayer_Idle;
+    ImageTwo = sPlayer_Idle;
+    ImageThree = sPlayer_Idle;
+    ImageFour = sPlayer_Idle;
+    ImageFive = sPlayer_Idle;
+    
+    //var CharactersGun = oOozer;
+    
+    break;
+    
 }
 

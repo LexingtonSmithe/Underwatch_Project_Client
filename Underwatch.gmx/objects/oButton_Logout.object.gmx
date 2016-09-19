@@ -54,13 +54,7 @@ var LoggedInChange = 2;
 ds_grid_set(global.PlayerGrid,0, 1, 0)
 oController.LoggedIn = false
 
-buffer_seek(global.buffer, buffer_seek_start, 0);
-buffer_write(global.buffer, buffer_u8, 3);
-buffer_write(global.buffer, buffer_u32,  global.playerId);
-buffer_write(global.buffer, buffer_string, playerUsername);
-buffer_write(global.buffer, buffer_string, playerPasswordHash);
-buffer_write(global.buffer, buffer_u8, LoggedInChange);
-network_send_packet(oController.socket, global.buffer, buffer_tell(global.buffer));
+Login_Attempt(playerUsername,playerPasswordHash,LoggedInChange);
 
 room_goto(rm_Login)
 

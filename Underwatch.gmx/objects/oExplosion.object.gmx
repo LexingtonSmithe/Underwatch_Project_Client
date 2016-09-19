@@ -25,20 +25,51 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>var ToMake = 20
-var Made = 0
+            <string>Owner = 0;
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>var ToMake = 20;
+var Made = 0;
+var dir = 0;
 while Made &lt; ToMake {
     var Fire = instance_create(x,y,oFlames);
-    var dir = 0;
     Fire.direction = dir;
     Fire.speed = 2;
+    Fire.Owner = Owner;
     Fire.image_angle = random(359);
     Fire.image_xscale = random_range(0.5,1);
-    Fire.image_yscale = Fire.image_xscale;
+    Fire.image_yscale = Fire.image_xscale;    
+    dir += (360 / ToMake);
     
-    dir += (360 / ToMake)
-    Made +=1    
+    var dust = instance_create(x,y,oDustLead);
+    dust.direction = random(359)
+    dust.speed = random_range(4,6);
+    
+    Made +=1;
 }
+
+instance_destroy();
 </string>
           </argument>
         </arguments>

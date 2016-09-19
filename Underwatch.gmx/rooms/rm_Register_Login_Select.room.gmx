@@ -16,6 +16,10 @@ global.displayHeight = ini_read_real("settings", "height", 720);
 ini_close();
 
 global.Level = noone;
+global.playerId = "";
+global.PlayerType = 0;
+global.Latency = 0;
+global.Team = 0;
 
 ScreenResolution()</code>
   <enableViews>-1</enableViews>

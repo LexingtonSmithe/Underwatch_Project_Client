@@ -4,7 +4,7 @@
 Requires Script in Gun Create Event
 GunStats(GunAmmo,ReloadTime,ShotTiming)
 */
-var xx = global.displayWidth - 128;
+var xx = global.displayWidth - 164;
 var yy = global.displayHeight - 96;
 var xp = (sprite_get_width(sReload_Bar) / 2) - 8;
 var percentage = (SecondsReloading / SecondsUntilReloaded)*2;

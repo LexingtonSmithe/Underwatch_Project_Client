@@ -100,26 +100,24 @@ if !instance_exists(oLocalPlayer) {
     SecondsToSpawn = SecondsToSpawn + 1 / room_speed
     drawRespawnTimer = true;
     drawPrompt = false;
+    LivingStatus = 0; // Dead
+    
     if SecondsToSpawn &gt; RespawnTime {
-        LivingStatus = 0; //dead
         var Player = instance_create(x, y, oLocalPlayer);
-        LivingStatus = 1; //alive
+        LivingStatus = 1; // Alive
         Killer = "";
+        SecondsToSpawn = 0;
         if instance_exists(oScreenFill) {
             with(oScreenFill) {
                 instance_destroy();
             }
         }
-        // tell the server we died
-        buffer_seek(global.buffer, buffer_seek_start, 0);
-        buffer_write(global.buffer, buffer_u8, 10);
-        buffer_write(global.buffer, buffer_u32,  global.playerId);
-        buffer_write(global.buffer, buffer_u8, global.PlayerType);
-        buffer_write(global.buffer, buffer_u8,  LivingStatus);
-        network_send_packet(oController.socket, global.buffer, buffer_tell(global.buffer));
-        
-        ds_grid_set(global.PlayerGrid,4 , 0, LivingStatus);
+
     }
+    // tell the server we died
+    Local_Player_Life_Change(LivingStatus);
+    
+    ds_grid_set(global.PlayerGrid,4 , 0, LivingStatus);
     
 } else {
 
@@ -128,15 +126,10 @@ if !instance_exists(oLocalPlayer) {
     if instance_place(x,y,oLocalPlayer) {
         drawPrompt = true;
         if keyboard_check_pressed(ord('H')) {
-        
+            LivingStatus = 0; // Effectively Dead
             // Destroy the player in other players clients
-            buffer_seek(global.buffer, buffer_seek_start, 0);
-            buffer_write(global.buffer, buffer_u8, 10);
-            buffer_write(global.buffer, buffer_u32,  global.playerId);
-            buffer_write(global.buffer, buffer_u8, global.PlayerType);
-            buffer_write(global.buffer, buffer_u8,  0);// Effectively Dead
-            network_send_packet(oController.socket, global.buffer, buffer_tell(global.buffer));
-            
+            Local_Player_Life_Change(LivingStatus);
+            // Return to player select
             room_goto(rm_PlayerSelect);
         }
     } else {
@@ -166,7 +159,9 @@ if !instance_exists(oLocalPlayer) {
           <argument>
             <kind>1</kind>
             <string>if drawRespawnTimer = true {
-    draw_sprite(sSpawnTimer,floor(SecondsToSpawn),64,64)
+    var xx = global.displayWidth / 2;
+    var yy = 128;
+    draw_sprite(sSpawnTimer,ceil(SecondsToSpawn),xx,yy)
 }   
 </string>
           </argument>

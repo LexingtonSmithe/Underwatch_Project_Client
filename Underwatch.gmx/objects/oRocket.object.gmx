@@ -58,13 +58,15 @@ Trail.image_yscale = 0.3
 
 
 if instance_place(x,y,oSolid) {
-    instance_create(x, y, oExplosion)
+    var boom = instance_create(x, y, oExplosion);
+    boom.Owner = Owner;
     instance_destroy();
 }
 var hitlen = sprite_width
 var hitdir = image_angle
 if instance_place(x + lengthdir_x(hitlen,hitdir), y + lengthdir_y(hitlen,hitdir),oPlayer) {
-    instance_create(x, y, oExplosion)
+    var boom = instance_create(x, y, oExplosion);
+    boom.Owner = Owner;
     instance_destroy();
 }
 </string>

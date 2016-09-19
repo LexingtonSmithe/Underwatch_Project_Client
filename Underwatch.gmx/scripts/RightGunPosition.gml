@@ -6,11 +6,11 @@ if instance_exists(Owner) {
     if Owner.Angle > 90 && Owner.Angle < 270 {
         Angle = 155
         image_yscale = -1
-        Flip = -20
+        Flip = -StartingFlip
     } else {
         Angle = 25
         image_yscale = 1
-        Flip = 20
+        Flip = StartingFlip
     }
     
     //Delcare the variables
