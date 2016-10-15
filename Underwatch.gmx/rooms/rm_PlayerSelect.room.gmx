@@ -62,8 +62,8 @@ Joined_Game();</code>
     <instance objName="oSelect_Gloop" x="544" y="448" name="inst_9BA9C1A4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oSideDisplay" x="640" y="128" name="inst_8235D96E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oTeamDisplay" x="320" y="256" name="inst_CC713A34" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oSelect_Brorus" x="928" y="448" name="inst_1A6ABCC6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oSelect_Generico" x="736" y="448" name="inst_85C673AC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oSelect_Brorus" x="736" y="448" name="inst_1A6ABCC6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oSelect_Generico" x="928" y="448" name="inst_85C673AC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

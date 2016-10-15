@@ -25,7 +25,21 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>GunStats(3,2,0.5)
+            <string>StartingFlip = 20;
+Flip = StartingFlip;
+SecondsSinceShot = 0.3;
+SecondsBetweenShots = 0.3;
+MaxAmmo = 3;
+Ammo = MaxAmmo;
+Reloading = false;
+SecondsReloading = 0;
+SecondsUntilReloaded = 2;
+sprite_index = sGauntlet;
+BulletType = oLightning;
+MuzzleType = oGauntletMuzzle;
+BulletSpeed = 2;
+Spray = 0
+Len = sprite_width;
 </string>
           </argument>
         </arguments>

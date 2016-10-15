@@ -26,18 +26,22 @@
           <argument>
             <kind>1</kind>
             <string>//GunStats(6,0.2,0.1)
-Flip = 20;
+
+StartingFlip = 20;
+Flip = StartingFlip;
 SecondsSinceShot = 0.3;
 SecondsBetweenShots = 0.3;
 MaxAmmo = 6;
 Ammo = MaxAmmo;
 Reloading = false;
 SecondsReloading = 0;
-SecondsUntilReloaded = 3;
+SecondsUntilReloaded = 2;
 sprite_index = sGun;
 BulletType = oLaserPellet;
 MuzzleType = oMuzzle;
-BulletSpeed = 2;
+BulletSpeed = 5;
+Spray = 0;
+Len = sprite_width;
 </string>
           </argument>
         </arguments>
@@ -64,7 +68,51 @@ BulletSpeed = 2;
 
 RightGunPosition();
 
-GenericShooting();
+///Generic Shooting
+
+///Shooting
+
+var Dir = image_angle + Flip;
+
+SecondsSinceShot = SecondsSinceShot + 1/room_speed;
+
+if mouse_check_button(mb_left) {
+    
+    if SecondsSinceShot &gt; SecondsBetweenShots &amp;&amp; Ammo &gt; 0 {
+        image_speed = 0.4;
+        Ammo = Ammo - 1;
+        SecondsSinceShot = 0;
+        
+        var bx = x + lengthdir_x(Len, Dir);
+        var by = y + lengthdir_y(Len, Dir);
+        var Bullet = instance_create(bx, by, BulletType);
+            Bullet.speed = BulletSpeed;
+            Bullet.direction = image_angle + random_range(-Spray,Spray);
+            Bullet.image_angle = Bullet.direction;
+            Bullet.Owner = global.playerId;
+        var Bang = instance_create(bx, by, MuzzleType);
+            Bang.image_angle = image_angle;
+    }
+    
+} else {
+    image_speed = 0;
+}
+
+if Ammo &lt;= 0 {
+    Reloading = true;
+}
+
+if Reloading = true &amp;&amp; Ammo != MaxAmmo{
+    Ammo = 0;
+    SecondsReloading = SecondsReloading + 1 / room_speed;
+    
+    if SecondsReloading &gt; SecondsUntilReloaded {
+        Ammo = MaxAmmo;
+        SecondsReloading = 0; 
+        Reloading = false;
+    }
+    
+}
 </string>
           </argument>
         </arguments>

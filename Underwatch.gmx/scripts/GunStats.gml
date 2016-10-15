@@ -74,4 +74,57 @@ switch(global.PlayerType){
         Len = sprite_width;
     break;
     
+    case 5: // Jakub Bow
+        StartingFlip = 0;
+        Flip = StartingFlip;
+        SecondsSinceShot = 0.05;
+        SecondsBetweenShots = 0.05;
+        MaxAmmo = 150;
+        Ammo = MaxAmmo;
+        Reloading = false;
+        SecondsReloading = 0;
+        SecondsUntilReloaded = 4;
+        sprite_index = sMinigun;
+        BulletType = oArrow;
+        MuzzleType = oGunMuzzle;
+        BulletSpeed = 6;
+        Spray = 5
+        Len = sprite_width;
+    break;
+    
+    case 6: // Garbage Mouse SawBlade
+        StartingFlip = 0;
+        Flip = StartingFlip;
+        SecondsSinceShot = 0.05;
+        SecondsBetweenShots = 0.05;
+        MaxAmmo = 150;
+        Ammo = MaxAmmo;
+        Reloading = false;
+        SecondsReloading = 0;
+        SecondsUntilReloaded = 4;
+        sprite_index = sMinigun;
+        BulletType = oSawBlade;
+        MuzzleType = oGunMuzzle;
+        BulletSpeed = 6;
+        Spray = 5
+        Len = sprite_width;
+    break;
+    
+    case 7: // 
+        StartingFlip = 0;
+        Flip = StartingFlip;
+        SecondsSinceShot = 0.05;
+        SecondsBetweenShots = 0.05;
+        MaxAmmo = 150;
+        Ammo = MaxAmmo;
+        Reloading = false;
+        SecondsReloading = 0;
+        SecondsUntilReloaded = 4;
+        sprite_index = sMinigun;
+        BulletType = oSmallBullet;
+        MuzzleType = oGunMuzzle;
+        BulletSpeed = 6;
+        Spray = 5
+        Len = sprite_width;
+    break;
 }

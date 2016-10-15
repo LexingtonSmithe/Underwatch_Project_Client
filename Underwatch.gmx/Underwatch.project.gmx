@@ -12,15 +12,12 @@
     <sprite>sprites\sPlayer_Idle</sprite>
     <sprite>sprites\sTargetDummy</sprite>
     <sprites name="Guns">
-      <sprite>sprites\sGunLeft</sprite>
-      <sprite>sprites\sGun</sprite>
-      <sprite>sprites\sBanana</sprite>
-      <sprite>sprites\sOozer</sprite>
-      <sprite>sprites\sGauntlet</sprite>
-      <sprite>sprites\sBazooka</sprite>
-      <sprite>sprites\sMinigun</sprite>
-      <sprite>sprites\sStaff</sprite>
-      <sprite>sprites\sBow</sprite>
+      <sprites name="Turrets">
+        <sprite>sprites\sMiniGunTurret</sprite>
+        <sprite>sprites\sSawBladturret</sprite>
+        <sprite>sprites\sFlameTurret</sprite>
+        <sprite>sprites\sSmokeTurret</sprite>
+      </sprites>
       <sprites name="Bullets">
         <sprite>sprites\sBlob</sprite>
         <sprite>sprites\sBloblet</sprite>
@@ -32,7 +29,22 @@
         <sprite>sprites\sSmallBullet</sprite>
         <sprite>sprites\sZap</sprite>
         <sprite>sprites\sBallLightning</sprite>
+        <sprite>sprites\sSawBlade</sprite>
+        <sprites name="Firey Bullets">
+          <sprite>sprites\sSmallBulletFire</sprite>
+          <sprite>sprites\sSawBladeFire</sprite>
+        </sprites>
       </sprites>
+      <sprite>sprites\sGunLeft</sprite>
+      <sprite>sprites\sGun</sprite>
+      <sprite>sprites\sBanana</sprite>
+      <sprite>sprites\sOozer</sprite>
+      <sprite>sprites\sGauntlet</sprite>
+      <sprite>sprites\sBazooka</sprite>
+      <sprite>sprites\sSawBladeLauncher</sprite>
+      <sprite>sprites\sMinigun</sprite>
+      <sprite>sprites\sStaff</sprite>
+      <sprite>sprites\sBow</sprite>
     </sprites>
     <sprites name="Effects">
       <sprite>sprites\sFire</sprite>
@@ -142,6 +154,7 @@
       <sprite>sprites\sFloatingHealth</sprite>
       <sprite>sprites\sInvisibleWall</sprite>
       <sprite>sprites\sTorch</sprite>
+      <sprite>sprites\sSmokeEffect</sprite>
     </sprites>
     <sprites name="Lights">
       <sprite>sprites\sFocus_Light</sprite>
@@ -221,6 +234,10 @@
       <script>scripts\RightGunPosition.gml</script>
       <script>scripts\AmmoCounter.gml</script>
       <script>scripts\GenericShooting.gml</script>
+      <scripts name="Bullet Scripts">
+        <script>scripts\DestroyOutsideRoom.gml</script>
+      </scripts>
+      <script>scripts\CatchFire.gml</script>
     </scripts>
     <scripts name="Settings">
       <script>scripts\ButtonPressed.gml</script>
@@ -228,7 +245,6 @@
       <script>scripts\CollisionCheck.gml</script>
       <scripts name="Room Scripts">
         <script>scripts\ObjectSetup.gml</script>
-        <script>scripts\DestroyOutsideRoom.gml</script>
         <script>scripts\ScreenResolution.gml</script>
         <script>scripts\CreateExistingPlayers.gml</script>
       </scripts>
@@ -290,6 +306,7 @@
       <objects name="Guns">
         <object>objects\oGunLeft</object>
         <object>objects\oGunRight</object>
+        <object>objects\oSawBladeLauncher</object>
         <object>objects\oMinigun</object>
         <object>objects\oOozer</object>
         <object>objects\oGauntlet</object>
@@ -301,6 +318,7 @@
         <object>objects\oArrow</object>
         <object>objects\oHarmlessArrow</object>
         <object>objects\oLaserPellet</object>
+        <object>objects\oGunFlames</object>
         <object>objects\oSmallBullet</object>
         <object>objects\oBlob</object>
         <object>objects\oBloblet</object>
@@ -309,6 +327,7 @@
         <object>objects\oRocket</object>
         <object>objects\oStaffLaser_End</object>
         <object>objects\oStaff_Laser</object>
+        <object>objects\oSawBlade</object>
       </objects>
       <objects name="Gun Effects">
         <object>objects\oHand</object>
@@ -325,6 +344,12 @@
       <objects name="Tests">
         <object>objects\oTargetDummy</object>
         <object>objects\oBlood</object>
+        <objects name="Turrets">
+          <object>objects\oMiniTurret</object>
+          <object>objects\oSawBladeTurret</object>
+          <object>objects\oFlameTurret</object>
+          <object>objects\oSmoketurret</object>
+        </objects>
       </objects>
     </objects>
     <objects name="Effects">
@@ -423,6 +448,7 @@
     </objects>
   </objects>
   <rooms name="rooms">
+    <room>rooms\rm_Level_Look</room>
     <room>rooms\rm_Register_Login_Select</room>
     <room>rooms\rm_Register</room>
     <room>rooms\rm_Login</room>
@@ -433,7 +459,6 @@
     <room>rooms\rm_One</room>
     <room>rooms\rm_Two</room>
     <room>rooms\rm_MenuTesting</room>
-    <room>rooms\rm_Level_Look</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>

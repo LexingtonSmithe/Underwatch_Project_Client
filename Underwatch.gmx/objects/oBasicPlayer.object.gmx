@@ -34,7 +34,10 @@ HP = MaxHP
 var gun = instance_create(x,y,oMinigun);
 gun.Owner = self.id;
 
-drawDebug = true;
+drawDebug = false;
+
+Blind = false
+alpha = 0
 </string>
           </argument>
         </arguments>
@@ -76,6 +79,33 @@ if hspd &gt; 0 or vspd &gt; 0 or vspd &lt; 0 or hspd &lt; 0  {
 
 // Set the depth
 depth = -y
+
+if instance_place(x,y,oSmoke) { 
+    alpha += 2 / room_speed
+} else {
+    alpha -= 1 / room_speed
+}
+
+alpha = clamp(alpha,0,0.8)
+
+if alpha &gt; 0.05 {
+    Blind = true;
+} else {
+    Blind = false;
+}
+
+var Hit = instance_place(x,y,oBullet);
+
+if instance_exists(Hit) {
+    HP = HP - 2;
+    with Hit {
+        instance_destroy()
+    }
+
+}
+if HP &lt; 0 {
+    HP = MaxHP;
+}
 </string>
           </argument>
         </arguments>
@@ -123,7 +153,11 @@ GetOrientationAndFace()
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>
+            <string>if Blind = true {
+    draw_sprite_stretched_ext(sSmokeEffect,0,0,0,global.displayWidth,global.displayHeight,c_white,alpha)
+}
+
+
 HealthHud(sHealth_100,"Generico")
 
 if drawDebug = true {
@@ -141,6 +175,29 @@ if drawDebug = true {
     draw_text_colour(16, 120, string(mouse_x) + "." + string(mouse_y), c_red,  c_red,  c_red, c_red, .75)
 }
 
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="9" enumb="82">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>game_restart();
 </string>
           </argument>
         </arguments>

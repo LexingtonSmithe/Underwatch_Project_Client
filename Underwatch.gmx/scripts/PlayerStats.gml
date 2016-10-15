@@ -1,4 +1,7 @@
 ///PlayerStats()
+
+Blind = false
+
 var Character = global.PlayerType;
 
 switch(Character){
