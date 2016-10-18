@@ -93,7 +93,7 @@ if alpha &gt; 0.05 {
 } else {
     Blind = false;
 }
-
+//Damage
 var Hit = instance_place(x,y,oBullet);
 
 if instance_exists(Hit) {
@@ -103,9 +103,22 @@ if instance_exists(Hit) {
     }
 
 }
+
+//Healing
+var Heal = instance_place(x,y,oHealthPack)
+
+if  instance_exists(Heal){
+    if HP &lt; MaxHP {
+        HP = HP + Heal.Ammount
+        with(Heal) {
+            instance_destroy()
+        }
+    }
+}
 if HP &lt; 0 {
     HP = MaxHP;
 }
+
 </string>
           </argument>
         </arguments>

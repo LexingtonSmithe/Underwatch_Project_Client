@@ -53,7 +53,7 @@ alarm[0] = 5 * room_speed
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//pointDir = random(359)
+            <string>pointDir = random(359)
 
 alarm[0] = 5 * room_speed
 </string>
@@ -84,7 +84,7 @@ var Dir = image_angle
 var Spray = 10
 
 var Bullet = instance_create(x+lengthdir_x(Len, Dir), y+lengthdir_y(Len, Dir), oGunFlames);
-Bullet.speed = 3
+Bullet.speed = 5
 Bullet.direction = image_angle + random_range(-Spray,Spray);
 Bullet.image_angle = Bullet.direction;
 Bullet.Owner = id;

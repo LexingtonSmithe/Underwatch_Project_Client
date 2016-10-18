@@ -72,14 +72,20 @@ ds_grid_set(global.PlayerGrid, 4, 0, 0)
 var m = global.Minutes;
 var s = global.Seconds;
 
-if global.Team != 0 {
+if global.Level != noone {
     drawTime = true
+    if m &gt;= 10 {
+        m = 0;
+    }
+    
     if s &gt;= 10 { // 09 : 19
         TimeString = "0" + string(m) + ":" + string(s);
     } else { // 09 : 09
         TimeString = "0" + string(m) + ":0" + string(s);
     }
+    
 } else {
+
     drawTime = false
 }
 </string>

@@ -8,13 +8,13 @@ global.Team = Team;
 ds_grid_set(global.PlayerGrid, 2, 0, Team);
 
 switch(Level) {
-    case 0: // Sewers
+    case 1: // Sewers
     
     global.Level = (rm_One);
     
     break;
     
-    case 1: // Dojo
+    case 2: // Dojo
     
     global.Level = (rm_Two);
                 

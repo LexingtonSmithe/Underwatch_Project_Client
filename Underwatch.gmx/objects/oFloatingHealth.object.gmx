@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>&lt;undefined&gt;</parentName>
+  <parentName>oHealthPack</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -27,6 +27,7 @@
             <kind>1</kind>
             <string>image_xscale = random_range(0.5,2)
 image_yscale = image_xscale
+Ammount = 1
 </string>
           </argument>
         </arguments>

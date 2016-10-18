@@ -77,8 +77,9 @@ alpha = 0.5
             <string>
 alpha = 1;
 global.PlayerType = 3; // Brorus
-
-ds_grid_set(global.PlayerGrid,3 ,0 ,3)
+if instance_exists(oController) {
+    ds_grid_set(global.PlayerGrid,3 ,0 ,3);
+}
 </string>
           </argument>
         </arguments>
@@ -107,6 +108,7 @@ draw_self();
 image_alpha = 1;
 draw_set_font(font_Pixel);
 draw_set_colour(c_white);
+draw_set_halign(fa_center)
 draw_text(x,y+100,"Brorus");
 </string>
           </argument>

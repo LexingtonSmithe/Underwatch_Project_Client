@@ -65,10 +65,9 @@ ScreenResolution()</code>
   </views>
   <instances>
     <instance objName="oController" x="96" y="32" name="inst_7E95B120" locked="0" code="room_goto(rm_Register_Login_Select);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oButton_Register" x="640" y="448" name="inst_7F0E3697" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oButton_Register" x="640" y="480" name="inst_7F0E3697" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oCursor" x="128" y="96" name="inst_4461865C" locked="0" code="" scaleX="2.5" scaleY="2.5" colour="4294967295" rotation="0"/>
-    <instance objName="oButton_Login" x="640" y="256" name="inst_C73003DD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oButton_Exit" x="640" y="640" name="inst_7B392DF1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oButton_Login" x="640" y="288" name="inst_C73003DD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oTitle" x="640" y="96" name="inst_1B9CFFB7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>

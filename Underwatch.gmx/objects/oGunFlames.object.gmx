@@ -51,10 +51,12 @@ image_yscale = image_xscale
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>image_xscale += 1/ room_speed;
+            <string>image_xscale += 2/ room_speed;
 image_yscale = image_xscale;
 
-Fade(2)
+if image_xscale &gt; 1 {
+    instance_destroy()
+}
 </string>
           </argument>
         </arguments>

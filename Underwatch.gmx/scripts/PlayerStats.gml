@@ -50,7 +50,7 @@ switch(Character){
     case 4:
     Name = "Generico"
     HudSprite = sHealth_100;
-    MaxHP = 100;
+    MaxHP = 20;
     ImageOne = sPlayer_Idle;
     ImageTwo = sPlayer_Idle;
     ImageThree = sPlayer_Idle;

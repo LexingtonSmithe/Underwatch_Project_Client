@@ -1,7 +1,5 @@
 ///CreateExistingPlayers();
 
-
-
 /*
 Starting off the for loop at 1 instead of 0 as the local player is always held in position 0 of their respective grid
 this way it should loop through everyone else that they player knows about 

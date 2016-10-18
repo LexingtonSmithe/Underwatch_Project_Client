@@ -83,7 +83,7 @@ if global.Level != noone {
           <argument>
             <kind>1</kind>
             <string>instance_create(x,y,oSearching)
-var margin = 640;
+var margin = 644;
 var cancel = instance_create(x, y, oButton_Cancel);
 cancel.nextX = x+margin;
 

@@ -25,7 +25,23 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>GunStats(4,1.3,0.5)
+            <string>//GunStats(4,1.3,0.5)
+
+StartingFlip = 20;
+Flip = StartingFlip;
+SecondsSinceShot = 0.5;
+SecondsBetweenShots = 0.5;
+MaxAmmo = 4;
+Ammo = MaxAmmo;
+Reloading = false;
+SecondsReloading = 0;
+SecondsUntilReloaded = 1.5;
+sprite_index = sOozer;
+BulletType = oBlob;
+MuzzleType = oMuzzle;
+BulletSpeed = 4;
+Spray = 0
+Len = sprite_width;
 </string>
           </argument>
         </arguments>
@@ -116,7 +132,7 @@ if Reloading = true {
     }
     
     //Declare the variables
-    var Length = 20
+    var Length = 10
     var xx = Owner.x + lengthdir_x(Length,0 - Angle)
     var yy = Owner.y + lengthdir_y(Length,0 - Angle)
     var mx = point_direction(x,y,mouse_x,mouse_y)

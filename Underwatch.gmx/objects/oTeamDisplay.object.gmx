@@ -25,55 +25,86 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>var xx = x;
-var yy = y;
-var PlayerType = "";
-var PlayerName = "";
-var Portrait = sTeamSelect;
-var count = 1;
-for (var i = 0; i &lt; ds_grid_height(global.PlayerGrid); i++) {
-    
-    if ds_grid_get(global.PlayerGrid, 2, i) == global.Team {
-    
-        PlayerName = ds_grid_get(global.PlayerGrid, 1, i)
-        PlayerType = ds_grid_get(global.PlayerGrid, 3, i)
-        count++; 
+            <string>if instance_exists(oController) {
+    var xx = x;
+    var yy = y;
+    var PlayerType = "";
+    var PlayerName = "";
+    var Portrait = sTeamSelect;
+    var count = 1;
+    for (var i = 0; i &lt; ds_grid_height(global.PlayerGrid); i++) {
         
-        switch(PlayerType) {
-            case 0: // NOT SELECTED
-                Portrait = sTeamSelect;
-            break;
+        if ds_grid_get(global.PlayerGrid, 2, i) == global.Team {
+        
+            PlayerName = ds_grid_get(global.PlayerGrid, 1, i)
+            PlayerType = ds_grid_get(global.PlayerGrid, 3, i)
+            count++; 
             
-            case 1: // Krang
-                Portrait = sKrang_Portrait
-            break;
-            
-            case 2: // Gloop
-                Portrait = sGloop_Portrait
-            break;
-            
-            case 3: // Brorus
-                Portrait = sBrorus_Portrait
-            break;
-            
-            case 4: // Generico
-                Portrait = sGenerico_Portrait
-            break;
+            switch(PlayerType) {
+                case 0: // NOT SELECTED
+                    Portrait = sTeamSelect;
+                break;
+                
+                case 1: // Krang
+                    Portrait = sKrang_Portrait
+                break;
+                
+                case 2: // Gloop
+                    Portrait = sGloop_Portrait
+                break;
+                
+                case 3: // Brorus
+                    Portrait = sBrorus_Portrait
+                break;
+                
+                case 4: // Generico
+                    Portrait = sGenerico_Portrait
+                break;
+            }
+            draw_sprite(Portrait,image_index,xx,yy)
+            draw_text(xx, yy + 64, string(PlayerName));
+            xx += 164
         }
-        draw_sprite(Portrait,image_index,xx,yy)
-        draw_text(xx, yy + 64, string(PlayerName));
-        xx += 164
+      
     }
-  
-}
+    
+    if count &lt; 6 {
+        for (var i = count; i &lt; 6; i++ ) {
+            draw_sprite(sTeamSelect,image_index,xx,yy)
+            draw_text(xx, yy + 64, "...");
+            xx += 164
+            
+        }
+    }
+} else {
 
-if count &lt; 6 {
-    for (var i = count; i &lt; 6; i++ ) {
-        draw_sprite(sTeamSelect,image_index,xx,yy)
-        draw_text(xx, yy + 64, "...");
-        xx += 164
+    var xx = room_width / 2
+    var yy = y
+    var PlayerType = global.PlayerType
+    var Portrait = sTeamSelect;
+    switch(PlayerType) {
+        case 0: // NOT SELECTED
+            Portrait = sTeamSelect;
+        break;
         
+        case 1: // Krang
+            Portrait = sKrang_Portrait
+        break;
+        
+        case 2: // Gloop
+            Portrait = sGloop_Portrait
+        break;
+        
+        case 3: // Brorus
+            Portrait = sBrorus_Portrait
+        break;
+        
+        case 4: // Generico
+            Portrait = sGenerico_Portrait
+        break;
     }
+    
+    draw_sprite(Portrait,image_index,xx,yy)
 }
 </string>
           </argument>

@@ -54,7 +54,7 @@ alarm[0] = 5 * room_speed
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//pointDir = random(359)
+            <string>pointDir = random(359)
 
 alarm[0] = 5 * room_speed
 </string>

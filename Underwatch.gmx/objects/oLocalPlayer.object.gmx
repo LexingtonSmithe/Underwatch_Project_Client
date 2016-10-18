@@ -94,13 +94,14 @@ if Shot = 1 {
 }
 
 //Healing
-var Heal = instance_place(x,y,oFloatingHealth)
+var Heal = instance_place(x,y,oHealthPack)
+
 if  instance_exists(Heal){
-        if HP &lt; MaxHP {
+    if HP &lt; MaxHP {
+        HP = HP + Heal.Ammount
         with(Heal) {
             instance_destroy()
         }
-        HP = HP + 1
     }
 }
 
@@ -190,7 +191,7 @@ switch Direction {
 
 // Change the sprite to an integer from 1 - 5
 
-SpriteParse()
+
 
 var XScale = 0;
 if image_xscale = 1 {
@@ -202,8 +203,9 @@ if image_xscale = 1 {
 var xx = x;
 var yy = y;
 var imageIndex = image_index;
+var spriteIndex = sprite_index;
 
-Local_Player_Movement(xx,yy,imageIndex,spriteNumber,XScale,Shot,HP,MaxHP)
+Local_Player_Movement(xx,yy,imageIndex,spriteIndex,XScale,Shot,HP,MaxHP)
 </string>
           </argument>
         </arguments>

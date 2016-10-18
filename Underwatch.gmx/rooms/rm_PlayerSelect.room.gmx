@@ -11,11 +11,15 @@
   <colour>16777215</colour>
   <showcolour>-1</showcolour>
   <code>global.PlayerType = 0;
-ds_grid_set(global.PlayerGrid,3 ,0 ,0)
+
 ScreenResolution();
 
 // tell the server we are joinging a game
-Joined_Game();</code>
+
+if instance_exists(oController) {
+    ds_grid_set(global.PlayerGrid,3 ,0 ,0)
+    Joined_Game();
+}</code>
   <enableViews>-1</enableViews>
   <clearViewBackground>-1</clearViewBackground>
   <clearDisplayBuffer>-1</clearDisplayBuffer>

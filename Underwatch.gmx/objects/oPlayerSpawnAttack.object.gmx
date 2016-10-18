@@ -33,6 +33,7 @@ drawRespawnTimer = false;
 drawPrompt = false;
 
 var Side = 1; // Attacking
+
 if global.Team == Side {
     var Player = instance_create(x, y, oLocalPlayer);
     var LivingStatus = 1;

@@ -25,13 +25,14 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>image_speed = 0.3
+            <string>image_speed = 0.3;
+
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="3" enumb="0">
+    <event eventtype="7" enumb="7">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -48,7 +49,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>Fade(4);
+            <string>instance_destroy();
 </string>
           </argument>
         </arguments>

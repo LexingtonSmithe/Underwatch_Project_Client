@@ -4,7 +4,7 @@ var pId = buffer_read(buffer, buffer_u32);
 var xx = buffer_read(buffer, buffer_f32);
 var yy = buffer_read(buffer, buffer_f32);
 var imageIndex = buffer_read(buffer, buffer_u8);
-var spriteNumber = buffer_read(buffer, buffer_u8);
+var spriteIndex = buffer_read(buffer, buffer_u8);
 var XScale = buffer_read(buffer, buffer_u8);
 var Shot = buffer_read(buffer, buffer_u8);
 var Health = buffer_read(buffer, buffer_u8);
@@ -18,7 +18,7 @@ with(oRemotePlayer) {
         MaxHP = MaxHealth;
         
         // Change the sprite
-        Sprite = spriteNumber;
+        sprite_index = spriteIndex;
         
         //make sure its the correct index
         image_index = imageIndex;

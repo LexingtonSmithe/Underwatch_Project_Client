@@ -53,7 +53,16 @@ s.image_angle = image_angle;
 
 direction += random_range(-20,20)
 
+
+if image_alpha &gt; 0 {
+    image_alpha -= 0.2
+} else {
+    instance_destroy()
+}
+
 alarm[0] = random(5);
+
+
 </string>
           </argument>
         </arguments>

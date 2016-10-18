@@ -33,7 +33,6 @@ remotePlayerTeam = 0;
 DrawHealth = false;
 HP = 0;
 MaxHP = 0;
-Sprite = "";
 </string>
           </argument>
         </arguments>
@@ -77,8 +76,6 @@ if instance_exists(Hit) {
         }
     }
 }
-
-IncomingSprite()
 </string>
           </argument>
         </arguments>
