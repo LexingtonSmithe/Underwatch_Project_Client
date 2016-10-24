@@ -35,9 +35,6 @@ drawPrompt = false;
 var Side = 2; // Defending
 if global.Team == Side {
     var Player = instance_create(x, y, oLocalPlayer);
-    var LivingStatus = 1;
-    Local_Player_Life_Change(LivingStatus);
-    ds_grid_set(global.PlayerGrid,4 , 0, 1); // Local Player is Alive
 }
 
 
@@ -104,21 +101,13 @@ if !instance_exists(oLocalPlayer) {
     
     if SecondsToSpawn &gt; RespawnTime {
         var Player = instance_create(x, y, oLocalPlayer);
-        LivingStatus = 1; // Alive
-        Killer = "";
         SecondsToSpawn = 0;
         if instance_exists(oScreenFill) {
             with(oScreenFill) {
                 instance_destroy();
             }
         }
-
-    }
-    // tell the server we died
-    Local_Player_Life_Change(LivingStatus);
-    
-    ds_grid_set(global.PlayerGrid,4 , 0, LivingStatus);
-    
+    }  
 } else {
 
     drawRespawnTimer = false;
@@ -126,10 +115,11 @@ if !instance_exists(oLocalPlayer) {
     if instance_place(x,y,oLocalPlayer) {
         drawPrompt = true;
         if keyboard_check_pressed(ord('H')) {
-            LivingStatus = 0; // Effectively Dead
-            // Destroy the player in other players clients
-            Local_Player_Life_Change(LivingStatus);
-            // Return to player select
+                // Destroy the player in other players clients
+            Local_Player_Life_Change(0,0);
+                // Update the grid to show we dont exist
+            ds_grid_set(global.PlayerGrid,4 , 0, 0);
+                // Return to player select
             room_goto(rm_PlayerSelect);
         }
     } else {

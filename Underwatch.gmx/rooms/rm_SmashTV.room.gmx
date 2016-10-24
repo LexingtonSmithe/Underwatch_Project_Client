@@ -41,7 +41,7 @@
     <background visible="0" foreground="0" name="" x="0" y="0" htiled="-1" vtiled="-1" hspeed="0" vspeed="0" stretch="0"/>
   </backgrounds>
   <views>
-    <view visible="-1" objName="oPlayer" xview="0" yview="0" wview="426" hview="240" xport="0" yport="0" wport="960" hport="960" hborder="210" vborder="120" hspeed="-1" vspeed="-1"/>
+    <view visible="-1" objName="oPlayer" xview="64" yview="128" wview="426" hview="240" xport="0" yport="0" wport="960" hport="960" hborder="210" vborder="120" hspeed="-1" vspeed="-1"/>
     <view visible="0" objName="&lt;undefined&gt;" xview="0" yview="0" wview="1024" hview="768" xport="0" yport="0" wport="1024" hport="768" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
     <view visible="0" objName="&lt;undefined&gt;" xview="0" yview="0" wview="1024" hview="768" xport="0" yport="0" wport="1024" hport="768" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
     <view visible="0" objName="&lt;undefined&gt;" xview="0" yview="0" wview="1024" hview="768" xport="0" yport="0" wport="1024" hport="768" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
@@ -56,7 +56,6 @@
     <instance objName="oRoombaHatch" x="224" y="288" name="inst_775E6456" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oRoombaHatch" x="288" y="224" name="inst_C0A26102" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoor_Top" x="256" y="64" name="inst_7FFB7270" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oDialogue_Box_Smash" x="224" y="352" name="inst_9F31AD2E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oVoid" x="256" y="64" name="inst_B10F9A88" locked="0" code="" scaleX="5.5" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oVoid" x="64" y="256" name="inst_83D06786" locked="0" code="" scaleX="1" scaleY="5.5" colour="4294967295" rotation="0"/>
     <instance objName="oVoid" x="256" y="448" name="inst_F289A397" locked="0" code="" scaleX="5.5" scaleY="1" colour="4294967295" rotation="0"/>
@@ -67,6 +66,7 @@
     <instance objName="oVoid" x="896" y="256" name="inst_6444C86C" locked="0" code="" scaleX="1" scaleY="6.5" colour="4294967295" rotation="0"/>
     <instance objName="oVoid" x="448" y="256" name="inst_0EB2F5B6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oS_Door_Right" x="424" y="235" name="inst_C196441E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oDialogue_Box_Smash" x="224" y="352" name="inst_9F31AD2E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="bg_floor_lab" x="288" y="224" w="64" h="64" xo="64" yo="64" id="10002546" name="inst_C6D5E685" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

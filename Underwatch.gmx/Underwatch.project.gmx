@@ -302,6 +302,7 @@
     <font>fonts\font_Pixel</font>
     <font>fonts\font_HUD</font>
     <font>fonts\font_Clock</font>
+    <font>fonts\font_Death</font>
   </fonts>
   <objects name="objects">
     <object>objects\oBasicPlayer</object>
@@ -478,9 +479,11 @@
       <object>objects\oLocalGun</object>
       <object>objects\oPlayerSpawnAttack</object>
       <object>objects\oPlayerSpawnDefend</object>
+      <object>objects\oDeathMessage</object>
     </objects>
   </objects>
   <rooms name="rooms">
+    <room>rooms\rm_MenuTesting</room>
     <room>rooms\rm_Connect</room>
     <room>rooms\rm_Offline_Menu</room>
     <room>rooms\rm_Register_Login_Select</room>
@@ -493,7 +496,6 @@
     <room>rooms\rm_One</room>
     <room>rooms\rm_Two</room>
     <room>rooms\rm_SmashTV</room>
-    <room>rooms\rm_MenuTesting</room>
     <room>rooms\rm_Level_Look</room>
   </rooms>
   <help>

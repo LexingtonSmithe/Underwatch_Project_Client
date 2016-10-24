@@ -39,6 +39,10 @@ Shot = 0;
 
 var Gun = instance_create(x,y,oLocalGun);
 Gun.Owner = self.id;
+
+//update the grid
+Local_Player_Life_Change(1,0); // alive no killer
+ds_grid_set(global.PlayerGrid,4 , 0, 1); // alive
 </string>
           </argument>
         </arguments>
@@ -64,7 +68,7 @@ Gun.Owner = self.id;
             <string>///Damage
 
 var Hit = instance_place(x,y,oBullet);
-
+var WhoShotMe = 0;
 if instance_exists(Hit) {
     var ID = Hit.Owner;
     if (ds_grid_value_exists(global.PlayerGrid,0,0,0, ds_grid_height(global.PlayerGrid), ID)) {
@@ -77,7 +81,8 @@ if instance_exists(Hit) {
             Shot = 1;
             SecondsSinceShot = 0;
             var shakeShakeShake = instance_create(x,y,oScreenShake); // shake that booooty...
-            var WhoShotMe = Hit.Owner;
+            WhoShotMe = Hit.Owner;
+            
             with Hit {
                 instance_destroy()
             }
@@ -108,13 +113,21 @@ if  instance_exists(Heal){
 //DIE
 if HP &lt;= 0 {
     var Killer = "";
+    var KillerID = WhoShotMe;
+    
     with(oRemotePlayer) {
         if remotePlayerId == WhoShotMe {
             Killer = remotePlayerName;
-        }
+            
+       }
     }
+    
     var ScreenFill = instance_create(x,y,oScreenFill);
-    ScreenFill.Text = Killer;
+    ScreenFill.Text = Killer; 
+
+    //update the grid
+    Local_Player_Life_Change(0, KillerID); // Dead and this is who killed me
+    ds_grid_set(global.PlayerGrid, 4 , 0, 0); // Dead
     instance_destroy();
 }
 </string>

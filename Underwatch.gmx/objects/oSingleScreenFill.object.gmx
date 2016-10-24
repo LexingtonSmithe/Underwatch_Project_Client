@@ -48,17 +48,17 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_set_colour(c_black)
-draw_rectangle(0,0,room_width,room_height,false)
-draw_set_font(font_Pixel)
-draw_set_colour(c_white)
-
+            <string>draw_set_colour(c_black);
+draw_rectangle(0,0,room_width,room_height,false);
+draw_set_font(font_Pixel);
+draw_set_colour(c_white);
+draw_set_halign(fa_center);
 var xx = global.displayWidth / 2;
 var yy = global.displayHeight / 2;
 
-draw_text(xx, yy - 64, "You failed to shut down the machine")
-draw_text(xx, yy, "835 Clones were tragically killed by the time it was finally under control")
-draw_text(xx, yy + 64, "By another hero who could do the job...")
+draw_text(xx, yy - 64, "You failed to shut down the machine");
+draw_text(xx, yy, "835 Clones were tragically killed by the time it was finally under control");
+draw_text(xx, yy + 64, "By another hero who could do the job...");
 </string>
           </argument>
         </arguments>

@@ -25,7 +25,37 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>Text = "";
+            <string>Victim = "Bill";
+Killer = "Ted";
+
+
+YY = 32;
+Height = string_height(string(Killer));
+
+alarm[0] = room_speed * 5;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>instance_destroy();
 </string>
           </argument>
         </arguments>
@@ -48,19 +78,14 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_set_colour(c_black);
-draw_rectangle(0,0,room_width,room_height,false);
-draw_set_font(font_Pixel);
-draw_set_colour(c_white);
+            <string>var dx = global.displayWidth - 32;
 
-var xx = global.displayWidth / 2;
-var yy = global.displayHeight / 2;
 
-draw_text(xx, yy - 64, "Your life was tragically cut short by");
-draw_set_colour(c_red);
-draw_text(xx, yy, string(Text));
-draw_set_colour(c_white);
-draw_text(xx, yy + 64, "Press H to take revenge");
+draw_set_halign(fa_right);
+draw_set_colour(c_yellow);
+draw_set_font(font_Death);
+
+draw_text(dx,YY,string(Killer) + " X " + string(Victim));
 </string>
           </argument>
         </arguments>
