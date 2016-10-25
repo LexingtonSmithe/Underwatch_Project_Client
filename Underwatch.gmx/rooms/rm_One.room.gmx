@@ -68,7 +68,10 @@ ObjectSetup();</code>
     <instance objName="oVoid" x="704" y="384" name="inst_1345B8A9" locked="0" code="" scaleX="3" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oVoid" x="1152" y="448" name="inst_2D94E7B1" locked="0" code="" scaleX="5.5" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oVoid" x="1344" y="256" name="inst_863597F6" locked="0" code="" scaleX="1" scaleY="6" colour="4294967295" rotation="0"/>
-    <instance objName="oS_Door_Right" x="808" y="233" name="inst_61078F01" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oSewer_Door_Right" x="448" y="224" name="inst_61078F01" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oSewer_Door_Left" x="960" y="224" name="inst_2814C9C4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oSolid_Door" x="448" y="256" name="inst_2FC51FCC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oSolid_Door" x="960" y="256" name="inst_5558B50C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="bg_floor_sewer" x="224" y="160" w="64" h="64" xo="64" yo="192" id="10002445" name="inst_DE4B159A" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

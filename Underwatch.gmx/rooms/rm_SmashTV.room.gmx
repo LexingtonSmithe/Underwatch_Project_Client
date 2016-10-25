@@ -65,7 +65,7 @@
     <instance objName="oVoid" x="704" y="64" name="inst_9410886A" locked="0" code="" scaleX="5" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oVoid" x="896" y="256" name="inst_6444C86C" locked="0" code="" scaleX="1" scaleY="6.5" colour="4294967295" rotation="0"/>
     <instance objName="oVoid" x="448" y="256" name="inst_0EB2F5B6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oS_Door_Right" x="424" y="235" name="inst_C196441E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oSewer_Door_Right" x="448" y="224" name="inst_C196441E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDialogue_Box_Smash" x="224" y="352" name="inst_9F31AD2E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>

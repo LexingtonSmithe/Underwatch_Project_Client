@@ -20,6 +20,6 @@
   <width>64</width>
   <height>64</height>
   <frames>
-    <frame index="0">images\sInvisibleWall_0.png</frame>
+    <frame index="0">images\sInvisible_Door_0.png</frame>
   </frames>
 </sprite>

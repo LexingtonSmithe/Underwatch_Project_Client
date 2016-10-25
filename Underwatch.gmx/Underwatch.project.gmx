@@ -150,6 +150,7 @@
         </sprites>
         <sprites name="Sewers">
           <sprite>sprites\sSewer_Door_Right</sprite>
+          <sprite>sprites\sSewer_Door_Left</sprite>
         </sprites>
       </sprites>
     </sprites>
@@ -167,7 +168,8 @@
     <sprites name="Misc">
       <sprite>sprites\sLava</sprite>
       <sprite>sprites\sprite84</sprite>
-      <sprite>sprites\sInvisibleWall</sprite>
+      <sprite>sprites\sInvisible_Wall</sprite>
+      <sprite>sprites\sInvisible_Door</sprite>
       <sprite>sprites\sTorch</sprite>
       <sprite>sprites\sSmokeEffect</sprite>
     </sprites>
@@ -407,7 +409,10 @@
       <objects name="Wall Objects">
         <object>objects\oComputer_One</object>
       </objects>
-      <object>objects\oS_Door_Right</object>
+      <objects name="Doors">
+        <object>objects\oSewer_Door_Right</object>
+        <object>objects\oSewer_Door_Left</object>
+      </objects>
     </objects>
     <objects name="Settings">
       <object>objects\oCamera</object>
@@ -415,6 +420,7 @@
       <object>objects\oScreenFill</object>
       <object>objects\oSingleScreenFill</object>
       <object>objects\oVoid</object>
+      <object>objects\oSolid_Door</object>
       <objects name="Parents">
         <object>objects\oPlayer</object>
         <object>objects\oHealthPack</object>
@@ -483,7 +489,6 @@
     </objects>
   </objects>
   <rooms name="rooms">
-    <room>rooms\rm_MenuTesting</room>
     <room>rooms\rm_Connect</room>
     <room>rooms\rm_Offline_Menu</room>
     <room>rooms\rm_Register_Login_Select</room>
@@ -496,6 +501,7 @@
     <room>rooms\rm_One</room>
     <room>rooms\rm_Two</room>
     <room>rooms\rm_SmashTV</room>
+    <room>rooms\rm_MenuTesting</room>
     <room>rooms\rm_Level_Look</room>
   </rooms>
   <help>
