@@ -72,6 +72,7 @@ ObjectSetup();</code>
     <instance objName="oSewer_Door_Left" x="960" y="224" name="inst_2814C9C4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oSolid_Door" x="448" y="256" name="inst_2FC51FCC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oSolid_Door" x="960" y="256" name="inst_5558B50C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oObjectiveA" x="704" y="256" name="inst_3447A898" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="bg_floor_sewer" x="224" y="160" w="64" h="64" xo="64" yo="192" id="10002445" name="inst_DE4B159A" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

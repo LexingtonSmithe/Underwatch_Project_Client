@@ -58,10 +58,15 @@ switch (messageID) {
     case 13: // Non bullet item has been created
         Item_Creation(buffer);        
     break;
+    
     case 14:
         Game_Time(buffer);
     break;
-
+    
+    case 15:
+        Update_Objectives(buffer)
+    break;
+    
     default:
         show_debug_message("No Recognisable Packet Type Was Sent To HandleIncomingPackets")
     break;      

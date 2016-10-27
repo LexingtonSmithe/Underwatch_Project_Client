@@ -134,6 +134,7 @@
     <sprites name="Level Objects">
       <sprite>sprites\sSpawnLocation</sprite>
       <sprite>sprites\sPlayerSpawn</sprite>
+      <sprite>sprites\sObjectiveA</sprite>
       <sprites name="Critters">
         <sprite>sprites\sCockroach_Walk</sprite>
         <sprite>sprites\sScorpion_Idle</sprite>
@@ -238,6 +239,7 @@
       <script>scripts\scr_herd.gml</script>
       <script>scripts\ImpactDust.gml</script>
       <script>scripts\ButtonHover.gml</script>
+      <script>scripts\Ring_Health_Bar.gml</script>
       <scripts name="Particles">
         <script>scripts\scr_red_sparks.gml</script>
         <script>scripts\scr_blue_sparks.gml</script>
@@ -283,6 +285,7 @@
         <script>scripts\Game_Found.gml</script>
         <script>scripts\Item_Creation.gml</script>
         <script>scripts\Game_Time.gml</script>
+        <script>scripts\Update_Objectives.gml</script>
       </scripts>
       <scripts name="Outgoing Packets">
         <script>scripts\Latency_Request.gml</script>
@@ -296,6 +299,7 @@
         <script>scripts\Join_Leave_Game.gml</script>
         <script>scripts\Send_Item_Created.gml</script>
         <script>scripts\Game_Found_Reciept.gml</script>
+        <script>scripts\Objective_Update.gml</script>
       </scripts>
     </scripts>
   </scripts>
@@ -430,6 +434,7 @@
         <object>objects\oSelect_Player</object>
         <object>objects\oPlayerSpawn</object>
         <object>objects\oDoor</object>
+        <object>objects\oObjective</object>
       </objects>
     </objects>
     <objects name="Menus">
@@ -486,6 +491,9 @@
       <object>objects\oPlayerSpawnAttack</object>
       <object>objects\oPlayerSpawnDefend</object>
       <object>objects\oDeathMessage</object>
+      <objects name="Objectives">
+        <object>objects\oObjectiveA</object>
+      </objects>
     </objects>
   </objects>
   <rooms name="rooms">
@@ -501,8 +509,8 @@
     <room>rooms\rm_One</room>
     <room>rooms\rm_Two</room>
     <room>rooms\rm_SmashTV</room>
-    <room>rooms\rm_MenuTesting</room>
     <room>rooms\rm_Level_Look</room>
+    <room>rooms\rm_MenuTesting</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
