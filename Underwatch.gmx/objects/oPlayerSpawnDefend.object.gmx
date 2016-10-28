@@ -61,11 +61,11 @@ if global.Team == Side {
           <argument>
             <kind>1</kind>
             <string>///SpawnFloatingHealth
-
-var calc = min(sprite_width*image_xscale,sprite_height*image_yscale);
-var len = random(calc / 2);
-var dir = random(359);
-instance_create(x + lengthdir_x(len, dir), y + lengthdir_y(len, dir), oFloatingHealth);
+if instance_exists(oPlayer){
+    if instance_place(x,y,oPlayer) {
+        instance_create(oPlayer.x, oPlayer.y, oFloatingHealth);
+    }
+}
 
 alarm[0] = 10;
 </string>
@@ -149,7 +149,7 @@ if !instance_exists(oLocalPlayer) {
           <argument>
             <kind>1</kind>
             <string>var xx = global.displayWidth / 2;
-var yy = 128;
+var yy = 236;
 var sy = global.displayHeight;
 
 if drawRespawnTimer = true {

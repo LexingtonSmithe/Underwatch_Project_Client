@@ -48,7 +48,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>room_goto(rm_Offline_Menu);
+            <string>
+room_goto(rm_Offline_Menu);
 </string>
           </argument>
         </arguments>

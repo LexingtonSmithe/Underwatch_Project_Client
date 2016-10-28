@@ -26,9 +26,10 @@
           <argument>
             <kind>1</kind>
             <string>active = true;
-Objective = 1;
 Score = 0;
-alarm[0] = 10
+MaxScore = 100;
+colour = c_yellow;
+alarm[0] = 10;
 </string>
           </argument>
         </arguments>
@@ -52,13 +53,24 @@ alarm[0] = 10
           <argument>
             <kind>1</kind>
             <string>if active = true {
-    var touching = instance_place(x,y,oLocalPlayer);
-    
-    if instance_exists(touching) {
-        Objective_Update(Objective)
+    if Score &gt;= MaxScore {        
+        if instance_exists(oObjectiveB) {
+            with(oObjectiveB) {
+                oObjectiveB.active = true
+            }
+        }
+        active = false;
+        colour = c_green
     }
-    alarm[0] = 10
+    
+    var touching = instance_place(x,y,oLocalPlayer);
+    if instance_exists(touching) {
+        Objective_Update()
+        show_debug_message("Player On Point A")
+    }
 }
+
+alarm[0] = 10
 </string>
           </argument>
         </arguments>
@@ -83,15 +95,20 @@ alarm[0] = 10
             <kind>1</kind>
             <string>var xx = global.displayWidth / 2;
 var yy = 136;
-draw_set_colour(c_yellow);
 draw_set_font(font_Clock);
 draw_set_halign(fa_center);
 draw_set_valign(fa_middle);
 
 dif = 40;
-draw_text(xx-dif,yy,"A")
-Ring_Health_Bar(xx-dif, yy, 25, 10, 100, Score, 90, 360, -1, c_yellow);
 
+draw_set_alpha(0.5)
+draw_set_colour(c_black)
+draw_circle(xx-dif,yy,30,false)
+draw_set_alpha(1)
+
+draw_set_colour(colour);
+draw_text(xx-dif,yy,"A")
+Ring_Health_Bar(xx-dif, yy, 25, 10, MaxScore, Score, 90, 360, -1, colour);
 draw_set_valign(fa_top);
 </string>
           </argument>

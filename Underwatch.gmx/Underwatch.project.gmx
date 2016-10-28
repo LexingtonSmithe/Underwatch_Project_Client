@@ -135,6 +135,7 @@
       <sprite>sprites\sSpawnLocation</sprite>
       <sprite>sprites\sPlayerSpawn</sprite>
       <sprite>sprites\sObjectiveA</sprite>
+      <sprite>sprites\sObjectiveB</sprite>
       <sprites name="Critters">
         <sprite>sprites\sCockroach_Walk</sprite>
         <sprite>sprites\sScorpion_Idle</sprite>
@@ -493,6 +494,8 @@
       <object>objects\oDeathMessage</object>
       <objects name="Objectives">
         <object>objects\oObjectiveA</object>
+        <object>objects\oObjectiveB</object>
+        <object>objects\oObjectiveC</object>
       </objects>
     </objects>
   </objects>

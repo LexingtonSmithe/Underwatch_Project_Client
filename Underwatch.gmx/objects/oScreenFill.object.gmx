@@ -56,11 +56,11 @@ draw_set_colour(c_white);
 var xx = global.displayWidth / 2;
 var yy = global.displayHeight / 2;
 
-draw_text(xx, yy - 64, "Your life was tragically cut short by");
+draw_text(xx, yy - 40, "Your life was tragically cut short by");
 draw_set_colour(c_red);
 draw_text(xx, yy, string(Text));
 draw_set_colour(c_white);
-draw_text(xx, yy + 64, "Press H to take revenge");
+draw_text(xx, yy + 40, "Press H to take revenge");
 </string>
           </argument>
         </arguments>

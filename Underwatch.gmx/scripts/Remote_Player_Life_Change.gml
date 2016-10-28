@@ -28,7 +28,9 @@ switch(LivingStatus) {
         if killerID != 0 {
             var message = instance_create(x,y,oDeathMessage);
             message.Victim = pName;
+            message.VictimID = pId;
             message.Killer = killerName;
+            message.KillerID = killerID;
         }
         
         with(oRemotePlayer) { //destroy the player who died
