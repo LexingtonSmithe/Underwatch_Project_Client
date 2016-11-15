@@ -25,7 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>max_width = 300;
+            <string>max_width = 10;
 Selected = false;
 blink  = false;
 txt = "";

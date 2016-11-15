@@ -139,7 +139,9 @@ GenericShooting();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>AmmoCounter()
+            <string>if !instance_exists(oOutcome) {
+    AmmoCounter();
+}
 </string>
           </argument>
         </arguments>

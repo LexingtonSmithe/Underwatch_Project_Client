@@ -31,13 +31,16 @@ facingLeft = true;
 MaxHP = 50
 HP = MaxHP
 
-var gun = instance_create(x,y,oMinigun);
+var gun = instance_create(x,y,oTurretPlacer);
 gun.Owner = self.id;
 
 drawDebug = false;
 
 Blind = false
 alpha = 0
+
+
+remotePlayerTeam = 5;
 </string>
           </argument>
         </arguments>

@@ -126,6 +126,9 @@ if !instance_exists(oLocalPlayer) {
         drawPrompt = false;
     }
 }
+if instance_exists(oOutcome) {
+    drawPrompt = false;
+}
 </string>
           </argument>
         </arguments>

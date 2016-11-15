@@ -67,6 +67,10 @@ switch (messageID) {
         Update_Objectives(buffer)
     break;
     
+    case 16:
+        Game_OutCome(buffer)
+    break;
+    
     default:
         show_debug_message("No Recognisable Packet Type Was Sent To HandleIncomingPackets")
     break;      

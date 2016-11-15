@@ -48,7 +48,7 @@ connectionLost = false;
 global.playerId = "";
 LoggedIn = false
 global.Team = 0;
-var Name = "";
+Name = "";
 
 //timings
 TimeString = "10:00";
@@ -140,6 +140,10 @@ var yy = 32;
     }
 
 }
+
+if instance_exists(oOutcome) {
+    drawTime = false;
+}
 </string>
           </argument>
         </arguments>
@@ -197,6 +201,7 @@ switch(eventType) {
           <argument>
             <kind>1</kind>
             <string>network_destroy(socket);
+ds_grid_destroy(global.PlayerGrid);
 buffer_delete(global.buffer);
 </string>
           </argument>

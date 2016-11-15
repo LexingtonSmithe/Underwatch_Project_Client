@@ -87,11 +87,22 @@ ScreenResolution()</code>
     <instance objName="oVoid" x="1841" y="160" name="inst_F5EE2A98" locked="0" code="" scaleX="5.5" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oVoid" x="1120" y="672" name="inst_5DB24398" locked="0" code="" scaleX="7" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oFlameTurret" x="288" y="192" name="inst_58AD51D2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oSmoketurret" x="736" y="288" name="inst_97F86944" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oSmoketurret" x="352" y="672" name="inst_97F86944" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oMiniTurret" x="256" y="288" name="inst_1C0A7653" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oSawBladeTurret" x="288" y="384" name="inst_E7777517" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oMedKit" x="992" y="192" name="inst_AE6063B2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oDoor_Top" x="736" y="480" name="inst_7FDB6048" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oMedKit" x="672" y="544" name="inst_AE6063B2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oVoid" x="512" y="736" name="inst_E0A0540E" locked="0" code="" scaleX="2" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oVoid" x="736" y="800" name="inst_D58E5255" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oVoid" x="672" y="800" name="inst_2A70607F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oVoid" x="608" y="800" name="inst_510B4A04" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oVoid" x="864" y="800" name="inst_3563661C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oVoid" x="928" y="736" name="inst_048F3AEA" locked="0" code="" scaleX="1" scaleY="5" colour="4294967295" rotation="0"/>
+    <instance objName="oVoid" x="736" y="864" name="inst_E1AC0E6A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oVoid" x="864" y="864" name="inst_DCF3E43C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oTargetDummy" x="832" y="544" name="inst_0858F47A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oTargetDummy" x="800" y="608" name="inst_D7CA1C12" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oTargetDummy" x="832" y="672" name="inst_93F659E8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oTestButtons" x="704" y="160" name="inst_1F8469F9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="bg_floor_sewer" x="256" y="192" w="64" h="64" xo="0" yo="192" id="10001663" name="inst_421F618D" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
@@ -599,6 +610,23 @@ ScreenResolution()</code>
     <tile bgName="bg_Floors_Marble" x="1792" y="1056" w="64" h="64" xo="64" yo="64" id="10002429" name="inst_6DEABD85" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bg_Floors_Marble" x="1920" y="1056" w="64" h="64" xo="64" yo="128" id="10002430" name="inst_0970CC2F" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bg_Floors_Marble" x="1920" y="992" w="64" h="64" xo="64" yo="0" id="10002431" name="inst_4F5BADD0" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bg_floor_temple" x="1408" y="1600" w="64" h="64" xo="64" yo="256" id="10002850" name="inst_BAD29B31" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bg_floor_temple" x="1408" y="1536" w="64" h="64" xo="64" yo="64" id="10002851" name="inst_EB83CF22" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bg_floor_temple" x="1408" y="1664" w="64" h="64" xo="64" yo="64" id="10002852" name="inst_C420A94F" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bg_floor_temple" x="1344" y="1600" w="64" h="64" xo="64" yo="64" id="10002853" name="inst_62CA0CDA" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bg_floor_temple" x="1472" y="1600" w="64" h="64" xo="64" yo="64" id="10002854" name="inst_291D03E8" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bg_floor_temple" x="1472" y="1536" w="64" h="64" xo="64" yo="64" id="10002855" name="inst_FD48C132" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bg_floor_temple" x="1344" y="1536" w="64" h="64" xo="64" yo="64" id="10002856" name="inst_0BDBA967" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bg_floor_temple" x="1344" y="1664" w="64" h="64" xo="64" yo="64" id="10002857" name="inst_74C6D23C" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bg_floor_temple" x="1472" y="1664" w="64" h="64" xo="64" yo="64" id="10002858" name="inst_0AFEF391" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bg_walls_temple" x="1344" y="1472" w="64" h="64" xo="64" yo="128" id="10002859" name="inst_D615C0C6" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bg_walls_temple" x="1408" y="1472" w="64" h="64" xo="128" yo="128" id="10002860" name="inst_CC4C238F" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bg_walls_temple" x="1472" y="1472" w="64" h="64" xo="192" yo="128" id="10002861" name="inst_8045627D" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bg_walls_temple" x="1280" y="1472" w="64" h="64" xo="384" yo="0" id="10002862" name="inst_5AB5CF4A" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bg_walls_temple" x="1536" y="1472" w="64" h="64" xo="448" yo="0" id="10002863" name="inst_D3D952C2" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bg_walls_temple" x="1280" y="1536" w="64" h="64" xo="320" yo="64" id="10002864" name="inst_A4F0EA41" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bg_walls_temple" x="1280" y="1600" w="64" h="64" xo="320" yo="64" id="10002865" name="inst_BB363A8F" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bg_walls_temple" x="1280" y="1664" w="64" h="64" xo="320" yo="64" id="10002866" name="inst_37E005CC" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
   </tiles>
   <PhysicsWorld>0</PhysicsWorld>
   <PhysicsWorldTop>0</PhysicsWorldTop>

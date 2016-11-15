@@ -48,14 +48,15 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>var StatusChange = 1;
+            <string>
+var StatusChange = 1;
 Join_Leave_Game(StatusChange);
 
 //reset the variables
 global.Level = noone;
 global.PlayerType = 0;
 global.Team = 0;
-// no need for the tracker if we are not in game. 
+ds_grid_resize(global.PlayerGrid,5,1);
 
 //re create the join button
 var margin = 640

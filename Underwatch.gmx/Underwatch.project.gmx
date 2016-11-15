@@ -26,6 +26,7 @@
         <sprite>sprites\sRocket</sprite>
         <sprite>sprites\sArrow</sprite>
         <sprite>sprites\sBullet</sprite>
+        <sprite>sprites\sEyeTurret</sprite>
         <sprite>sprites\sSmallBullet</sprite>
         <sprite>sprites\sZap</sprite>
         <sprite>sprites\sBallLightning</sprite>
@@ -40,6 +41,7 @@
       <sprite>sprites\sBanana</sprite>
       <sprite>sprites\sOozer</sprite>
       <sprite>sprites\sGauntlet</sprite>
+      <sprite>sprites\sTurretPlacer</sprite>
       <sprite>sprites\sBazooka</sprite>
       <sprite>sprites\sSawBladeLauncher</sprite>
       <sprite>sprites\sMinigun</sprite>
@@ -166,6 +168,14 @@
       <sprite>sprites\sSwitch</sprite>
       <sprite>sprites\sClockBackground</sprite>
       <sprite>sprites\sDialogue_Box</sprite>
+      <sprites name="Victorys">
+        <sprite>sprites\sVictory</sprite>
+        <sprite>sprites\sVictoryPieces</sprite>
+      </sprites>
+      <sprites name="Defeats">
+        <sprite>sprites\sDefeat</sprite>
+        <sprite>sprites\sDefeatPieces</sprite>
+      </sprites>
     </sprites>
     <sprites name="Misc">
       <sprite>sprites\sLava</sprite>
@@ -236,6 +246,7 @@
       <script>scripts\PlayerStats.gml</script>
     </scripts>
     <scripts name="Effects">
+      <script>scripts\IHaveLineOfSightTo.gml</script>
       <script>scripts\Fade.gml</script>
       <script>scripts\scr_herd.gml</script>
       <script>scripts\ImpactDust.gml</script>
@@ -245,6 +256,7 @@
         <script>scripts\scr_red_sparks.gml</script>
         <script>scripts\scr_blue_sparks.gml</script>
         <script>scripts\scr_green_flare.gml</script>
+        <script>scripts\scr_red_flare.gml</script>
       </scripts>
     </scripts>
     <scripts name="Gun Scripts">
@@ -287,6 +299,7 @@
         <script>scripts\Item_Creation.gml</script>
         <script>scripts\Game_Time.gml</script>
         <script>scripts\Update_Objectives.gml</script>
+        <script>scripts\Game_OutCome.gml</script>
       </scripts>
       <scripts name="Outgoing Packets">
         <script>scripts\Latency_Request.gml</script>
@@ -332,6 +345,7 @@
         <object>objects\oGunRight</object>
         <object>objects\oSawBladeLauncher</object>
         <object>objects\oMinigun</object>
+        <object>objects\oTurretPlacer</object>
         <object>objects\oOozer</object>
         <object>objects\oGauntlet</object>
         <object>objects\oStaff</object>
@@ -344,6 +358,7 @@
         <object>objects\oLaserPellet</object>
         <object>objects\oGunFlames</object>
         <object>objects\oSmallBullet</object>
+        <object>objects\oEyeTurret</object>
         <object>objects\oBlob</object>
         <object>objects\oBloblet</object>
         <object>objects\oZap</object>
@@ -375,6 +390,7 @@
           <object>objects\oFlameTurret</object>
           <object>objects\oSmoketurret</object>
         </objects>
+        <object>objects\oTestButtons</object>
       </objects>
       <objects name="Health Packs">
         <object>objects\oMedKit</object>
@@ -436,6 +452,7 @@
         <object>objects\oPlayerSpawn</object>
         <object>objects\oDoor</object>
         <object>objects\oObjective</object>
+        <object>objects\oOutcome</object>
       </objects>
     </objects>
     <objects name="Menus">
@@ -496,6 +513,18 @@
         <object>objects\oObjectiveA</object>
         <object>objects\oObjectiveB</object>
         <object>objects\oObjectiveC</object>
+      </objects>
+      <objects name="Outcomes">
+        <objects name="Losses">
+          <object>objects\oDefeatMaker</object>
+          <object>objects\oDefeat</object>
+          <object>objects\oDefeatPiece</object>
+        </objects>
+        <objects name="Victories">
+          <object>objects\oVictoryMaker</object>
+          <object>objects\oVictory</object>
+          <object>objects\oVictoryPiece</object>
+        </objects>
       </objects>
     </objects>
   </objects>

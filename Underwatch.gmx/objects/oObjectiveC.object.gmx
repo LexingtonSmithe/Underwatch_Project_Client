@@ -93,18 +93,20 @@ alarm[0] = 10
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>var xx = global.displayWidth / 2;
-var yy = 136;
-draw_set_colour(colour);
-draw_set_font(font_Clock);
-draw_set_halign(fa_center);
-draw_set_valign(fa_middle);
-
-dif = 40;
-draw_text(xx+dif,yy,"B")
-Ring_Health_Bar(xx+dif, yy, 25, 10, MaxScore, Score, 90, 360, -1, colour);
-
-draw_set_valign(fa_top);
+            <string>if !instance_exists(oOutcome) {
+    var xx = global.displayWidth / 2;
+    var yy = 136;
+    draw_set_colour(colour);
+    draw_set_font(font_Clock);
+    draw_set_halign(fa_center);
+    draw_set_valign(fa_middle);
+    
+    dif = 40;
+    draw_text(xx+dif,yy,"B")
+    Ring_Health_Bar(xx+dif, yy, 25, 10, MaxScore, Score, 90, 360, -1, colour);
+    
+    draw_set_valign(fa_top);
+}
 </string>
           </argument>
         </arguments>

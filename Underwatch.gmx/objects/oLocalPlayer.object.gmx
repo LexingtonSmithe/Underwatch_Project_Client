@@ -265,9 +265,10 @@ room_goto(rm_Lobby)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>
-var DisplayName = Name;
-HealthHud(sHealth_100,DisplayName)
+            <string>if !instance_exists(oOutcome){
+    var DisplayName = Name;
+    HealthHud(sHealth_100,DisplayName)
+}
 </string>
           </argument>
         </arguments>
