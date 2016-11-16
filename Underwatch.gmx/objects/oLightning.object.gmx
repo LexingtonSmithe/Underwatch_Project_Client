@@ -26,7 +26,44 @@
           <argument>
             <kind>1</kind>
             <string>Owner = "";
+Damage = 10;
 image_speed = 0.4
+alarm[0] = 0.5 * room_speed;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>var sparks = 7;
+var dir = direction - 15;
+
+for (i = 0; i &lt; sparks; i ++) {
+    var zap = instance_create(x,y,oZap);
+    zap.Owner = Owner;
+    zap.speed = 4;
+    zap.direction = dir;
+    zap.image_angle = zap.direction;
+    dir += 5;
+}
+instance_destroy();
+
 </string>
           </argument>
         </arguments>
@@ -56,24 +93,6 @@ DestroyOutsideRoom()
 
 // Spin in flight
 image_angle += 1;
-
-var dummy = instance_nearest(x,y,oPlayer);
-
-if instance_exists(dummy){
-    var Odds = 10
-    var ang = point_direction(x,y,dummy.x,dummy.y)
-    if distance_to_object(dummy) &lt; 50 {
-        if irandom(Odds) == Odds {
-            var zap = instance_create(x,y,oZap);
-            zap.Owner = Owner;
-            zap.speed = 4;
-            zap.direction = ang;
-            zap.image_angle = zap.direction
-            
-        }
-    }
-
-}
 </string>
           </argument>
         </arguments>

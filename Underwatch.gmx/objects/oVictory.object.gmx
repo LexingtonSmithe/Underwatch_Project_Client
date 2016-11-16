@@ -119,7 +119,7 @@ draw_set_colour(c_white);
 draw_rectangle(0,0,room_width,room_height,false);
 draw_set_alpha(1);
 draw_set_halign(fa_center)
-draw_text(x,y + dif,"MVP of the match: " + string(oController.Name));
+//draw_text(x,y + dif,"MVP of the match: " + string(oController.Name));
 draw_self();
 </string>
           </argument>

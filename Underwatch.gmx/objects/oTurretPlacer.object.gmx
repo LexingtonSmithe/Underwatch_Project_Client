@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>-10</depth>
   <persistent>0</persistent>
-  <parentName>&lt;undefined&gt;</parentName>
+  <parentName>oWeapon</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -39,6 +39,7 @@ sprite_index = sTurretPlacer;
 BulletType = oEyeTurret;
 MuzzleType = oGauntletMuzzle;
 BulletSpeed = 6;
+DistanceFromPlayer = 7;
 Spray = 0;
 </string>
           </argument>

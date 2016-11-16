@@ -17,6 +17,7 @@ switch(global.PlayerType){
         MuzzleType = oGauntletMuzzle;
         BulletSpeed = 2;
         Spray = 0
+        DistanceFromPlayer = 7;
         Len = sprite_width;
     break;
     
@@ -35,6 +36,7 @@ switch(global.PlayerType){
         MuzzleType = oMuzzle;
         BulletSpeed = 3;
         Spray = 0
+        DistanceFromPlayer = 7;
         Len = sprite_width;
     break;
     
@@ -53,6 +55,7 @@ switch(global.PlayerType){
         MuzzleType = oGunMuzzle;
         BulletSpeed = 5;
         Spray = 0
+        DistanceFromPlayer = 7;
         Len = sprite_width / 2;
     break;
     
@@ -71,6 +74,7 @@ switch(global.PlayerType){
         MuzzleType = oGunMuzzle;
         BulletSpeed = 6;
         Spray = 5
+        DistanceFromPlayer = 7;
         Len = sprite_width;
     break;
     
@@ -89,6 +93,7 @@ switch(global.PlayerType){
         MuzzleType = oGunMuzzle;
         BulletSpeed = 6;
         Spray = 5
+        DistanceFromPlayer = 7;
         Len = sprite_width;
     break;
     
@@ -107,6 +112,7 @@ switch(global.PlayerType){
         MuzzleType = oGunMuzzle;
         BulletSpeed = 6;
         Spray = 5
+        DistanceFromPlayer = 7;
         Len = sprite_width;
     break;
     
@@ -125,6 +131,7 @@ switch(global.PlayerType){
         MuzzleType = oGunMuzzle;
         BulletSpeed = 6;
         Spray = 5
+        DistanceFromPlayer = 7;
         Len = sprite_width;
     break;
 }

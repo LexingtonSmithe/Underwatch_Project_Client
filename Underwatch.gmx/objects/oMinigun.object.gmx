@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>-10</depth>
   <persistent>0</persistent>
-  <parentName>&lt;undefined&gt;</parentName>
+  <parentName>oWeapon</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -39,7 +39,9 @@ sprite_index = sMinigun;
 BulletType = oSmallBullet;
 MuzzleType = oGunMuzzle;
 BulletSpeed = 6;
-Spray = 15
+DistanceFromPlayer = 9;
+Spray = 15;
+Len = sprite_width;
 </string>
           </argument>
         </arguments>
@@ -69,7 +71,6 @@ RightGunPosition();
 ///GenericShooting();
 
 ///Shooting
-var Len = sprite_width;
 var Dir = image_angle + Flip;
 
 SecondsSinceShot = SecondsSinceShot + 1/room_speed;

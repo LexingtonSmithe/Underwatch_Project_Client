@@ -67,11 +67,17 @@ Gun.Owner = self.id;
 var Hit = instance_place(x,y,oBullet);
 
 if instance_exists(Hit) {
-    HP = HP - 2;
+    HP = HP - Hit.Damage;
     with Hit {
         instance_destroy()
     }
 
+}
+
+var Hurt = instance_place(x,y,oPermBullet);
+
+if instance_exists(Hurt) {
+    HP = HP - Hurt.Damage;
 }
 
 //Healing

@@ -51,7 +51,7 @@ image_speed = 0.3;
             <kind>1</kind>
             <string>var len = sprite_width / 2;
 var dir = image_angle + random_range(157,202);
-var Trail = instance_create(x + lengthdir_x(len,dir), y + lengthdir_y(len,dir), oSmoke);
+var Trail = instance_create(x + lengthdir_x(len,dir), y + lengthdir_y(len,dir), oSmokeEffect);
 Trail.image_xscale = 0.3
 Trail.image_yscale = 0.3
 

@@ -14,9 +14,8 @@ if instance_exists(Owner) {
     }
     
     //Delcare the variables
-    var Length = 7
-    var xx = Owner.x + lengthdir_x(Length,0 - Angle)
-    var yy = Owner.y + lengthdir_y(Length,0 - Angle)
+    var xx = Owner.x + lengthdir_x(DistanceFromPlayer,0 - Angle)
+    var yy = Owner.y + lengthdir_y(DistanceFromPlayer,0 - Angle)
     var mx = point_direction(x,y,mouse_x,mouse_y)
     
     //Set depth based on which way the player is facing

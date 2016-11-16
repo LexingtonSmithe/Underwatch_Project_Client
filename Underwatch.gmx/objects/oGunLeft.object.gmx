@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>-10</depth>
   <persistent>0</persistent>
-  <parentName>&lt;undefined&gt;</parentName>
+  <parentName>oWeapon</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -25,7 +25,22 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>GunStats(6,1,0.3)
+            <string>StartingFlip = 20;
+Flip = StartingFlip;
+SecondsSinceShot = 0.3;
+SecondsBetweenShots = 0.3;
+MaxAmmo = 6;
+Ammo = MaxAmmo;
+Reloading = false;
+SecondsReloading = 0;
+SecondsUntilReloaded = 1;
+//sprite_index = sGunLeft;
+BulletType = oLaserPellet;
+MuzzleType = oMuzzle;
+BulletSpeed = 5;
+Spray = 0;
+DistanceFromPlayer = 7;
+Len = sprite_width;
 </string>
           </argument>
         </arguments>
@@ -50,10 +65,8 @@
             <kind>1</kind>
             <string>///Positioning and Actions
 
-LeftGunPosition()
+LeftGunPosition();
 
-
-var Len = 12;
 var Dir = image_angle + Flip;
 
 SecondsSinceShot = SecondsSinceShot + 1/room_speed;
@@ -61,24 +74,30 @@ SecondsSinceShot = SecondsSinceShot + 1/room_speed;
 if mouse_check_button(mb_left) {
     
     if SecondsSinceShot &gt; SecondsBetweenShots &amp;&amp; Ammo &gt; 0 {
-        Length = 5;
-        Bullet = instance_create(x+lengthdir_x(Len, Dir), y+lengthdir_y(Len, Dir), oLaserPellet);
-        Bullet.speed = 5;
-        Bullet.direction = image_angle;
-        Bullet.image_angle = Bullet.direction;
-        Bang = instance_create(x+lengthdir_x(Len, Dir), y+lengthdir_y(Len, Dir), oMuzzle);
-        Bang.image_angle = image_angle;
+        image_speed = 0.4;
         Ammo = Ammo - 1;
         SecondsSinceShot = 0;
         
+        var bx = x + lengthdir_x(Len, Dir);
+        var by = y + lengthdir_y(Len, Dir);
+        var Bullet = instance_create(bx, by, BulletType);
+            Bullet.speed = BulletSpeed;
+            Bullet.direction = image_angle + random_range(-Spray,Spray);
+            Bullet.image_angle = Bullet.direction;
+            Bullet.Owner = global.playerId;
+        var Bang = instance_create(bx, by, MuzzleType);
+            Bang.image_angle = image_angle;
     }
     
+} else {
+    image_speed = 0;
 }
+
 if Ammo &lt;= 0 {
     Reloading = true;
 }
 
-if Reloading = true {
+if Reloading = true &amp;&amp; Ammo != MaxAmmo{
     Ammo = 0;
     SecondsReloading = SecondsReloading + 1 / room_speed;
     
@@ -111,7 +130,23 @@ if Reloading = true {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>AmmoCounter()
+            <string>//AmmoCounter()
+
+
+var xx = global.displayWidth - 356;
+var yy = global.displayHeight - 96;
+var xp = (sprite_get_width(sReload_Bar) / 2) - 8;
+var percentage = (SecondsReloading / SecondsUntilReloaded)*2;
+
+draw_set_colour(c_white);
+draw_set_halign(fa_center);
+draw_set_font(font_HUD);
+draw_text(xx,yy,string(Ammo)+" / "+string(MaxAmmo));
+
+if Reloading = true {
+    draw_sprite(sReload_Bar,0,xx,yy-32);
+    draw_sprite(sReload_Slider,0,xx-xp+(xp*percentage),yy-32);
+}
 </string>
           </argument>
         </arguments>

@@ -77,7 +77,7 @@ if instance_exists(Hit) {
         
         if shooterTeam != global.Team {
         
-            HP = HP - 2;
+            HP = HP - Hit.Damage;
             Shot = 1;
             SecondsSinceShot = 0;
             var shakeShakeShake = instance_create(x,y,oScreenShake); // shake that booooty...
@@ -86,6 +86,25 @@ if instance_exists(Hit) {
             with Hit {
                 instance_destroy()
             }
+        }
+    }
+}
+//Same as above except dont destroy the thing that damaging us
+var Hurt = instance_place(x,y,oPermBullet);
+var WhoShotMe = 0;
+if instance_exists(Hurt) {
+    var ID = Hurt.Owner;
+    if (ds_grid_value_exists(global.PlayerGrid,0,0,0, ds_grid_height(global.PlayerGrid), ID)) {
+        var playerRow = ds_grid_value_y(global.PlayerGrid,0,0,0,ds_grid_height(global.PlayerGrid)-1,ID);
+        var shooterTeam = ds_grid_get(global.PlayerGrid, 2, playerRow);
+        
+        if shooterTeam != global.Team {
+        
+            HP = HP - Hurt.Damage;
+            Shot = 1;
+            SecondsSinceShot = 0;
+            var shakeShakeShake = instance_create(x,y,oScreenShake); // shake that booooty...
+            WhoShotMe = Hurt.Owner;
         }
     }
 }

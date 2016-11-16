@@ -25,7 +25,9 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>alarm[0] = 30;
+            <string>OriginalxView = view_xview;
+OriginalyView = view_yview;
+alarm[0] = 30;
 shakeAmount = 2;
 </string>
           </argument>
@@ -49,8 +51,8 @@ shakeAmount = 2;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>view_xview = 0;
-view_yview = 0;
+            <string>view_xview = OriginalxView;
+view_yview = OriginalyView;
 
 instance_destroy();
 </string>

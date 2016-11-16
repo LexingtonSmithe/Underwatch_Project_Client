@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>-10</depth>
   <persistent>0</persistent>
-  <parentName>&lt;undefined&gt;</parentName>
+  <parentName>oWeapon</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -25,7 +25,22 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>GunStats(20,0.3,0.5)
+            <string>StartingFlip = 20;
+Flip = StartingFlip;
+SecondsSinceShot = 1;
+SecondsBetweenShots = 1;
+MaxAmmo = 50;
+Ammo = MaxAmmo;
+Reloading = false;
+SecondsReloading = 0;
+SecondsUntilReloaded = 1;
+sprite_index = sStaff;
+//BulletType = oRocket;
+//MuzzleType = oGunMuzzle;
+BulletSpeed = 5;
+Spray = 0
+Len = sprite_width / 2;
+DistanceFromPlayer = 6;
 Firing = false
 </string>
           </argument>
@@ -50,47 +65,7 @@ Firing = false
           <argument>
             <kind>1</kind>
             <string>///Positioning and Actions
-
-///GunPositionAndAngle
-
-if instance_exists(Owner) {
-    //Set the Angle
-    //if the Owner faces the other direcion switch hands and reorient
-    if Owner.Angle &gt; 90 &amp;&amp; Owner.Angle &lt; 270 {
-        Angle = 160;
-        image_yscale = -1;
-        Flip = -20;
-    } else {
-        Angle = 20;
-        image_yscale = 1;
-        Flip = 20;
-    }
-    
-    //Delcare the variables
-    var Length = 10;
-    var xx = Owner.x + lengthdir_x(Length,0 - Angle);
-    var yy = Owner.y + lengthdir_y(Length,0 - Angle);
-    var mx = point_direction(x,y,mouse_x,mouse_y);
-    
-    //Set depth based on which way the player is facing
-    if Owner.Direction = 1 or Owner.Direction = 2 or Owner.Direction = 8 {
-        depth = Owner.depth +1;
-    } else {
-        depth = Owner.depth -1;
-    }
-    // Set our position
-    x = xx;
-    y = yy;
-    
-    //Face the correct way
-    image_angle = mx;
-    
-} else {
-    // If our owner doesnt exists, destroy 
-    instance_destroy();
-    
-}
-
+RightGunPosition();
 </string>
           </argument>
         </arguments>

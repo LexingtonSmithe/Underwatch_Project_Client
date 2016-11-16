@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>-10</depth>
   <persistent>0</persistent>
-  <parentName>&lt;undefined&gt;</parentName>
+  <parentName>oWeapon</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -41,6 +41,7 @@ BulletType = oBlob;
 MuzzleType = oMuzzle;
 BulletSpeed = 4;
 Spray = 0
+DistanceFromPlayer = 14;
 Len = sprite_width;
 </string>
           </argument>
@@ -118,43 +119,7 @@ if Reloading = true {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if instance_exists(Owner) {
-    //Set the Angle
-    //if the Owner faces the other direcion switch hands and reorient
-    if Owner.Angle &gt; 90 &amp;&amp; Owner.Angle &lt; 270 {
-        Angle = 145
-        image_yscale = -1
-        Flip = -20
-    } else {
-        Angle = 35
-        image_yscale = 1
-        Flip = 20
-    }
-    
-    //Declare the variables
-    var Length = 10
-    var xx = Owner.x + lengthdir_x(Length,0 - Angle)
-    var yy = Owner.y + lengthdir_y(Length,0 - Angle)
-    var mx = point_direction(x,y,mouse_x,mouse_y)
-    
-    //Set depth based on which way the player is facing
-    if Owner.Direction = 1 or Owner.Direction = 2 or Owner.Direction = 8 {
-        depth = Owner.depth +1;
-    } else {
-        depth = Owner.depth -1;
-    }
-    // Set our position
-    x = xx;
-    y = yy;
-    
-    //Face the correct way
-    image_angle = mx;
-    
-} else {
-    // If our owner doesnt exists, destroy 
-    instance_destroy()
-    
-}
+            <string>RightGunPosition();
 </string>
           </argument>
         </arguments>

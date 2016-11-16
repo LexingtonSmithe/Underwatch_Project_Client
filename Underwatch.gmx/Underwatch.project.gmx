@@ -377,6 +377,7 @@
         <object>objects\oStaffMuzzle</object>
         <object>objects\oExplosion</object>
         <object>objects\oSmoke</object>
+        <object>objects\oSmokeEffect</object>
         <object>objects\oFlames</object>
         <object>objects\oShellCasing</object>
         <object>objects\oSlime</object>
@@ -446,6 +447,7 @@
         <object>objects\oPlayer</object>
         <object>objects\oHealthPack</object>
         <object>objects\oBullet</object>
+        <object>objects\oPermBullet</object>
         <object>objects\oFire</object>
         <object>objects\oSolid</object>
         <object>objects\oSelect_Player</object>
@@ -453,6 +455,7 @@
         <object>objects\oDoor</object>
         <object>objects\oObjective</object>
         <object>objects\oOutcome</object>
+        <object>objects\oWeapon</object>
       </objects>
     </objects>
     <objects name="Menus">
@@ -529,6 +532,7 @@
     </objects>
   </objects>
   <rooms name="rooms">
+    <room>rooms\rm_Level_Look</room>
     <room>rooms\rm_Connect</room>
     <room>rooms\rm_Offline_Menu</room>
     <room>rooms\rm_Register_Login_Select</room>
@@ -541,7 +545,6 @@
     <room>rooms\rm_One</room>
     <room>rooms\rm_Two</room>
     <room>rooms\rm_SmashTV</room>
-    <room>rooms\rm_Level_Look</room>
     <room>rooms\rm_MenuTesting</room>
   </rooms>
   <help>

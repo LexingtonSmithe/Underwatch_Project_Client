@@ -27,6 +27,7 @@
             <kind>1</kind>
             <string>Owner = "";
 Lit = false
+Damage = 1;
 
 /*
 randomize()

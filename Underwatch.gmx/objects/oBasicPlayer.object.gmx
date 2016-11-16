@@ -31,8 +31,8 @@ facingLeft = true;
 MaxHP = 50
 HP = MaxHP
 
-var gun = instance_create(x,y,oTurretPlacer);
-gun.Owner = self.id;
+var gun = instance_create(x,y,oGauntlet);
+gun.Owner = id;
 
 drawDebug = false;
 
@@ -41,6 +41,20 @@ alpha = 0
 
 
 remotePlayerTeam = 5;
+
+weapon[0] = oGunLeft;
+weapon[1] = oGunRight;
+weapon[2] = oGunRight;
+weapon[3] = oSawBladeLauncher;
+weapon[4] = oMinigun;
+weapon[5] = oTurretPlacer;
+weapon[6] = oOozer;
+weapon[7] = oGauntlet;
+weapon[8] = oStaff;
+weapon[9] = oBazooka;
+weapon[10] = oBow;
+weaponCount = 11;
+currentWeapon = 0;
 </string>
           </argument>
         </arguments>
@@ -83,6 +97,47 @@ if hspd &gt; 0 or vspd &gt; 0 or vspd &lt; 0 or hspd &lt; 0  {
 // Set the depth
 depth = -y
 
+if keyboard_check_pressed(vk_tab) {
+    if instance_exists(oWeapon) {
+        with (oWeapon) {
+            instance_destroy();
+        }
+        
+        if currentWeapon &gt;= weaponCount {
+            currentWeapon = 0;
+        }
+        
+        var w = instance_create(x,y,weapon[currentWeapon]);
+        w.Owner = id;
+        if currentWeapon == 2 {
+            var w = instance_create(x,y,oGunLeft);
+            w.Owner = id;
+        }
+        currentWeapon ++;
+    }
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Damage and effects
+
 if instance_place(x,y,oSmoke) { 
     alpha += 2 / room_speed
 } else {
@@ -100,11 +155,17 @@ if alpha &gt; 0.05 {
 var Hit = instance_place(x,y,oBullet);
 
 if instance_exists(Hit) {
-    HP = HP - 2;
+    HP = HP - Hit.Damage;
     with Hit {
         instance_destroy()
     }
 
+}
+
+var Hurt = instance_place(x,y,oPermBullet);
+
+if instance_exists(Hurt) {
+    HP = HP - Hurt.Damage;
 }
 
 //Healing
@@ -191,29 +252,6 @@ if drawDebug = true {
     draw_text_colour(16, 120, string(mouse_x) + "." + string(mouse_y), c_red,  c_red,  c_red, c_red, .75)
 }
 
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="9" enumb="82">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>game_restart();
 </string>
           </argument>
         </arguments>

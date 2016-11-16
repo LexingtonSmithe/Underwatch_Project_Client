@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>-10</depth>
   <persistent>0</persistent>
-  <parentName>&lt;undefined&gt;</parentName>
+  <parentName>oWeapon</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -35,12 +35,13 @@ MaxAmmo = 6;
 Ammo = MaxAmmo;
 Reloading = false;
 SecondsReloading = 0;
-SecondsUntilReloaded = 2;
+SecondsUntilReloaded = 1;
 sprite_index = sGun;
 BulletType = oLaserPellet;
 MuzzleType = oMuzzle;
 BulletSpeed = 5;
 Spray = 0;
+DistanceFromPlayer = 7;
 Len = sprite_width;
 </string>
           </argument>

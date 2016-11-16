@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>-10</depth>
   <persistent>0</persistent>
-  <parentName>&lt;undefined&gt;</parentName>
+  <parentName>oWeapon</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -25,8 +25,22 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>Flip = 20
-GunStats(3,2,1)
+            <string>StartingFlip = 20;
+Flip = StartingFlip;
+SecondsSinceShot = 1;
+SecondsBetweenShots = 1;
+MaxAmmo = 1;
+Ammo = MaxAmmo;
+Reloading = false;
+SecondsReloading = 0;
+SecondsUntilReloaded = 1;
+//sprite_index = sStaff;
+BulletType = oRocket;
+MuzzleType = oGunMuzzle;
+BulletSpeed = 5;
+Spray = 0
+DistanceFromPlayer = 10;
+Len = sprite_width / 2;
 </string>
           </argument>
         </arguments>
@@ -54,37 +68,48 @@ GunStats(3,2,1)
 RightGunPosition();
 
 ///Shooting
+
+var Dir = image_angle + Flip;
+
 SecondsSinceShot = SecondsSinceShot + 1/room_speed;
 
 if mouse_check_button(mb_left) {
     
     if SecondsSinceShot &gt; SecondsBetweenShots &amp;&amp; Ammo &gt; 0 {
-        Bullet = instance_create(x, y, oRocket);
-        Bullet.speed = 4;
-        Bullet.direction = image_angle;
-        Bullet.image_angle = Bullet.direction;
+        image_speed = 0.4;
         Ammo = Ammo - 1;
-        SecondsSinceShot = 0 
+        SecondsSinceShot = 0;
+        
+        var bx = x + lengthdir_x(Len, Dir);
+        var by = y + lengthdir_y(Len, Dir);
+        var Bullet = instance_create(bx, by, BulletType);
+            Bullet.speed = BulletSpeed;
+            Bullet.direction = image_angle + random_range(-Spray,Spray);
+            Bullet.image_angle = Bullet.direction;
+            Bullet.Owner = global.playerId;
+        var Bang = instance_create(bx, by, MuzzleType);
+            Bang.image_angle = image_angle;
     }
     
+} else {
+    image_speed = 0;
 }
 
 if Ammo &lt;= 0 {
     Reloading = true;
 }
 
-if Reloading = true {
+if Reloading = true &amp;&amp; Ammo != MaxAmmo{
     Ammo = 0;
     SecondsReloading = SecondsReloading + 1 / room_speed;
     
     if SecondsReloading &gt; SecondsUntilReloaded {
-        Ammo = MaxAmmo ;
-        SecondsReloading = 0;
+        Ammo = MaxAmmo;
+        SecondsReloading = 0; 
         Reloading = false;
     }
     
 }
-
 </string>
           </argument>
         </arguments>

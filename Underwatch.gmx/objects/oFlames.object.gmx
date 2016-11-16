@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>-8</depth>
   <persistent>0</persistent>
-  <parentName>oBullet</parentName>
+  <parentName>oPermBullet</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -27,6 +27,7 @@
             <kind>1</kind>
             <string>Owner = 0;
 Time = 1;
+Damage = 1;
 alarm[0] = 10;
 </string>
           </argument>
@@ -50,7 +51,7 @@ alarm[0] = 10;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>var s = instance_create(x,y,oSmoke);
+            <string>var s = instance_create(x,y,oSmokeEffect);
 s.image_angle = image_angle;
 
 alarm[0] = 10;

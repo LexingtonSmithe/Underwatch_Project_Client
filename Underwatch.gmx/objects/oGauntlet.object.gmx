@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>-10</depth>
   <persistent>0</persistent>
-  <parentName>&lt;undefined&gt;</parentName>
+  <parentName>oWeapon</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -27,8 +27,8 @@
             <kind>1</kind>
             <string>StartingFlip = 20;
 Flip = StartingFlip;
-SecondsSinceShot = 0.3;
-SecondsBetweenShots = 0.3;
+SecondsSinceShot = 0.5;
+SecondsBetweenShots = 0.5;
 MaxAmmo = 3;
 Ammo = MaxAmmo;
 Reloading = false;
@@ -37,8 +37,9 @@ SecondsUntilReloaded = 2;
 sprite_index = sGauntlet;
 BulletType = oLightning;
 MuzzleType = oGauntletMuzzle;
-BulletSpeed = 2;
+BulletSpeed = 3;
 Spray = 0
+DistanceFromPlayer = 14;
 Len = sprite_width;
 </string>
           </argument>
@@ -64,45 +65,7 @@ Len = sprite_width;
             <kind>1</kind>
             <string>///Positioning and Actions
 
-///GunPositionAndAngle
-
-if instance_exists(Owner) {
-    //Set the Angle
-    //if the Owner faces the other direcion switch hands and reorient
-    if Owner.Angle &gt; 90 &amp;&amp; Owner.Angle &lt; 270 {
-        Angle = 170;
-        image_yscale = -1;
-        Flip = -20;
-    } else {
-        Angle = 10;
-        image_yscale = 1;
-        Flip = 20;
-    }
-    
-    //Delcare the variables
-    var Length = 10;
-    var xx = Owner.x + lengthdir_x(Length,0 - Angle);
-    var yy = Owner.y + lengthdir_y(Length,0 - Angle);
-    var mx = point_direction(x,y,mouse_x,mouse_y);
-    
-    //Set depth based on which way the player is facing
-    if Owner.Direction = 1 or Owner.Direction = 2 or Owner.Direction = 8 {
-        depth = Owner.depth +1;
-    } else {
-        depth = Owner.depth -1;
-    }
-    // Set our position
-    x = xx;
-    y = yy;
-    
-    //Face the correct way
-    image_angle = mx;
-    
-} else {
-    // If our owner doesnt exists, destroy 
-    instance_destroy();
-    
-}
+RightGunPosition();
 
 </string>
           </argument>
@@ -125,40 +88,44 @@ if instance_exists(Owner) {
           <argument>
             <kind>1</kind>
             <string>///Shooting
-var Len = 0;
+
 var Dir = image_angle + Flip;
 
 SecondsSinceShot = SecondsSinceShot + 1/room_speed;
 
 if mouse_check_button(mb_left) {
     
-    if SecondsSinceShot &gt; SecondsBetweenShots &amp;&amp; Ammo &gt; 0  {
-        Length = 5;
-        Bullet = instance_create(x+lengthdir_x(Len, Dir), y+lengthdir_y(Len, Dir), oLightning);
-        Bullet.speed = 2;
-        Bullet.direction = image_angle;
-        Bullet.image_angle = Bullet.direction
-        Bang = instance_create(x, y, oGauntletMuzzle);
-        Bang.image_angle = image_angle;
-        Ammo = Ammo - 1
+    if SecondsSinceShot &gt; SecondsBetweenShots &amp;&amp; Ammo &gt; 0 {
+        image_speed = 0.4;
+        Ammo = Ammo - 1;
         SecondsSinceShot = 0;
         
+        var bx = x + lengthdir_x(Len, Dir);
+        var by = y + lengthdir_y(Len, Dir);
+        var Bullet = instance_create(bx, by, BulletType);
+            Bullet.speed = BulletSpeed;
+            Bullet.direction = image_angle + random_range(-Spray,Spray);
+            Bullet.image_angle = Bullet.direction;
+            Bullet.Owner = global.playerId;
+        var Bang = instance_create(bx, by, MuzzleType);
+            Bang.image_angle = image_angle;
     }
     
+} else {
+    image_speed = 0;
 }
-
 
 if Ammo &lt;= 0 {
     Reloading = true;
 }
 
-if Reloading = true {
+if Reloading = true &amp;&amp; Ammo != MaxAmmo{
     Ammo = 0;
     SecondsReloading = SecondsReloading + 1 / room_speed;
     
     if SecondsReloading &gt; SecondsUntilReloaded {
         Ammo = MaxAmmo;
-        SecondsReloading = 0;
+        SecondsReloading = 0; 
         Reloading = false;
     }
     

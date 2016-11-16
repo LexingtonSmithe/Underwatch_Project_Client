@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>&lt;undefined&gt;</parentName>
+  <parentName>oWeapon</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -28,7 +28,22 @@
             <string>image_speed = 0
 Charging = false
 Charge = 0 
-GunStats(1,1,0)
+StartingFlip = 20;
+Flip = StartingFlip;
+SecondsSinceShot = 0.3;
+SecondsBetweenShots = 0.3;
+MaxAmmo = 3;
+Ammo = MaxAmmo;
+Reloading = false;
+SecondsReloading = 0;
+SecondsUntilReloaded = 2;
+//sprite_index = sBow;
+BulletType = oArrow;
+MuzzleType = oHand;
+BulletSpeed = 2;
+Spray = 0
+DistanceFromPlayer = 10;
+Len = sprite_width;
 
 </string>
           </argument>
@@ -54,39 +69,7 @@ GunStats(1,1,0)
             <kind>1</kind>
             <string>///Position Of the Bow
 
-if instance_exists(Owner) {
-    //Set the Angle
-    //if the Owner faces the other direcion switch hands and reorient
-    if Owner.Angle &gt; 90 &amp;&amp; Owner.Angle &lt; 270 {
-        Angle = 155
-        image_yscale = -1
-        Flip = 300
-    } else {
-        Angle = 25
-        image_yscale = 1
-        Flip = 120
-    }
-    
-    //Delcare the variables
-    var Length = 7
-    var xx = Owner.x + lengthdir_x(Length,0 - Angle)
-    var yy = Owner.y + lengthdir_y(Length,0 - Angle)
-    var mx = point_direction(x,y,mouse_x,mouse_y)
-    
-    //Set our position and depth
-
-    depth = Owner.depth -1
-    x = xx
-    y = yy
-    
-    //Face the correct way
-    image_angle = mx
-    
-} else {
-    // If our owner doesnt exists, destroy 
-    instance_destroy()
-    
-}
+RightGunPosition();
 
 if Charging = true {
     Charge = Charge + 1 / room_speed
@@ -162,6 +145,7 @@ if Reloading = true {
           <argument>
             <kind>1</kind>
             <string>Charging = false
+
 if  Charge &lt; 2 {
     Arrow = instance_create(x,y, oArrow)
     Arrow.speed = Charge*6

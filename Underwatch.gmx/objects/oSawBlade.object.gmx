@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>&lt;undefined&gt;</parentName>
+  <parentName>oPermBullet</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -26,6 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>Owner = 0;
+Damage = 1;
 Bounces = 0;
 image_speed = 0.4;
 dir = direction;

@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>-10</depth>
   <persistent>0</persistent>
-  <parentName>&lt;undefined&gt;</parentName>
+  <parentName>oWeapon</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -40,6 +40,7 @@ BulletType = oSawBlade;
 MuzzleType = oGunMuzzle;
 BulletSpeed = 4;
 //Spray = 0;
+DistanceFromPlayer = 9;
 Len = sprite_width / 2 ;
 
 image_speed = 0.3
@@ -69,7 +70,7 @@ image_speed = 0.3
 
 RightGunPosition();
 
-
+// Shooting
 var Dir = image_angle + Flip;
 
 SecondsSinceShot = SecondsSinceShot + 1/room_speed;
