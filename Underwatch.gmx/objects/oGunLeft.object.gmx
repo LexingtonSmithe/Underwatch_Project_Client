@@ -40,7 +40,7 @@ MuzzleType = oMuzzle;
 BulletSpeed = 5;
 Spray = 0;
 DistanceFromPlayer = 7;
-Len = sprite_width;
+Len = sprite_width + 10;
 </string>
           </argument>
         </arguments>
@@ -130,22 +130,8 @@ if Reloading = true &amp;&amp; Ammo != MaxAmmo{
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//AmmoCounter()
-
-
-var xx = global.displayWidth - 356;
-var yy = global.displayHeight - 96;
-var xp = (sprite_get_width(sReload_Bar) / 2) - 8;
-var percentage = (SecondsReloading / SecondsUntilReloaded)*2;
-
-draw_set_colour(c_white);
-draw_set_halign(fa_center);
-draw_set_font(font_HUD);
-draw_text(xx,yy,string(Ammo)+" / "+string(MaxAmmo));
-
-if Reloading = true {
-    draw_sprite(sReload_Bar,0,xx,yy-32);
-    draw_sprite(sReload_Slider,0,xx-xp+(xp*percentage),yy-32);
+            <string>if !instance_exists(oGunRight) {
+    AmmoCounter();
 }
 </string>
           </argument>

@@ -244,12 +244,18 @@ if drawDebug = true {
     draw_rectangle(0,0,180,80,0)
     draw_set_alpha(1)
     draw_set_halign(fa_left)
+    //Player
     draw_text_colour(16, 0, "Player", c_white,  c_white,  c_white, c_white, .75)
-    draw_text_colour(16, 24, instance_count, c_white,  c_white,  c_white, c_white, .75)
-    draw_text_colour(16, 48, string(x)+ ", " + string(y), c_white,  c_white,  c_white, c_white, .75)
-    draw_text_colour(16, 72, Direction, c_white,  c_white,  c_white, c_white, .75)
+    draw_text_colour(16, 32, "X: " + string(x)+ ", " + " Y: " + string(y), c_white,  c_white,  c_white, c_white, .75)    
+    draw_text_colour(16, 64, Direction, c_white,  c_white,  c_white, c_white, .75)
+    //Mouse
     draw_text_colour(16, 96, "Mouse", c_red,  c_red,  c_red, c_red, .75)
-    draw_text_colour(16, 120, string(mouse_x) + "." + string(mouse_y), c_red,  c_red,  c_red, c_red, .75)
+    draw_text_colour(16, 128, "X: " + string(mouse_x) + " Y: " + string(mouse_y), c_red,  c_red,  c_red, c_red, .75)
+    //Game Info
+    draw_text_colour(16, 160, "Objects: " + string(instance_count), c_white,  c_white,  c_white, c_white, .75)
+    draw_text_colour(16, 192, "FPS: " + string(fps), c_white,  c_white,  c_white, c_white, .75)
+    //draw_text_colour(16, 120, "Memory: " + instance_count, c_white,  c_white,  c_white, c_white, .75)
+    
 }
 
 </string>

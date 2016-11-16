@@ -65,7 +65,6 @@ ScreenResolution()</code>
     <instance objName="oCursor" x="224" y="128" name="inst_116C6BF5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oBasicPlayer" x="736" y="640" name="inst_1F6D6143" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oRoombaHatch" x="736" y="640" name="inst_C69AA437" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oScorpionHole" x="1056" y="224" name="inst_B8A2550A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oVoid" x="160" y="288" name="inst_443FFAF6" locked="0" code="" scaleX="1" scaleY="6" colour="4294967295" rotation="0"/>
     <instance objName="oVoid" x="352" y="96" name="inst_5E6BCEFF" locked="0" code="" scaleX="7.5" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oVoid" x="320" y="480" name="inst_8777AB81" locked="0" code="" scaleX="7.5" scaleY="1" colour="4294967295" rotation="0"/>
@@ -86,11 +85,7 @@ ScreenResolution()</code>
     <instance objName="oVoid" x="1568" y="96" name="inst_31997915" locked="0" code="" scaleX="4.5" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oVoid" x="1841" y="160" name="inst_F5EE2A98" locked="0" code="" scaleX="5.5" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oVoid" x="1120" y="672" name="inst_5DB24398" locked="0" code="" scaleX="7" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oFlameTurret" x="288" y="192" name="inst_58AD51D2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oSmoketurret" x="352" y="672" name="inst_97F86944" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oMiniTurret" x="256" y="288" name="inst_1C0A7653" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oSawBladeTurret" x="288" y="384" name="inst_E7777517" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oMedKit" x="672" y="544" name="inst_AE6063B2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oMedKit" x="352" y="672" name="inst_AE6063B2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oVoid" x="512" y="736" name="inst_E0A0540E" locked="0" code="" scaleX="2" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oVoid" x="736" y="800" name="inst_D58E5255" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oVoid" x="672" y="800" name="inst_2A70607F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -103,13 +98,11 @@ ScreenResolution()</code>
     <instance objName="oTargetDummy" x="832" y="608" name="inst_D7CA1C12" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oTargetDummy" x="832" y="672" name="inst_93F659E8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oTestButtons" x="704" y="160" name="inst_1F8469F9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oTargetDummy" x="1105" y="404" name="inst_1E6FB8F8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oTargetDummy" x="1133" y="428" name="inst_1DAB4692" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oTargetDummy" x="1184" y="160" name="inst_0EEAF796" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oTargetDummy" x="1206" y="254" name="inst_BBB394A0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oTargetDummy" x="449" y="286" name="inst_5F24D47C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oTargetDummy" x="1216" y="224" name="inst_1E6FB8F8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oTargetDummy" x="832" y="736" name="inst_73637285" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oTargetDummy" x="384" y="640" name="inst_2854DE7B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oMiniTurret" x="1056" y="160" name="inst_0F0A5BA6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oFlameTurret" x="1056" y="288" name="inst_E91F428E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oSawBladeTurret" x="352" y="288" name="inst_AD52A177" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="bg_floor_sewer" x="256" y="192" w="64" h="64" xo="0" yo="192" id="10001663" name="inst_421F618D" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

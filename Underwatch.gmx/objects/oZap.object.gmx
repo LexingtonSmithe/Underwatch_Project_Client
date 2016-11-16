@@ -78,7 +78,7 @@ image_speed = 0.3;
           <argument>
             <kind>1</kind>
             <string>if wave &lt; 3 {
-    var sparks = 3;
+    var sparks = 2;
     var dir = direction - 5;
     
     for (i = 0; i &lt; sparks; i ++) {
@@ -89,7 +89,7 @@ image_speed = 0.3;
         zap.speed = 4 - (wave + 1) ;
         zap.direction = dir;
         zap.image_angle = zap.direction;
-        dir += 5;
+        dir += 10;
     }
     instance_destroy();
 }

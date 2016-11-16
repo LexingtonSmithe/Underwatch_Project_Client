@@ -96,10 +96,10 @@ if SecondsSinceShot &gt; SecondsBetweenShots {
 
 }
 
-image_angle += sin(degtorad(pointDir - image_angle)) * rSpeed;
 
-
-
+if image_angle != pointDir {
+    image_angle += sin(degtorad(pointDir - image_angle)) * rSpeed;
+}
 </string>
           </argument>
         </arguments>

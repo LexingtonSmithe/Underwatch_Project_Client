@@ -42,7 +42,7 @@ MuzzleType = oMuzzle;
 BulletSpeed = 5;
 Spray = 0;
 DistanceFromPlayer = 7;
-Len = sprite_width;
+Len = sprite_width + 10;
 </string>
           </argument>
         </arguments>
